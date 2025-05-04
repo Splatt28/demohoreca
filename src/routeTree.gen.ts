@@ -8,14 +8,30 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as ProduktProduktIdImport } from './routes/produkt/$produktId'
+import { Route as PanelUzytkownikaLayoutImport } from './routes/panel-uzytkownika/_layout'
 import { Route as KategoriaCategoryIdImport } from './routes/kategoria/$categoryId'
+import { Route as PanelUzytkownikaLayoutIndexImport } from './routes/panel-uzytkownika/_layout/index'
+import { Route as PanelUzytkownikaLayoutTwojeProduktyImport } from './routes/panel-uzytkownika/_layout/twoje-produkty'
+import { Route as PanelUzytkownikaLayoutTwojeDaneImport } from './routes/panel-uzytkownika/_layout/twoje-dane'
+
+// Create Virtual Routes
+
+const PanelUzytkownikaImport = createFileRoute('/panel-uzytkownika')()
 
 // Create/Update Routes
+
+const PanelUzytkownikaRoute = PanelUzytkownikaImport.update({
+  id: '/panel-uzytkownika',
+  path: '/panel-uzytkownika',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -29,11 +45,37 @@ const ProduktProduktIdRoute = ProduktProduktIdImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const PanelUzytkownikaLayoutRoute = PanelUzytkownikaLayoutImport.update({
+  id: '/_layout',
+  getParentRoute: () => PanelUzytkownikaRoute,
+} as any)
+
 const KategoriaCategoryIdRoute = KategoriaCategoryIdImport.update({
   id: '/kategoria/$categoryId',
   path: '/kategoria/$categoryId',
   getParentRoute: () => rootRoute,
 } as any)
+
+const PanelUzytkownikaLayoutIndexRoute =
+  PanelUzytkownikaLayoutIndexImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => PanelUzytkownikaLayoutRoute,
+  } as any)
+
+const PanelUzytkownikaLayoutTwojeProduktyRoute =
+  PanelUzytkownikaLayoutTwojeProduktyImport.update({
+    id: '/twoje-produkty',
+    path: '/twoje-produkty',
+    getParentRoute: () => PanelUzytkownikaLayoutRoute,
+  } as any)
+
+const PanelUzytkownikaLayoutTwojeDaneRoute =
+  PanelUzytkownikaLayoutTwojeDaneImport.update({
+    id: '/twoje-dane',
+    path: '/twoje-dane',
+    getParentRoute: () => PanelUzytkownikaLayoutRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -53,6 +95,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KategoriaCategoryIdImport
       parentRoute: typeof rootRoute
     }
+    '/panel-uzytkownika': {
+      id: '/panel-uzytkownika'
+      path: '/panel-uzytkownika'
+      fullPath: '/panel-uzytkownika'
+      preLoaderRoute: typeof PanelUzytkownikaImport
+      parentRoute: typeof rootRoute
+    }
+    '/panel-uzytkownika/_layout': {
+      id: '/panel-uzytkownika/_layout'
+      path: '/panel-uzytkownika'
+      fullPath: '/panel-uzytkownika'
+      preLoaderRoute: typeof PanelUzytkownikaLayoutImport
+      parentRoute: typeof PanelUzytkownikaRoute
+    }
     '/produkt/$produktId': {
       id: '/produkt/$produktId'
       path: '/produkt/$produktId'
@@ -60,48 +116,135 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProduktProduktIdImport
       parentRoute: typeof rootRoute
     }
+    '/panel-uzytkownika/_layout/twoje-dane': {
+      id: '/panel-uzytkownika/_layout/twoje-dane'
+      path: '/twoje-dane'
+      fullPath: '/panel-uzytkownika/twoje-dane'
+      preLoaderRoute: typeof PanelUzytkownikaLayoutTwojeDaneImport
+      parentRoute: typeof PanelUzytkownikaLayoutImport
+    }
+    '/panel-uzytkownika/_layout/twoje-produkty': {
+      id: '/panel-uzytkownika/_layout/twoje-produkty'
+      path: '/twoje-produkty'
+      fullPath: '/panel-uzytkownika/twoje-produkty'
+      preLoaderRoute: typeof PanelUzytkownikaLayoutTwojeProduktyImport
+      parentRoute: typeof PanelUzytkownikaLayoutImport
+    }
+    '/panel-uzytkownika/_layout/': {
+      id: '/panel-uzytkownika/_layout/'
+      path: '/'
+      fullPath: '/panel-uzytkownika/'
+      preLoaderRoute: typeof PanelUzytkownikaLayoutIndexImport
+      parentRoute: typeof PanelUzytkownikaLayoutImport
+    }
   }
 }
 
 // Create and export the route tree
 
+interface PanelUzytkownikaLayoutRouteChildren {
+  PanelUzytkownikaLayoutTwojeDaneRoute: typeof PanelUzytkownikaLayoutTwojeDaneRoute
+  PanelUzytkownikaLayoutTwojeProduktyRoute: typeof PanelUzytkownikaLayoutTwojeProduktyRoute
+  PanelUzytkownikaLayoutIndexRoute: typeof PanelUzytkownikaLayoutIndexRoute
+}
+
+const PanelUzytkownikaLayoutRouteChildren: PanelUzytkownikaLayoutRouteChildren =
+  {
+    PanelUzytkownikaLayoutTwojeDaneRoute: PanelUzytkownikaLayoutTwojeDaneRoute,
+    PanelUzytkownikaLayoutTwojeProduktyRoute:
+      PanelUzytkownikaLayoutTwojeProduktyRoute,
+    PanelUzytkownikaLayoutIndexRoute: PanelUzytkownikaLayoutIndexRoute,
+  }
+
+const PanelUzytkownikaLayoutRouteWithChildren =
+  PanelUzytkownikaLayoutRoute._addFileChildren(
+    PanelUzytkownikaLayoutRouteChildren,
+  )
+
+interface PanelUzytkownikaRouteChildren {
+  PanelUzytkownikaLayoutRoute: typeof PanelUzytkownikaLayoutRouteWithChildren
+}
+
+const PanelUzytkownikaRouteChildren: PanelUzytkownikaRouteChildren = {
+  PanelUzytkownikaLayoutRoute: PanelUzytkownikaLayoutRouteWithChildren,
+}
+
+const PanelUzytkownikaRouteWithChildren =
+  PanelUzytkownikaRoute._addFileChildren(PanelUzytkownikaRouteChildren)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
+  '/panel-uzytkownika': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
+  '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
+  '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
+  '/panel-uzytkownika/': typeof PanelUzytkownikaLayoutIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
+  '/panel-uzytkownika': typeof PanelUzytkownikaLayoutIndexRoute
   '/produkt/$produktId': typeof ProduktProduktIdRoute
+  '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
+  '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
+  '/panel-uzytkownika': typeof PanelUzytkownikaRouteWithChildren
+  '/panel-uzytkownika/_layout': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
+  '/panel-uzytkownika/_layout/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
+  '/panel-uzytkownika/_layout/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
+  '/panel-uzytkownika/_layout/': typeof PanelUzytkownikaLayoutIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kategoria/$categoryId' | '/produkt/$produktId'
+  fullPaths:
+    | '/'
+    | '/kategoria/$categoryId'
+    | '/panel-uzytkownika'
+    | '/produkt/$produktId'
+    | '/panel-uzytkownika/twoje-dane'
+    | '/panel-uzytkownika/twoje-produkty'
+    | '/panel-uzytkownika/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kategoria/$categoryId' | '/produkt/$produktId'
-  id: '__root__' | '/' | '/kategoria/$categoryId' | '/produkt/$produktId'
+  to:
+    | '/'
+    | '/kategoria/$categoryId'
+    | '/panel-uzytkownika'
+    | '/produkt/$produktId'
+    | '/panel-uzytkownika/twoje-dane'
+    | '/panel-uzytkownika/twoje-produkty'
+  id:
+    | '__root__'
+    | '/'
+    | '/kategoria/$categoryId'
+    | '/panel-uzytkownika'
+    | '/panel-uzytkownika/_layout'
+    | '/produkt/$produktId'
+    | '/panel-uzytkownika/_layout/twoje-dane'
+    | '/panel-uzytkownika/_layout/twoje-produkty'
+    | '/panel-uzytkownika/_layout/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KategoriaCategoryIdRoute: typeof KategoriaCategoryIdRoute
+  PanelUzytkownikaRoute: typeof PanelUzytkownikaRouteWithChildren
   ProduktProduktIdRoute: typeof ProduktProduktIdRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KategoriaCategoryIdRoute: KategoriaCategoryIdRoute,
+  PanelUzytkownikaRoute: PanelUzytkownikaRouteWithChildren,
   ProduktProduktIdRoute: ProduktProduktIdRoute,
 }
 
@@ -117,6 +260,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/kategoria/$categoryId",
+        "/panel-uzytkownika",
         "/produkt/$produktId"
       ]
     },
@@ -126,8 +270,35 @@ export const routeTree = rootRoute
     "/kategoria/$categoryId": {
       "filePath": "kategoria/$categoryId.tsx"
     },
+    "/panel-uzytkownika": {
+      "filePath": "panel-uzytkownika",
+      "children": [
+        "/panel-uzytkownika/_layout"
+      ]
+    },
+    "/panel-uzytkownika/_layout": {
+      "filePath": "panel-uzytkownika/_layout.tsx",
+      "parent": "/panel-uzytkownika",
+      "children": [
+        "/panel-uzytkownika/_layout/twoje-dane",
+        "/panel-uzytkownika/_layout/twoje-produkty",
+        "/panel-uzytkownika/_layout/"
+      ]
+    },
     "/produkt/$produktId": {
       "filePath": "produkt/$produktId.tsx"
+    },
+    "/panel-uzytkownika/_layout/twoje-dane": {
+      "filePath": "panel-uzytkownika/_layout/twoje-dane.tsx",
+      "parent": "/panel-uzytkownika/_layout"
+    },
+    "/panel-uzytkownika/_layout/twoje-produkty": {
+      "filePath": "panel-uzytkownika/_layout/twoje-produkty.tsx",
+      "parent": "/panel-uzytkownika/_layout"
+    },
+    "/panel-uzytkownika/_layout/": {
+      "filePath": "panel-uzytkownika/_layout/index.tsx",
+      "parent": "/panel-uzytkownika/_layout"
     }
   }
 }
