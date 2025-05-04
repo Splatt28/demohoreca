@@ -7,27 +7,36 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { User, LogIn, LogOut } from 'lucide-react'
 import PlaceholderAvatar from '@/assets/placeholder-avatar.png'
+import { Link } from '@tanstack/react-router'
 
 export const Nav = () => {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur bg-stone-100/70 shadow-sm border-b border-stone-200">
+    <header className="sticky top-0 z-50 backdrop-blur bg-primary/70 shadow-sm text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-lg font-semibold tracking-tight text-stone-800 flex-1">
+        <div className="text-lg font-semibold tracking-tight text-white flex-1">
           MyLogo
         </div>
 
         {/* Navigation Menu */}
-        <nav className="space-x-6 text-stone-700 hidden md:flex">
-          <a href="/" className="hover:text-stone-900 transition-colors">
+        <nav className="space-x-6 text-white hidden md:flex">
+          <a href="/" className="hover:text-accent transition-colors">
             Home
           </a>
-          <a
-            href="/produkty"
-            className="hover:text-stone-900 transition-colors"
+          <Link
+            to="/kategoria/$categoryId"
+            params={{ categoryId: 'obiekt' }}
+            className="hover:text-accent transition-colors"
           >
-            Produkty
-          </a>
+            Obiekt
+          </Link>
+          <Link
+            to="/kategoria/$categoryId"
+            params={{ categoryId: 'artykuly_spozywcze' }}
+            className="hover:text-accent transition-colors"
+          >
+            Artykuły Spożywcze
+          </Link>
         </nav>
 
         {/* Right Side Icons */}

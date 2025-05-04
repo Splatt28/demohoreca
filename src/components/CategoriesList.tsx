@@ -4,9 +4,8 @@ import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { FormField, FormLabel } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
-
-// Define TypeScript interfaces
-interface Category {
+import { useNavigate } from '@tanstack/react-router'
+export interface Category {
   id: number | string
   name: string
   children: Category[]
@@ -18,15 +17,21 @@ interface NavigationItem {
   selectedCategory?: string
 }
 
-const sampleCategories: Category[] = [
+export const sampleCategories: Category[] = [
   {
-    id: 1,
-    name: 'Meble',
-    children: [],
+    id: 'obiekt',
+    name: 'Obiekt',
+    children: [
+      {
+        id: 'test',
+        name: 'Test',
+        children: [],
+      },
+    ],
   },
   {
-    id: 2,
-    name: 'Jedzenie',
+    id: 'artykuly_spozywcze',
+    name: 'Artykuły Spożywcze',
     children: [],
   },
 ]
@@ -42,6 +47,7 @@ export const CategoriesList = ({
   initialCategories = sampleCategories,
   onCategorySelect,
 }: CategorySidebarProps) => {
+  const navigate = useNavigate()
   const form = useFormContext()
   const [navigationStack, setNavigationStack] = useState<NavigationItem[]>([])
   const [currentCategories, setCurrentCategories] =
@@ -49,6 +55,9 @@ export const CategoriesList = ({
   const [slideDirection, setSlideDirection] = useState<SlideDirection>('')
 
   const handleCategoryClick = (category: Category) => {
+    navigate({
+      to: `/kategoria/${category.id}`,
+    })
     if (onCategorySelect) {
       onCategorySelect(category)
     }

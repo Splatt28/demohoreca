@@ -48,7 +48,6 @@ export const CheckboxList = <T,>({
                       <Checkbox
                         checked={field.value?.includes(item.id)}
                         onCheckedChange={(checked) => {
-                          console.log(field.value)
                           return checked
                             ? field.onChange([...field.value, item.id])
                             : field.onChange(
