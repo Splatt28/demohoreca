@@ -1,9 +1,10 @@
-import { sampleCategories, type Category } from '@/components/CategoriesList'
+import { type Category } from '@/components/CategoriesList'
 import { Product } from '@/components/Product'
-import { useProductStore } from '@/store/useProductStore'
+import { CategoryEnum } from '@/types/enums'
+import type { Product as ProductType } from '@/types/types'
 import { useParams } from '@tanstack/react-router'
 
-export const ProductList = () => {
+export const ProductList = ({ products }: { products: ProductType[] }) => {
   const data = useParams({ from: '/kategoria/$categoryId' })
   const getProductNumber = (liczba: number): string => {
     const mod10 = liczba % 10
@@ -31,12 +32,11 @@ export const ProductList = () => {
     return undefined
   }
 
-  const { products } = useProductStore()
   return (
     <section className="">
       <div className="mb-8">
         <h1 className="text-primary font-bold text-3xl mb-1">
-          {findNodeById(sampleCategories, data.categoryId)?.name}
+          {CategoryEnum[data.categoryId as keyof typeof CategoryEnum]}
         </h1>
         <p className="text-black/30">{getProductNumber(products.length)}</p>
       </div>

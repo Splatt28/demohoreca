@@ -19,9 +19,13 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { useStore } from '@/store/useStore'
+import { CategoryEnum } from '@/types/enums'
+import type { Product } from '@/types/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { Edit, Plus } from 'lucide-react'
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export const Route = createFileRoute(
   '/panel-uzytkownika/_layout/twoje-produkty',
@@ -29,54 +33,8 @@ export const Route = createFileRoute(
   component: TwojeProdukty,
 })
 
-interface Product {
-  id: number
-  name: string
-  price: number
-  available: boolean
-  description: string
-  image: string
-  category: string
-  sku: string
-  stock: number
-}
-
 export default function TwojeProdukty() {
-  const [products, setProducts] = useState<Product[]>([
-    {
-      id: 1,
-      name: 'Smartfon XYZ',
-      price: 1299.99,
-      available: true,
-      description: 'Najnowszy model smartfona z zaawansowanymi funkcjami.',
-      image: '/placeholder.svg',
-      category: 'Elektronika',
-      sku: 'SM-XYZ-001',
-      stock: 15,
-    },
-    {
-      id: 2,
-      name: 'Słuchawki bezprzewodowe',
-      price: 299.99,
-      available: true,
-      description: 'Wysokiej jakości słuchawki z redukcją szumów.',
-      image: '/placeholder.svg',
-      category: 'Akcesoria',
-      sku: 'SL-BEZ-002',
-      stock: 8,
-    },
-    {
-      id: 3,
-      name: 'Laptop Pro',
-      price: 4999.99,
-      available: false,
-      description: 'Wydajny laptop dla profesjonalistów.',
-      image: '/placeholder.svg',
-      category: 'Elektronika',
-      sku: 'LP-PRO-003',
-      stock: 0,
-    },
-  ])
+  const { products, setProducts } = useStore()
 
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
@@ -90,7 +48,7 @@ export default function TwojeProdukty() {
 
   const handleAddProduct = (): void => {
     const newProduct: Product = {
-      id: products.length + 1,
+      id: uuidv4(),
       name: '',
       price: 0,
       available: true,
@@ -98,7 +56,6 @@ export default function TwojeProdukty() {
       image: '/placeholder.svg',
       category: '',
       sku: '',
-      stock: 0,
     }
     setCurrentProduct(null)
     setEditedProduct(newProduct)
@@ -151,7 +108,6 @@ export default function TwojeProdukty() {
               <TableHead>Cena</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Kategoria</TableHead>
-              <TableHead>Ilość</TableHead>
               <TableHead className="text-right">Akcje</TableHead>
             </TableRow>
           </TableHeader>
@@ -165,8 +121,9 @@ export default function TwojeProdukty() {
                     {product.available ? 'Dostępny' : 'Niedostępny'}
                   </Badge>
                 </TableCell>
-                <TableCell>{product.category}</TableCell>
-                <TableCell>{product.stock}</TableCell>
+                <TableCell>
+                  {CategoryEnum[product.category as keyof typeof CategoryEnum]}
+                </TableCell>
                 <TableCell className="text-right">
                   <Button
                     variant="ghost"
@@ -261,21 +218,6 @@ export default function TwojeProdukty() {
               </div>
 
               <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="stock">Ilość w magazynie</Label>
-                  <Input
-                    id="stock"
-                    type="number"
-                    value={editedProduct.stock}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange(
-                        'stock',
-                        Number.parseInt(e.target.value),
-                      )
-                    }
-                  />
-                </div>
-
                 <div className="space-y-2">
                   <Label htmlFor="image">URL obrazka</Label>
                   <Input

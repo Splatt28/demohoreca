@@ -25,10 +25,6 @@ function RouteComponent() {
   })
 
   useEffect(() => {
-    getItemsByCategory(data.categoryId)
-  }, [data])
-
-  useEffect(() => {
     const { unsubscribe } = watch((value) => {
       console.log(value)
     })
@@ -37,7 +33,7 @@ function RouteComponent() {
 
   //TODO: Handle category banners based on url data.categoryid
   return (
-    <section>
+    <section className="container">
       <CategoryBanner imageSrc={Placeholder}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed
@@ -54,7 +50,7 @@ function RouteComponent() {
       <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
         <Form watch={watch} {...form}>
           <Filters />
-          <ProductList />
+          <ProductList products={getItemsByCategory(data.categoryId)} />
         </Form>
       </div>
     </section>

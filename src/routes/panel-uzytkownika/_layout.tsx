@@ -9,7 +9,7 @@ export const Route = createFileRoute('/panel-uzytkownika/_layout')({
 export default function PanelLayout() {
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen w-full">
         <AppSidebar />
         <Outlet />
       </div>

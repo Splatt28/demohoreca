@@ -15,47 +15,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Pencil, Save, X } from 'lucide-react'
 import React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
+import { useStore } from '@/store/useStore'
+import type { UserData } from '@/types/types'
 
-interface PersonalData {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  address: string
-}
-
-interface PublicData {
-  companyName: string
-  description: string
-  website: string
-  socialMedia: string
-}
-
-interface UserData {
-  personal: PersonalData
-  public: PublicData
-}
 export const Route = createFileRoute('/panel-uzytkownika/_layout/twoje-dane')({
   component: TwojeDane,
 })
 
 export default function TwojeDane() {
-  const [userData, setUserData] = useState<UserData>({
-    personal: {
-      firstName: 'Jan',
-      lastName: 'Kowalski',
-      email: 'jan.kowalski@example.com',
-      phone: '+48 123 456 789',
-      address: 'ul. Przykładowa 123, 00-001 Warszawa',
-    },
-    public: {
-      companyName: 'Sklep Jana',
-      description: 'Najlepsze produkty w najlepszych cenach',
-      website: 'www.sklepjana.pl',
-      socialMedia: 'instagram.com/sklepjana',
-    },
-  })
-
+  const { userData, setUserData } = useStore()
   const [editingField, setEditingField] = useState<string | null>(null)
   const [editValue, setEditValue] = useState<string>('')
 

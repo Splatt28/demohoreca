@@ -43,7 +43,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="border-b">
+      <SidebarHeader className="border-b mt-16">
         <div className="p-4">
           <h1 className="text-xl font-bold">Panel Sprzedawcy</h1>
         </div>

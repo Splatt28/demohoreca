@@ -8,7 +8,7 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <Header />
-      <main className="container min-h-[calc(100vh-65px)] my-12">
+      <main className="min-h-[calc(100vh-65px)] my-12">
         <Outlet />
       </main>
       <TanStackRouterDevtools />

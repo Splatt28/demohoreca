@@ -21,9 +21,9 @@ export const Nav = () => {
 
         {/* Navigation Menu */}
         <nav className="space-x-6 text-white hidden md:flex">
-          <a href="/" className="hover:text-accent transition-colors">
+          <Link to="/" className="hover:text-accent transition-colors">
             Home
-          </a>
+          </Link>
           <Link
             to="/kategoria/$categoryId"
             params={{ categoryId: 'obiekt' }}

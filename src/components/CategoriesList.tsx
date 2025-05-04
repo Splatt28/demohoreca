@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { FormField, FormLabel } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
 import { useNavigate } from '@tanstack/react-router'
+import { useStore } from '@/store/useStore'
+import { CategoryEnum } from '@/types/enums'
 export interface Category {
   id: number | string
-  name: string
+  name: CategoryEnum
   children: Category[]
 }
 
@@ -17,41 +19,27 @@ interface NavigationItem {
   selectedCategory?: string
 }
 
-export const sampleCategories: Category[] = [
-  {
-    id: 'obiekt',
-    name: 'Obiekt',
-    children: [
-      {
-        id: 'test',
-        name: 'Test',
-        children: [],
-      },
-    ],
-  },
-  {
-    id: 'artykuly_spozywcze',
-    name: 'Artykuły Spożywcze',
-    children: [],
-  },
-]
-
 type SlideDirection = '' | 'slide-left' | 'slide-right'
 
 interface CategorySidebarProps {
-  initialCategories?: Category[]
   onCategorySelect?: (category: Category) => void
 }
 
-export const CategoriesList = ({
-  initialCategories = sampleCategories,
-  onCategorySelect,
-}: CategorySidebarProps) => {
+export const CategoriesList = ({ onCategorySelect }: CategorySidebarProps) => {
+  const { products } = useStore()
   const navigate = useNavigate()
   const form = useFormContext()
   const [navigationStack, setNavigationStack] = useState<NavigationItem[]>([])
-  const [currentCategories, setCurrentCategories] =
-    useState<Category[]>(initialCategories)
+  const [currentCategories, setCurrentCategories] = useState<Category[]>(
+    Array.from(new Set(products.map((product) => product.category))).map(
+      (category) => ({
+        id: category,
+        name: CategoryEnum[category as keyof typeof CategoryEnum],
+        children: [],
+      }),
+    ),
+  )
+
   const [slideDirection, setSlideDirection] = useState<SlideDirection>('')
 
   const handleCategoryClick = (category: Category) => {
@@ -97,11 +85,6 @@ export const CategoriesList = ({
       }, 300)
     }
   }
-
-  useEffect(() => {
-    setCurrentCategories(initialCategories)
-    setNavigationStack([])
-  }, [initialCategories])
 
   return (
     <div className="flex-col">

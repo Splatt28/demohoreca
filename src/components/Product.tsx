@@ -1,13 +1,13 @@
-import type { Product as ProductProps } from '@/types'
+import type { Product as ProductProps } from '@/types/types'
 import { Link } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 
-export const Product = ({ id, img, name, price }: ProductProps) => {
+export const Product = ({ id, image, name, price }: ProductProps) => {
   return (
     <div className="group">
       <Link to="/produkt/$produktId" params={{ produktId: id }}>
         <div className="relative rounded-xl overflow-hidden mb-3">
-          <img src={img} className="h-64 mx-auto" />
+          <img src={image} className="h-64 mx-auto" />
           <Button className="bg-primary font-bold text-md text-white w-full absolute py-8 rounded-t-none translate-y-full bottom-0 opacity-90 group-hover:translate-y-0">
             Zobacz więcej
           </Button>

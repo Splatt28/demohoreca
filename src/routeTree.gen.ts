@@ -19,6 +19,8 @@ import { Route as PanelUzytkownikaLayoutImport } from './routes/panel-uzytkownik
 import { Route as KategoriaCategoryIdImport } from './routes/kategoria/$categoryId'
 import { Route as PanelUzytkownikaLayoutTwojeProduktyImport } from './routes/panel-uzytkownika/_layout/twoje-produkty'
 import { Route as PanelUzytkownikaLayoutTwojeDaneImport } from './routes/panel-uzytkownika/_layout/twoje-dane'
+import { Route as PanelUzytkownikaLayoutTwojaUmowaImport } from './routes/panel-uzytkownika/_layout/twoja-umowa'
+import { Route as PanelUzytkownikaLayoutTwojaStronaSprzedawcyImport } from './routes/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
 
 // Create Virtual Routes
 
@@ -69,6 +71,20 @@ const PanelUzytkownikaLayoutTwojeDaneRoute =
     getParentRoute: () => PanelUzytkownikaLayoutRoute,
   } as any)
 
+const PanelUzytkownikaLayoutTwojaUmowaRoute =
+  PanelUzytkownikaLayoutTwojaUmowaImport.update({
+    id: '/twoja-umowa',
+    path: '/twoja-umowa',
+    getParentRoute: () => PanelUzytkownikaLayoutRoute,
+  } as any)
+
+const PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute =
+  PanelUzytkownikaLayoutTwojaStronaSprzedawcyImport.update({
+    id: '/twoja-strona-sprzedawcy',
+    path: '/twoja-strona-sprzedawcy',
+    getParentRoute: () => PanelUzytkownikaLayoutRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -108,6 +124,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProduktProduktIdImport
       parentRoute: typeof rootRoute
     }
+    '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy': {
+      id: '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
+      path: '/twoja-strona-sprzedawcy'
+      fullPath: '/panel-uzytkownika/twoja-strona-sprzedawcy'
+      preLoaderRoute: typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyImport
+      parentRoute: typeof PanelUzytkownikaLayoutImport
+    }
+    '/panel-uzytkownika/_layout/twoja-umowa': {
+      id: '/panel-uzytkownika/_layout/twoja-umowa'
+      path: '/twoja-umowa'
+      fullPath: '/panel-uzytkownika/twoja-umowa'
+      preLoaderRoute: typeof PanelUzytkownikaLayoutTwojaUmowaImport
+      parentRoute: typeof PanelUzytkownikaLayoutImport
+    }
     '/panel-uzytkownika/_layout/twoje-dane': {
       id: '/panel-uzytkownika/_layout/twoje-dane'
       path: '/twoje-dane'
@@ -128,12 +158,18 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 interface PanelUzytkownikaLayoutRouteChildren {
+  PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute: typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
+  PanelUzytkownikaLayoutTwojaUmowaRoute: typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   PanelUzytkownikaLayoutTwojeDaneRoute: typeof PanelUzytkownikaLayoutTwojeDaneRoute
   PanelUzytkownikaLayoutTwojeProduktyRoute: typeof PanelUzytkownikaLayoutTwojeProduktyRoute
 }
 
 const PanelUzytkownikaLayoutRouteChildren: PanelUzytkownikaLayoutRouteChildren =
   {
+    PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute:
+      PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute,
+    PanelUzytkownikaLayoutTwojaUmowaRoute:
+      PanelUzytkownikaLayoutTwojaUmowaRoute,
     PanelUzytkownikaLayoutTwojeDaneRoute: PanelUzytkownikaLayoutTwojeDaneRoute,
     PanelUzytkownikaLayoutTwojeProduktyRoute:
       PanelUzytkownikaLayoutTwojeProduktyRoute,
@@ -160,6 +196,8 @@ export interface FileRoutesByFullPath {
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
   '/panel-uzytkownika': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
+  '/panel-uzytkownika/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
+  '/panel-uzytkownika/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
 }
@@ -169,6 +207,8 @@ export interface FileRoutesByTo {
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
   '/panel-uzytkownika': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
+  '/panel-uzytkownika/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
+  '/panel-uzytkownika/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
 }
@@ -180,6 +220,8 @@ export interface FileRoutesById {
   '/panel-uzytkownika': typeof PanelUzytkownikaRouteWithChildren
   '/panel-uzytkownika/_layout': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
+  '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
+  '/panel-uzytkownika/_layout/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/_layout/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/_layout/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
 }
@@ -191,6 +233,8 @@ export interface FileRouteTypes {
     | '/kategoria/$categoryId'
     | '/panel-uzytkownika'
     | '/produkt/$produktId'
+    | '/panel-uzytkownika/twoja-strona-sprzedawcy'
+    | '/panel-uzytkownika/twoja-umowa'
     | '/panel-uzytkownika/twoje-dane'
     | '/panel-uzytkownika/twoje-produkty'
   fileRoutesByTo: FileRoutesByTo
@@ -199,6 +243,8 @@ export interface FileRouteTypes {
     | '/kategoria/$categoryId'
     | '/panel-uzytkownika'
     | '/produkt/$produktId'
+    | '/panel-uzytkownika/twoja-strona-sprzedawcy'
+    | '/panel-uzytkownika/twoja-umowa'
     | '/panel-uzytkownika/twoje-dane'
     | '/panel-uzytkownika/twoje-produkty'
   id:
@@ -208,6 +254,8 @@ export interface FileRouteTypes {
     | '/panel-uzytkownika'
     | '/panel-uzytkownika/_layout'
     | '/produkt/$produktId'
+    | '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
+    | '/panel-uzytkownika/_layout/twoja-umowa'
     | '/panel-uzytkownika/_layout/twoje-dane'
     | '/panel-uzytkownika/_layout/twoje-produkty'
   fileRoutesById: FileRoutesById
@@ -259,12 +307,22 @@ export const routeTree = rootRoute
       "filePath": "panel-uzytkownika/_layout.tsx",
       "parent": "/panel-uzytkownika",
       "children": [
+        "/panel-uzytkownika/_layout/twoja-strona-sprzedawcy",
+        "/panel-uzytkownika/_layout/twoja-umowa",
         "/panel-uzytkownika/_layout/twoje-dane",
         "/panel-uzytkownika/_layout/twoje-produkty"
       ]
     },
     "/produkt/$produktId": {
       "filePath": "produkt/$produktId.tsx"
+    },
+    "/panel-uzytkownika/_layout/twoja-strona-sprzedawcy": {
+      "filePath": "panel-uzytkownika/_layout/twoja-strona-sprzedawcy.tsx",
+      "parent": "/panel-uzytkownika/_layout"
+    },
+    "/panel-uzytkownika/_layout/twoja-umowa": {
+      "filePath": "panel-uzytkownika/_layout/twoja-umowa.tsx",
+      "parent": "/panel-uzytkownika/_layout"
     },
     "/panel-uzytkownika/_layout/twoje-dane": {
       "filePath": "panel-uzytkownika/_layout/twoje-dane.tsx",
