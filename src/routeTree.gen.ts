@@ -17,7 +17,6 @@ import { Route as IndexImport } from './routes/index'
 import { Route as ProduktProduktIdImport } from './routes/produkt/$produktId'
 import { Route as PanelUzytkownikaLayoutImport } from './routes/panel-uzytkownika/_layout'
 import { Route as KategoriaCategoryIdImport } from './routes/kategoria/$categoryId'
-import { Route as PanelUzytkownikaLayoutIndexImport } from './routes/panel-uzytkownika/_layout/index'
 import { Route as PanelUzytkownikaLayoutTwojeProduktyImport } from './routes/panel-uzytkownika/_layout/twoje-produkty'
 import { Route as PanelUzytkownikaLayoutTwojeDaneImport } from './routes/panel-uzytkownika/_layout/twoje-dane'
 
@@ -55,13 +54,6 @@ const KategoriaCategoryIdRoute = KategoriaCategoryIdImport.update({
   path: '/kategoria/$categoryId',
   getParentRoute: () => rootRoute,
 } as any)
-
-const PanelUzytkownikaLayoutIndexRoute =
-  PanelUzytkownikaLayoutIndexImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => PanelUzytkownikaLayoutRoute,
-  } as any)
 
 const PanelUzytkownikaLayoutTwojeProduktyRoute =
   PanelUzytkownikaLayoutTwojeProduktyImport.update({
@@ -130,13 +122,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PanelUzytkownikaLayoutTwojeProduktyImport
       parentRoute: typeof PanelUzytkownikaLayoutImport
     }
-    '/panel-uzytkownika/_layout/': {
-      id: '/panel-uzytkownika/_layout/'
-      path: '/'
-      fullPath: '/panel-uzytkownika/'
-      preLoaderRoute: typeof PanelUzytkownikaLayoutIndexImport
-      parentRoute: typeof PanelUzytkownikaLayoutImport
-    }
   }
 }
 
@@ -145,7 +130,6 @@ declare module '@tanstack/react-router' {
 interface PanelUzytkownikaLayoutRouteChildren {
   PanelUzytkownikaLayoutTwojeDaneRoute: typeof PanelUzytkownikaLayoutTwojeDaneRoute
   PanelUzytkownikaLayoutTwojeProduktyRoute: typeof PanelUzytkownikaLayoutTwojeProduktyRoute
-  PanelUzytkownikaLayoutIndexRoute: typeof PanelUzytkownikaLayoutIndexRoute
 }
 
 const PanelUzytkownikaLayoutRouteChildren: PanelUzytkownikaLayoutRouteChildren =
@@ -153,7 +137,6 @@ const PanelUzytkownikaLayoutRouteChildren: PanelUzytkownikaLayoutRouteChildren =
     PanelUzytkownikaLayoutTwojeDaneRoute: PanelUzytkownikaLayoutTwojeDaneRoute,
     PanelUzytkownikaLayoutTwojeProduktyRoute:
       PanelUzytkownikaLayoutTwojeProduktyRoute,
-    PanelUzytkownikaLayoutIndexRoute: PanelUzytkownikaLayoutIndexRoute,
   }
 
 const PanelUzytkownikaLayoutRouteWithChildren =
@@ -179,13 +162,12 @@ export interface FileRoutesByFullPath {
   '/produkt/$produktId': typeof ProduktProduktIdRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
-  '/panel-uzytkownika/': typeof PanelUzytkownikaLayoutIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
-  '/panel-uzytkownika': typeof PanelUzytkownikaLayoutIndexRoute
+  '/panel-uzytkownika': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
@@ -200,7 +182,6 @@ export interface FileRoutesById {
   '/produkt/$produktId': typeof ProduktProduktIdRoute
   '/panel-uzytkownika/_layout/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/_layout/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
-  '/panel-uzytkownika/_layout/': typeof PanelUzytkownikaLayoutIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -212,7 +193,6 @@ export interface FileRouteTypes {
     | '/produkt/$produktId'
     | '/panel-uzytkownika/twoje-dane'
     | '/panel-uzytkownika/twoje-produkty'
-    | '/panel-uzytkownika/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -230,7 +210,6 @@ export interface FileRouteTypes {
     | '/produkt/$produktId'
     | '/panel-uzytkownika/_layout/twoje-dane'
     | '/panel-uzytkownika/_layout/twoje-produkty'
-    | '/panel-uzytkownika/_layout/'
   fileRoutesById: FileRoutesById
 }
 
@@ -281,8 +260,7 @@ export const routeTree = rootRoute
       "parent": "/panel-uzytkownika",
       "children": [
         "/panel-uzytkownika/_layout/twoje-dane",
-        "/panel-uzytkownika/_layout/twoje-produkty",
-        "/panel-uzytkownika/_layout/"
+        "/panel-uzytkownika/_layout/twoje-produkty"
       ]
     },
     "/produkt/$produktId": {
@@ -294,10 +272,6 @@ export const routeTree = rootRoute
     },
     "/panel-uzytkownika/_layout/twoje-produkty": {
       "filePath": "panel-uzytkownika/_layout/twoje-produkty.tsx",
-      "parent": "/panel-uzytkownika/_layout"
-    },
-    "/panel-uzytkownika/_layout/": {
-      "filePath": "panel-uzytkownika/_layout/index.tsx",
       "parent": "/panel-uzytkownika/_layout"
     }
   }

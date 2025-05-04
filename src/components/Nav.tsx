@@ -7,9 +7,10 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { User, LogIn, LogOut } from 'lucide-react'
 import PlaceholderAvatar from '@/assets/placeholder-avatar.png'
-import { Link } from '@tanstack/react-router'
+import { Link, useNavigate } from '@tanstack/react-router'
 
 export const Nav = () => {
+  const navigate = useNavigate()
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-primary/70 shadow-sm text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -52,7 +53,11 @@ export const Nav = () => {
               align="end"
               className="w-48 bg-white border border-stone-200 shadow-md"
             >
-              <DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() =>
+                  navigate({ to: '/panel-uzytkownika/twoje-dane' })
+                }
+              >
                 <User className="mr-2 h-4 w-4" />
                 Profile
               </DropdownMenuItem>
