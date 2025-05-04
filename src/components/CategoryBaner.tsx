@@ -8,7 +8,7 @@ export const CategoryBanner = ({
   children: JSX.Element
 }) => {
   return (
-    <div className="flex w-full h-64 mb-12 bg-primary-foreground overflow-hidden shadow-lg rounded-r-xl">
+    <div className="flex w-full h-64 mb-12 bg-primary-foreground/50 overflow-hidden shadow-lg rounded-xl">
       <div className="relative w-1/3 h-full">
         <img
           src={imageSrc}
