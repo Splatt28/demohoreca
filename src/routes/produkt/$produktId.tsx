@@ -24,6 +24,8 @@ import { useStore } from '@/store/useStore'
 import { useShallow } from 'zustand/react/shallow'
 import type { Product } from '@/types/types'
 import { CategoryEnum } from '@/types/enums'
+import { SellerModal } from '@/components/SellerModal'
+import { Badge } from '@/components/ui/badge'
 
 export const Route = createFileRoute('/produkt/$produktId')({
   component: RouteComponent,
@@ -31,8 +33,13 @@ export const Route = createFileRoute('/produkt/$produktId')({
 
 function RouteComponent() {
   const data = useParams({ from: '/produkt/$produktId' })
-  const products = useStore(useShallow((state) => state.products))
-
+  const { products, userData } = useStore(
+    useShallow((state) => ({
+      products: state.products,
+      userData: state.userData,
+    })),
+  )
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [currentProduct, setCurrentProduct] = useState<Product | undefined>(
     undefined,
   )
@@ -57,144 +64,145 @@ function RouteComponent() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Breadcrumbs */}
-      <Breadcrumb className="mb-6">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link to="/">Home</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
+    <>
+      <div className="container mx-auto px-4 py-8">
+        {/* Breadcrumbs */}
+        <Breadcrumb className="mb-6">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
 
-          <BreadcrumbSeparator>
-            <ChevronRight className="h-4 w-4" />
-          </BreadcrumbSeparator>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link
-                to="/kategoria/$categoryId"
-                params={{ categoryId: currentProduct.category }}
-                className="capitalize"
-              >
-                {
-                  CategoryEnum[
-                    currentProduct.category as keyof typeof CategoryEnum
-                  ]
-                }
-              </Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator>
-            <ChevronRight className="h-4 w-4" />
-          </BreadcrumbSeparator>
-          <BreadcrumbItem>
-            <BreadcrumbPage>{currentProduct.name}</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-
-      {/* Product Details */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        {/* Product Images */}
-        <div className="space-y-4">
-          <div className="relative aspect-square overflow-hidden rounded-xl border">
-            <img
-              src={currentProduct.images[0]}
-              alt={currentProduct.name}
-              className="object-cover  w-full"
-            />
-          </div>
-          <div className="flex space-x-2 overflow-auto p-2">
-            {currentProduct.images.map((image, index) => (
-              <button
-                key={index}
-                className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${selectedImage === index ? 'ring-2 ring-primary' : ''}`}
-                onClick={() => setSelectedImage(index)}
-              >
-                <img
-                  src={image}
-                  alt={`${currentProduct.name} view ${index + 1}`}
-                  className="object-cover  w-full"
-                />
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Product Info */}
-        <div className="space-y-6">
-          <div>
-            <h1 className="text-3xl font-bold">{currentProduct.name}</h1>
-            <div className="flex items-center mt-2">
-              <p className="text-muted-foreground">
-                By
-                <Button
-                  variant="link"
-                  onClick={() => console.log('open')}
-                  className="text-primary"
+            <BreadcrumbSeparator>
+              <ChevronRight className="h-4 w-4" />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link
+                  to="/kategoria/$categoryId"
+                  params={{ categoryId: currentProduct.category }}
+                  className="capitalize"
                 >
-                  {/* {currentProduct.seller} */}
-                </Button>
-              </p>
-            </div>
-          </div>
+                  {
+                    CategoryEnum[
+                      currentProduct.category as keyof typeof CategoryEnum
+                    ]
+                  }
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <ChevronRight className="h-4 w-4" />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbPage>{currentProduct.name}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
-          {/* <div className="flex items-baseline space-x-3">
-            <span className="text-3xl font-bold">
-              {currentProduct.price.toFixed(2)}zł
-            </span>
-            {currentProduct.originalPrice && (
-              <span className="text-lg text-muted-foreground line-through">
-                {currentProduct.originalPrice.toFixed(2)}zł
-              </span>
-            )}
-            {currentProduct.originalPrice && (
-              <Badge className="rounded-full px-3 bg-green-100 text-green-800 hover:bg-green-100">
-                {Math.round(
-                  ((currentProduct.originalPrice - currentProduct.price) /
-                  currentProduct.originalPrice) *
-                    100,
-                )}
-                % OFF
-              </Badge>
-            )}
-          </div> */}
-
-          <Separator />
-
+        {/* Product Details */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {/* Product Images */}
           <div className="space-y-4">
-            <div className="flex space-x-3">
-              <Button className="flex-1 rounded-full">
-                <ShoppingCart className="mr-2 h-4 w-4" />
-                Add to Cart
-              </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Heart className="h-4 w-4" />
-              </Button>
+            <div className="relative aspect-square overflow-hidden rounded-xl border">
+              <img
+                src={currentProduct.images[0]}
+                alt={currentProduct.name}
+                className="object-cover  w-full"
+              />
+            </div>
+            <div className="flex space-x-2 overflow-auto p-2">
+              {currentProduct.images.map((image, index) => (
+                <button
+                  key={index}
+                  className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${selectedImage === index ? 'ring-2 ring-primary' : ''}`}
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <img
+                    src={image}
+                    alt={`${currentProduct.name} view ${index + 1}`}
+                    className="object-cover  w-full"
+                  />
+                </button>
+              ))}
             </div>
           </div>
 
-          <Tabs defaultValue="description" className="mt-6">
-            <TabsList className="grid w-full grid-cols-3 rounded-lg">
-              <TabsTrigger value="description" className="rounded-lg">
-                Description
-              </TabsTrigger>
-              <TabsTrigger value="features" className="rounded-lg">
-                Features
-              </TabsTrigger>
-              <TabsTrigger value="specifications" className="rounded-lg">
-                Specifications
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value="description" className="mt-4">
-              <Card className="border-0 shadow-none">
-                <CardContent className="pt-4">
-                  <p>{currentProduct.description}</p>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            {/* <TabsContent value="features" className="mt-4">
+          {/* Product Info */}
+          <div className="space-y-6">
+            <div>
+              <h1 className="text-3xl font-bold">{currentProduct.name}</h1>
+              <div className="flex items-center mt-2">
+                <p className="text-muted-foreground">
+                  By
+                  <Button
+                    variant="link"
+                    onClick={() => setIsDialogOpen(true)}
+                    className="text-primary"
+                  >
+                    {userData.publicData.companyName}
+                  </Button>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-baseline space-x-3">
+              <span className="text-3xl font-bold">
+                {currentProduct.price.toFixed(2)}zł
+              </span>
+              {currentProduct.price !== currentProduct.originalPrice && (
+                <span className="text-lg text-muted-foreground line-through">
+                  {currentProduct.originalPrice.toFixed(2)}zł
+                </span>
+              )}
+              {currentProduct.price !== currentProduct.originalPrice && (
+                <Badge className="rounded-full px-3 bg-green-100 text-green-800 hover:bg-green-100">
+                  {Math.round(
+                    ((currentProduct.originalPrice - currentProduct.price) /
+                      currentProduct.originalPrice) *
+                      100,
+                  )}
+                  % OFF
+                </Badge>
+              )}
+            </div>
+
+            <Separator />
+
+            <div className="space-y-4">
+              <div className="flex space-x-3">
+                <Button className="flex-1 rounded-full">
+                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  Add to Cart
+                </Button>
+                <Button variant="outline" size="icon" className="rounded-full">
+                  <Heart className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            <Tabs defaultValue="description" className="mt-6">
+              <TabsList className="grid w-full grid-cols-3 rounded-lg">
+                <TabsTrigger value="description" className="rounded-lg">
+                  Description
+                </TabsTrigger>
+                <TabsTrigger value="features" className="rounded-lg">
+                  Features
+                </TabsTrigger>
+                <TabsTrigger value="specifications" className="rounded-lg">
+                  Specifications
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="description" className="mt-4">
+                <Card className="border-0 shadow-none">
+                  <CardContent className="pt-4">
+                    <p>{currentProduct.description}</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              {/* <TabsContent value="features" className="mt-4">
               <Card className="border-0 shadow-none">
                 <CardContent className="pt-4">
                   <ul className="list-disc pl-5 space-y-2">
@@ -219,49 +227,57 @@ function RouteComponent() {
                 </CardContent>
               </Card>
             </TabsContent> */}
-          </Tabs>
+            </Tabs>
+          </div>
+        </div>
+
+        {/* Similar Products Carousel */}
+        <div className="my-12">
+          <h2 className="text-2xl font-bold mb-6">Similar Products</h2>
+          <Carousel className="w-full">
+            <CarouselContent>
+              {similarProducts.map((product) => (
+                <CarouselItem
+                  key={product.id}
+                  className="md:basis-1/3 lg:basis-1/4"
+                >
+                  <Card className="h-full">
+                    <CardContent className="p-4 flex flex-col h-full">
+                      <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
+                        <img
+                          src={product.images[0]}
+                          alt={product.name}
+                          className="object-cover w-full transition-transform hover:scale-105"
+                        />
+                      </div>
+                      <h3 className="font-medium line-clamp-1">
+                        {product.name}
+                      </h3>
+                      <p className="font-bold mt-1">
+                        {product.price.toFixed(2)}zł
+                      </p>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="mt-auto rounded-full"
+                      >
+                        View Product
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
         </div>
       </div>
 
-      {/* Similar Products Carousel */}
-      <div className="my-12">
-        <h2 className="text-2xl font-bold mb-6">Similar Products</h2>
-        <Carousel className="w-full">
-          <CarouselContent>
-            {similarProducts.map((product) => (
-              <CarouselItem
-                key={product.id}
-                className="md:basis-1/3 lg:basis-1/4"
-              >
-                <Card className="h-full">
-                  <CardContent className="p-4 flex flex-col h-full">
-                    <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
-                      <img
-                        src={product.images[0]}
-                        alt={product.name}
-                        className="object-cover w-full transition-transform hover:scale-105"
-                      />
-                    </div>
-                    <h3 className="font-medium line-clamp-1">{product.name}</h3>
-                    <p className="font-bold mt-1">
-                      {product.price.toFixed(2)}zł
-                    </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="mt-auto rounded-full"
-                    >
-                      View Product
-                    </Button>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-2" />
-          <CarouselNext className="right-2" />
-        </Carousel>
-      </div>
-    </div>
+      <SellerModal
+        isDialogOpen={isDialogOpen}
+        setIsDialogOpen={setIsDialogOpen}
+      />
+    </>
   )
 }

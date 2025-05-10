@@ -22,6 +22,7 @@ const productList: Product[] = [
     available: true,
     description: 'Lorem ipmum',
     sku: '21521',
+    originalPrice: 20,
   },
   {
     category: 'obiekt',
@@ -32,6 +33,7 @@ const productList: Product[] = [
     available: true,
     description: 'Lorem ipmum',
     sku: '21521',
+    originalPrice: 20,
   },
   {
     category: 'artykuly_spozywcze',
@@ -42,16 +44,18 @@ const productList: Product[] = [
     available: true,
     description: 'Lorem ipmum',
     sku: '21521',
+    originalPrice: 20,
   },
   {
     category: 'obiekt',
     id: '4',
     images: [ProdImg2],
     name: 'Krzesło',
-    price: 20,
+    price: 15,
     available: true,
     description: 'Lorem ipmum',
     sku: '21521',
+    originalPrice: 20,
   },
 ]
 //TODO: Handle filter

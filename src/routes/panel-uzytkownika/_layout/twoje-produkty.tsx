@@ -54,6 +54,7 @@ export default function TwojeProdukty() {
       id: uuidv4(),
       name: '',
       price: 0,
+      originalPrice: 0,
       available: true,
       description: '',
       images: ['/placeholder.svg'],
