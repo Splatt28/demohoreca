@@ -41,9 +41,11 @@ export const ProductList = ({ products }: { products: ProductType[] }) => {
         <p className="text-black/30">{getProductNumber(products.length)}</p>
       </div>
       <div className="grid grid-cols-3 gap-6">
-        {products.map((product) => (
-          <Product key={product.id} {...product} />
-        ))}
+        {products
+          .filter((product) => product.available)
+          .map((product) => (
+            <Product key={product.id} {...product} />
+          ))}
       </div>
     </section>
   )

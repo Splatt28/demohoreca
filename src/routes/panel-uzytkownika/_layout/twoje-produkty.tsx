@@ -23,7 +23,7 @@ import { useStore } from '@/store/useStore'
 import { CategoryEnum } from '@/types/enums'
 import type { Product } from '@/types/types'
 import { createFileRoute } from '@tanstack/react-router'
-import { Edit, Plus } from 'lucide-react'
+import { Edit, Plus, TrashIcon } from 'lucide-react'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -34,7 +34,7 @@ export const Route = createFileRoute(
 })
 
 export default function TwojeProdukty() {
-  const { products, setProducts } = useStore()
+  const { products, setProducts, removeProduct } = useStore()
 
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
@@ -45,6 +45,9 @@ export default function TwojeProdukty() {
     setEditedProduct({ ...product })
     setIsDialogOpen(true)
   }
+  const handleRemoveProduct = (product: Product): void => {
+    removeProduct(product.id)
+  }
 
   const handleAddProduct = (): void => {
     const newProduct: Product = {
@@ -53,7 +56,7 @@ export default function TwojeProdukty() {
       price: 0,
       available: true,
       description: '',
-      image: '/placeholder.svg',
+      images: ['/placeholder.svg'],
       category: '',
       sku: '',
     }
@@ -131,6 +134,13 @@ export default function TwojeProdukty() {
                     onClick={() => handleEditProduct(product)}
                   >
                     <Edit className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => handleRemoveProduct(product)}
+                  >
+                    <TrashIcon className="h-4 w-4" />
                   </Button>
                 </TableCell>
               </TableRow>
@@ -222,9 +232,9 @@ export default function TwojeProdukty() {
                   <Label htmlFor="image">URL obrazka</Label>
                   <Input
                     id="image"
-                    value={editedProduct.image}
+                    value={editedProduct.images}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange('image', e.target.value)
+                      handleInputChange('images', [e.target.value])
                     }
                   />
                 </div>

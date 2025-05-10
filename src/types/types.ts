@@ -4,7 +4,7 @@ export type Product = {
   price: number
   available: boolean
   description: string
-  image: string
+  images: string[]
   category: string
   sku: string
 }
@@ -25,6 +25,6 @@ interface PublicData {
 }
 
 export interface UserData {
-  personal: PersonalData
-  public: PublicData
+  personalData: PersonalData
+  publicData: PublicData
 }

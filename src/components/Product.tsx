@@ -2,12 +2,12 @@ import { Button } from '@/components/ui/button'
 import type { Product as ProductProps } from '@/types/types'
 import { Link } from '@tanstack/react-router'
 
-export const Product = ({ id, image, name, price }: ProductProps) => {
+export const Product = ({ id, images, name, price }: ProductProps) => {
   return (
     <div className="group relative bg-white shadow-md p-4 rounded-xl transition-all hover:shadow-xl overflow-hidden">
       <Link to="/produkt/$produktId" params={{ produktId: id }}>
         <div className=" rounded-xl  mb-3">
-          <img src={image} className="h-64 mx-auto py-4" />
+          <img src={images[0]} className="h-64 mx-auto py-4" />
         </div>
         <div className="flex flex-col gap-2">
           <p className="text-primary-text font-semibold text-xl">{name}</p>

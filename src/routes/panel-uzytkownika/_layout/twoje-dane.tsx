@@ -120,11 +120,11 @@ export default function TwojeDane() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {renderField('personal', 'firstName', 'Imię')}
-              {renderField('personal', 'lastName', 'Nazwisko')}
-              {renderField('personal', 'email', 'Email')}
-              {renderField('personal', 'phone', 'Telefon')}
-              {renderField('personal', 'address', 'Adres')}
+              {renderField('personalData', 'firstName', 'Imię')}
+              {renderField('personalData', 'lastName', 'Nazwisko')}
+              {renderField('personalData', 'email', 'Email')}
+              {renderField('personalData', 'phone', 'Telefon')}
+              {renderField('personalData', 'address', 'Adres')}
             </CardContent>
           </Card>
         </TabsContent>
@@ -139,10 +139,14 @@ export default function TwojeDane() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {renderField('public', 'companyName', 'Nazwa firmy')}
-              {renderField('public', 'description', 'Opis')}
-              {renderField('public', 'website', 'Strona internetowa')}
-              {renderField('public', 'socialMedia', 'Media społecznościowe')}
+              {renderField('publicData', 'companyName', 'Nazwa firmy')}
+              {renderField('publicData', 'description', 'Opis')}
+              {renderField('publicData', 'website', 'Strona internetowa')}
+              {renderField(
+                'publicData',
+                'socialMedia',
+                'Media społecznościowe',
+              )}
             </CardContent>
           </Card>
         </TabsContent>

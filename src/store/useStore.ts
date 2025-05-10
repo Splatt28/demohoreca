@@ -16,7 +16,7 @@ const productList: Product[] = [
   {
     category: 'obiekt',
     id: '1',
-    image: ProdImg1,
+    images: [ProdImg1],
     name: 'Krzesło',
     price: 20,
     available: true,
@@ -28,7 +28,7 @@ const productList: Product[] = [
     id: '2',
     name: 'Krzesło',
     price: 20,
-    image: ProdImg2,
+    images: [ProdImg2],
     available: true,
     description: 'Lorem ipmum',
     sku: '21521',
@@ -36,7 +36,7 @@ const productList: Product[] = [
   {
     category: 'artykuly_spozywcze',
     id: '3',
-    image: ProdImg1,
+    images: [ProdImg1],
     name: 'Krzesło',
     price: 20,
     available: true,
@@ -46,7 +46,7 @@ const productList: Product[] = [
   {
     category: 'obiekt',
     id: '4',
-    image: ProdImg2,
+    images: [ProdImg2],
     name: 'Krzesło',
     price: 20,
     available: true,
@@ -65,14 +65,14 @@ export const useStore = create<ProductStore>((set) => ({
       products: state.products.filter((product) => product.id !== productId),
     })),
   userData: {
-    personal: {
+    personalData: {
       firstName: 'Jan',
       lastName: 'Kowalski',
       email: 'jan.kowalski@example.com',
       phone: '+48 123 456 789',
       address: 'ul. Przykładowa 123, 00-001 Warszawa',
     },
-    public: {
+    publicData: {
       companyName: 'Sklep Jana',
       description: 'Najlepsze produkty w najlepszych cenach',
       website: 'www.sklepjana.pl',
