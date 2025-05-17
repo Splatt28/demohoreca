@@ -1,7 +1,6 @@
 import type { Product, UserData } from '@/types/types'
 import { create } from 'zustand'
-import ProdImg1 from '@/assets/skandynawski-fotel-wypoczynkowy.jpg'
-import ProdImg2 from '@/assets/stolik-223x232.jpg'
+import productList from '@/assets/data/products.json'
 
 type ProductStore = {
   products: Product[]
@@ -12,52 +11,6 @@ type ProductStore = {
   setUserData: (userData: UserData) => void
 }
 
-const productList: Product[] = [
-  {
-    category: 'obiekt',
-    id: '1',
-    images: [ProdImg1],
-    name: 'Krzesło',
-    price: 20,
-    available: true,
-    description: 'Lorem ipmum',
-    sku: '21521',
-    originalPrice: 20,
-  },
-  {
-    category: 'obiekt',
-    id: '2',
-    name: 'Krzesło',
-    price: 20,
-    images: [ProdImg2],
-    available: true,
-    description: 'Lorem ipmum',
-    sku: '21521',
-    originalPrice: 20,
-  },
-  {
-    category: 'artykuly_spozywcze',
-    id: '3',
-    images: [ProdImg1],
-    name: 'Krzesło',
-    price: 20,
-    available: true,
-    description: 'Lorem ipmum',
-    sku: '21521',
-    originalPrice: 20,
-  },
-  {
-    category: 'obiekt',
-    id: '4',
-    images: [ProdImg2],
-    name: 'Krzesło',
-    price: 15,
-    available: true,
-    description: 'Lorem ipmum',
-    sku: '21521',
-    originalPrice: 20,
-  },
-]
 //TODO: Handle filter
 export const useStore = create<ProductStore>((set) => ({
   products: productList,

@@ -1,0 +1,46 @@
+[
+  {
+    "category": "obiekt",
+    "id": "1",
+    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
+    "name": "Krzesło",
+    "price": 20,
+    "available": true,
+    "description": "Lorem ipmum",
+    "sku": "21521",
+    "originalPrice": 20
+  },
+  {
+    "category": "obiekt",
+    "id": "2",
+    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
+    "name": "Krzesło",
+    "price": 20,
+    "available": true,
+    "description": "Lorem ipmum",
+    "sku": "21521",
+    "originalPrice": 20
+  },
+  {
+    "category": "artykuly_spozywcze",
+    "id": "3",
+    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
+    "name": "Krzesło",
+    "price": 20,
+    "available": true,
+    "description": "Lorem ipmum",
+    "sku": "21521",
+    "originalPrice": 20
+  },
+  {
+    "category": "obiekt",
+    "id": "4",
+    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
+    "name": "Krzesło",
+    "price": 15,
+    "available": true,
+    "description": "Lorem ipmum",
+    "sku": "21521",
+    "originalPrice": 20
+  }
+]
