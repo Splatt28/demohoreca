@@ -65,6 +65,7 @@ export default function TwojaStronaSprzedawcy(): JSX.Element {
       <SellerModal
         isDialogOpen={isDialogOpen}
         setIsDialogOpen={setIsDialogOpen}
+        companyId="1"
       />
     </div>
   )
