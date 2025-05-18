@@ -1,11 +1,20 @@
-import { type Category } from '@/components/CategoriesList'
 import { Product } from '@/components/Product'
-import { CategoryEnum } from '@/types/enums'
-import type { Product as ProductType } from '@/types/types'
+import { findCategoryByNormalizedName } from '@/lib/utils'
+import type { Category, ListType, Product as ProductType } from '@/types/types'
 import { useParams } from '@tanstack/react-router'
+import productCategoryList from '@/assets/data/productCategories.json'
+import serviceCategoryList from '@/assets/data/serviceCategories.json'
 
-export const ProductList = ({ products }: { products: ProductType[] }) => {
-  const data = useParams({ from: '/kategoria/$categoryId' })
+export const ProductList = ({
+  products,
+  type,
+}: {
+  products: ProductType[]
+  type: ListType
+}) => {
+  const data = useParams({
+    from: type === 'PRODUCT' ? '/kategoria/$categoryId' : '/uslugi/$categoryId',
+  })
   const getProductNumber = (liczba: number): string => {
     const mod10 = liczba % 10
     const mod100 = liczba % 100
@@ -26,7 +35,7 @@ export const ProductList = ({ products }: { products: ProductType[] }) => {
   ): Category | undefined => {
     for (const category of categories) {
       if (category.id === id) return category
-      const found = findNodeById(category.children, id)
+      const found = findNodeById(category.subCategories, id)
       if (found) return found
     }
     return undefined
@@ -36,7 +45,12 @@ export const ProductList = ({ products }: { products: ProductType[] }) => {
     <section className="">
       <div className="mb-8">
         <h1 className="text-primary font-bold text-3xl mb-1">
-          {CategoryEnum[data.categoryId as keyof typeof CategoryEnum]}
+          {
+            findCategoryByNormalizedName(
+              type === 'PRODUCT' ? productCategoryList : serviceCategoryList,
+              data.categoryId,
+            )?.name
+          }
         </h1>
         <p className="text-black/30">{getProductNumber(products.length)}</p>
       </div>

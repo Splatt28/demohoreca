@@ -1,6 +1,7 @@
 import { CategoriesList } from '@/components/CategoriesList'
 import { CheckboxList } from '@/components/CheckboxList'
 import { PriceSlider } from '@/components/PriceSlider'
+import type { ListType } from '@/types/types'
 
 const items = [
   {
@@ -28,10 +29,10 @@ const items = [
     label: 'Documents',
   },
 ]
-export const Filters = () => {
+export const Filters = ({ type }: { type: ListType }) => {
   return (
     <div className="flex gap-6 flex-col">
-      <CategoriesList />
+      <CategoriesList type={type} />
       <CheckboxList listLabel="Kolory" items={items} />
       <PriceSlider />
     </div>

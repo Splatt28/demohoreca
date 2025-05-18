@@ -49,8 +49,11 @@ function RouteComponent() {
       </CategoryBanner>
       <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
         <Form watch={watch} {...form}>
-          <Filters />
-          <ProductList products={getItemsByCategory(data.categoryId)} />
+          <Filters type="PRODUCT" />
+          <ProductList
+            products={getItemsByCategory(data.categoryId)}
+            type="PRODUCT"
+          />
         </Form>
       </div>
     </section>

@@ -1,0 +1,143 @@
+[
+  {
+    "id": 1,
+    "name": "Budowa i infrastruktura",
+    "subCategories": [
+      { "id": 2, "name": "Prace konstrukcyjne", "subCategories": [] },
+      { "id": 3, "name": "Roboty ziemne", "subCategories": [] },
+      { "id": 4, "name": "Remonty i modernizacje", "subCategories": [] },
+      { "id": 5, "name": "Montaż elementów budowlanych", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Utrzymanie techniczne",
+    "subCategories": [
+      {
+        "id": 7,
+        "name": "Instalacje sanitarne i grzewcze",
+        "subCategories": []
+      },
+      {
+        "id": 8,
+        "name": "Sieci elektryczne i oświetlenie",
+        "subCategories": []
+      },
+      { "id": 9, "name": "Systemy HVAC", "subCategories": [] },
+      { "id": 10, "name": "Systemy BMS/automatyka", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Usługi „miękkie”",
+    "subCategories": [
+      { "id": 12, "name": "Sprzątanie i higiena", "subCategories": [] },
+      { "id": 13, "name": "Catering i vending", "subCategories": [] },
+      {
+        "id": 14,
+        "name": "Obsługa recepcyjna i concierge",
+        "subCategories": []
+      },
+      { "id": 15, "name": "Zarządzanie odpadami", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Tereny zewnętrzne i zieleniarskie",
+    "subCategories": [
+      { "id": 17, "name": "Pielęgnacja ogrodów", "subCategories": [] },
+      { "id": 18, "name": "Pielęgnacja parkingu", "subCategories": [] },
+      { "id": 19, "name": "Mała architektura", "subCategories": [] },
+      { "id": 20, "name": "Nawierzchnie komunikacyjne", "subCategories": [] },
+      { "id": 21, "name": "Oświetlenie zewnętrzne", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Cyfrowe i IT",
+    "subCategories": [
+      {
+        "id": 23,
+        "name": "Strony internetowe i e‑commerce",
+        "subCategories": []
+      },
+      { "id": 24, "name": "Systemy PMS/CRS", "subCategories": [] },
+      {
+        "id": 25,
+        "name": "Sieci LAN/Wi‑Fi i bezpieczeństwo IT",
+        "subCategories": []
+      },
+      { "id": 26, "name": "Rozwiązania IoT", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Projektowanie wnętrz i wyposażenie",
+    "subCategories": [
+      { "id": 28, "name": "Projektowanie graficzne i 3D", "subCategories": [] },
+      { "id": 29, "name": "Dobór mebli i dekoracji", "subCategories": [] },
+      { "id": 30, "name": "Oświetlenie wewnętrzne", "subCategories": [] },
+      { "id": 31, "name": "Tekstylia hotelowe", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Konsulting i szkolenia",
+    "subCategories": [
+      { "id": 33, "name": "Szkolenia personelu", "subCategories": [] },
+      {
+        "id": 34,
+        "name": "Doradztwo prawne i compliance",
+        "subCategories": []
+      },
+      { "id": 35, "name": "Zarządzanie ESG", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Zarządzanie energią i zrównoważony rozwój",
+    "subCategories": [
+      { "id": 37, "name": "Instalacje fotowoltaiczne", "subCategories": [] },
+      { "id": 38, "name": "Systemy smart meteringu", "subCategories": [] },
+      { "id": 39, "name": "Programy oszczędnościowe", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Bezpieczeństwo i ochrona",
+    "subCategories": [
+      { "id": 41, "name": "Monitoring CCTV", "subCategories": [] },
+      { "id": 42, "name": "Kontrola dostępu", "subCategories": [] },
+      { "id": 43, "name": "Systemy przeciwpożarowe", "subCategories": [] },
+      { "id": 44, "name": "Przeglądy BHP", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Marketing i branding",
+    "subCategories": [
+      {
+        "id": 46,
+        "name": "Kampanie online (SEM/SEO, social media)",
+        "subCategories": []
+      },
+      {
+        "id": 47,
+        "name": "Fotografia i wirtualne spacery",
+        "subCategories": []
+      },
+      { "id": 48, "name": "Content marketing", "subCategories": [] },
+      { "id": 49, "name": "Programy lojalnościowe", "subCategories": [] }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Audyty",
+    "subCategories": [
+      { "id": 51, "name": "Audyty personelu", "subCategories": [] },
+      { "id": 52, "name": "Audyty budynku", "subCategories": [] },
+      { "id": 53, "name": "Audyty systemów", "subCategories": [] },
+      { "id": 54, "name": "Audyty prawne", "subCategories": [] }
+    ]
+  }
+]

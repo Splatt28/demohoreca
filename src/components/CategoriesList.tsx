@@ -1,127 +1,51 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { FormField, FormLabel } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
 import { useNavigate, useRouterState } from '@tanstack/react-router'
-import categoryList from '@/assets/data/productCategories.json'
-import { normalizePolishString } from '@/lib/utils'
+import productCategoryList from '@/assets/data/productCategories.json'
+import serviceCategoryList from '@/assets/data/serviceCategories.json'
+import {
+  findCategoryByNormalizedName,
+  findCategoryPath,
+  normalizePolishString,
+} from '@/lib/utils'
+import type {
+  Category,
+  CategorySidebarProps,
+  NavigationItem,
+  SlideDirection,
+} from '@/types/types'
 
-export interface Category {
-  id: number | string
-  name: string
-  subCategories: Category[]
-}
-
-interface NavigationItem {
-  categories: Category[]
-  title: string
-  selectedCategory?: string
-}
-
-type SlideDirection = '' | 'slide-left' | 'slide-right'
-
-interface CategorySidebarProps {
-  onCategorySelect?: (category: Category) => void
-}
-interface CategoryPathResult {
-  navigationStack: NavigationItem[]
-  currentCategories: Category[]
-}
-
-const findCategoryPath = (
-  categories: Category[],
-  target: string,
-  path: NavigationItem[] = [],
-  parentCategories: Category[] = [],
-): CategoryPathResult | null => {
-  for (const category of categories) {
-    const normalizedName = normalizePolishString(category.name)
-    const hasSubcategories = category.subCategories?.length > 0
-
-    const newPath = hasSubcategories
-      ? [
-          ...path,
-          {
-            categories,
-            title: path[path.length - 1]?.selectedCategory || '',
-            selectedCategory: category.name,
-          },
-        ]
-      : [...path]
-
-    if (normalizedName === target) {
-      // currentCategories = siblings (i.e., parent's subcategories)
-      // if no parent (root level), currentCategories = root categories
-      return {
-        navigationStack: newPath,
-        currentCategories: hasSubcategories
-          ? category.subCategories!
-          : parentCategories,
-      }
-    }
-
-    if (hasSubcategories) {
-      const result = findCategoryPath(
-        category.subCategories,
-        target,
-        newPath,
-        category.subCategories,
-      )
-      if (result) return result
-    }
-  }
-
-  return null
-}
-const findCategorySubcategories = (
-  categories: Category[],
-  target: string,
-): Category[] | null => {
-  for (const category of categories) {
-    const normalizedName = normalizePolishString(category.name)
-
-    if (normalizedName === target) {
-      return category.subCategories || []
-    }
-
-    if (category.subCategories?.length) {
-      const result = findCategorySubcategories(category.subCategories, target)
-      if (result) return result
-    }
-  }
-
-  return null
-}
-
-const findCategoryByNormalizedName = (
-  categories: Category[],
-  target: string,
-): Category | null => {
-  for (const category of categories) {
-    const normalized = normalizePolishString(category.name)
-    if (normalized === target) return category
-
-    if (category.subCategories?.length) {
-      const found = findCategoryByNormalizedName(category.subCategories, target)
-      if (found) return found
-    }
-  }
-  return null
-}
-
-export const CategoriesList = ({ onCategorySelect }: CategorySidebarProps) => {
+export const CategoriesList = ({
+  onCategorySelect,
+  type,
+}: CategorySidebarProps) => {
   const navigate = useNavigate()
   const form = useFormContext()
+  const [categoryList, setCategoryList] = useState(productCategoryList)
   const [navigationStack, setNavigationStack] = useState<NavigationItem[]>([])
   const [currentCategories, setCurrentCategories] =
     useState<Category[]>(categoryList)
   const [slideDirection, setSlideDirection] = useState<SlideDirection>('')
-  const [isBackDisabled, setIsBackDisabled] = useState<boolean>(true)
+  const [isBackDisabled, setIsBackDisabled] = useState<boolean>(
+    type === 'PRODUCT',
+  )
 
   const { location } = useRouterState()
   const urlCategory = location.pathname.split('/kategoria/')[1]
+
+  useEffect(() => {
+    setCategoryList(
+      type === 'PRODUCT' ? productCategoryList : serviceCategoryList,
+    )
+  }, [type])
+
+  useEffect(() => {
+    setCurrentCategories(categoryList)
+  }, [categoryList])
 
   useEffect(() => {
     if (!urlCategory) return
@@ -131,7 +55,9 @@ export const CategoriesList = ({ onCategorySelect }: CategorySidebarProps) => {
 
     if (result) {
       const { navigationStack, currentCategories } = result
-      setIsBackDisabled(navigationStack.length === 1)
+      setIsBackDisabled(
+        type === 'PRODUCT' ? navigationStack.length === 1 : false,
+      )
       setNavigationStack(navigationStack)
       setCurrentCategories(currentCategories)
       const targetCategory = findCategoryByNormalizedName(
@@ -148,7 +74,10 @@ export const CategoriesList = ({ onCategorySelect }: CategorySidebarProps) => {
   const handleCategoryClick = (category: Category) => {
     const normalizedCategory = normalizePolishString(category.name)
     navigate({
-      to: `/kategoria/${normalizedCategory}`,
+      to:
+        type === 'PRODUCT'
+          ? `/kategoria/${normalizedCategory}`
+          : `/uslugi/${normalizedCategory}`,
     })
     if (onCategorySelect) {
       onCategorySelect(category)
@@ -184,7 +113,10 @@ export const CategoriesList = ({ onCategorySelect }: CategorySidebarProps) => {
         if (previous?.title) {
           const normalizedCategory = normalizePolishString(previous.title)
           navigate({
-            to: `/kategoria/${normalizedCategory}`,
+            to:
+              type === 'PRODUCT'
+                ? `/kategoria/${normalizedCategory}`
+                : `/uslugi/${normalizedCategory}`,
           })
         }
         setSlideDirection('')

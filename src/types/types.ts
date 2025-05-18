@@ -24,3 +24,28 @@ export type CompanyData = {
   socialMedia: string
   phone: string
 }
+
+export type ListType = 'PRODUCT' | 'SERVICE'
+
+export type Category = {
+  id: number | string
+  name: string
+  subCategories: Category[]
+}
+
+export type NavigationItem = {
+  categories: Category[]
+  title: string
+  selectedCategory?: string
+}
+
+export type SlideDirection = '' | 'slide-left' | 'slide-right'
+
+export type CategorySidebarProps = {
+  onCategorySelect?: (category: Category) => void
+  type: ListType
+}
+export type CategoryPathResult = {
+  navigationStack: NavigationItem[]
+  currentCategories: Category[]
+}
