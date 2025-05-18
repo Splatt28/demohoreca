@@ -34,10 +34,17 @@ export const Nav = () => {
           </Link>
           <Link
             to="/kategoria/$categoryId"
-            params={{ categoryId: 'obiekt' }}
+            params={{ categoryId: 'obiekt_od_zewnatrz' }}
             className="hover:text-accent transition-colors"
           >
-            Obiekt
+            Obiekt od zewnątrz
+          </Link>
+          <Link
+            to="/kategoria/$categoryId"
+            params={{ categoryId: 'elementy_wykonczenia_wnetrz' }}
+            className="hover:text-accent transition-colors"
+          >
+            Elementy wykończenia wnętrz
           </Link>
           <Link
             to="/kategoria/$categoryId"
@@ -45,6 +52,9 @@ export const Nav = () => {
             className="hover:text-accent transition-colors"
           >
             Artykuły Spożywcze
+          </Link>
+          <Link to="/uslugi" className="hover:text-accent transition-colors">
+            Usługi
           </Link>
         </nav>
 
