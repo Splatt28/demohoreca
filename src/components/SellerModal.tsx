@@ -6,20 +6,34 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
-import { Star, MapPin, Globe, Instagram, Phone, Mail } from 'lucide-react'
+import { MapPin, Globe, Instagram, Phone, Mail } from 'lucide-react'
 import { useStore } from '@/store/useStore'
+import type { CompanyData } from '@/types/types'
+import { useEffect, useState } from 'react'
 
 export const SellerModal = ({
   isDialogOpen,
   setIsDialogOpen,
+  companyId,
 }: {
   isDialogOpen: boolean
   setIsDialogOpen: (isOpen: boolean) => void
+
+  companyId: string
 }) => {
-  const {
-    userData: { publicData, personalData },
-  } = useStore()
+  const { companies } = useStore()
+
+  const [currentCompany, setCurrentyCompany] = useState<CompanyData>()
+
+  useEffect(() => {
+    const tempCompany = companies.find((company) => company.id === companyId)
+    setCurrentyCompany(tempCompany)
+  }, [companyId])
+
+  if (!currentCompany) {
+    return <></>
+  }
+
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogContent className="max-w-3xl">
@@ -35,19 +49,21 @@ export const SellerModal = ({
             <Avatar className="w-24 h-24">
               <AvatarImage
                 src={'/placeholder.svg'}
-                alt={publicData.companyName}
+                alt={currentCompany.companyName}
               />
               <AvatarFallback>SJ</AvatarFallback>
             </Avatar>
 
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold">{publicData.companyName}</h2>
+              <h2 className="text-2xl font-bold">
+                {currentCompany.companyName}
+              </h2>
               <div className="flex items-center gap-1 text-muted-foreground text-sm">
                 <MapPin className="h-3 w-3" />
-                <span>{personalData.address}</span>
+                <span>{currentCompany.address}</span>
               </div>
               {/* <div className="flex flex-wrap gap-2 mt-2">
-                {personalData.categories.map((category) => (
+                {currentCompany.categories.map((category) => (
                   <Badge key={category} variant="default">
                     {category}
                   </Badge>
@@ -58,7 +74,7 @@ export const SellerModal = ({
 
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">O sprzedawcy</h3>
-            <p>{publicData.description}</p>
+            <p>{currentCompany.description}</p>
             <p className="text-sm text-muted-foreground">
               Na platformie od: 05 Maja 2025
             </p>
@@ -70,28 +86,28 @@ export const SellerModal = ({
               <div className="flex items-center gap-2">
                 <Globe className="h-4 w-4 text-muted-foreground" />
                 <a
-                  href={`https://${publicData.website}`}
+                  href={`https://${currentCompany.website}`}
                   className="text-primary hover:underline"
                 >
-                  {publicData.website}
+                  {currentCompany.website}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Instagram className="h-4 w-4 text-muted-foreground" />
                 <a
-                  href={`https://${publicData.socialMedia}`}
+                  href={`https://${currentCompany.socialMedia}`}
                   className="text-primary hover:underline"
                 >
-                  {publicData.socialMedia}
+                  {currentCompany.socialMedia}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-muted-foreground" />
-                <span>{personalData.phone}</span>
+                <span>{currentCompany.phone}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-muted-foreground" />
-                <span>{personalData.email}</span>
+                <span>{currentCompany.email}</span>
               </div>
             </div>
           </div>

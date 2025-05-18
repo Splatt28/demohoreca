@@ -1,44 +1,80 @@
 [
   {
     "id": "1",
-    "name": "Stylowe Wnętrza Sp. z o.o.",
-    "description": "Firma specjalizująca się w projektowaniu wnętrz hotelowych i restauracyjnych, oferująca kompleksową obsługę w zakresie doboru mebli i dekoracji.",
     "companyLogo": "https://example.com/logos/stylowe-wnetrza-logo.png",
-    "address": "ul. Wnętrza 10, 00-234 Warszawa, Polska"
+    "firstName": "Anna",
+    "lastName": "Kowalska",
+    "companyName": "Stylowe Wnętrza Sp. z o.o.",
+    "address": "ul. Wnętrza 10, 00-234 Warszawa, Polska",
+    "email": "anna.kowalska@stylowewnetrza.pl",
+    "phone": "+48 600 111 222",
+    "description": "Firma specjalizująca się w projektowaniu wnętrz hotelowych i restauracyjnych, oferująca kompleksową obsługę w zakresie doboru mebli i dekoracji.",
+    "website": "https://stylowewnetrza.pl",
+    "socialMedia": "https://facebook.com/stylowewnetrza"
   },
   {
     "id": "2",
-    "name": "Design Plus",
+    "companyLogo": "https://example.com/logos/stylowe-wnetrza-logo.png",
+    "firstName": "Piotr",
+    "lastName": "Nowak",
+    "companyName": "Design Plus",
+    "address": "ul. Designowa 25, 01-456 Kraków, Polska",
+    "email": "piotr.nowak@designplus.pl",
+    "phone": "+48 600 222 333",
     "description": "Firma projektowa oferująca nowoczesne rozwiązania w zakresie oświetlenia wnętrz, tekstyliów oraz projektowania mebli do obiektów hotelowych.",
-    "companyLogo": "https://example.com/logos/design-plus-logo.png",
-    "address": "ul. Designowa 25, 01-456 Kraków, Polska"
+    "website": "https://designplus.pl",
+    "socialMedia": "https://instagram.com/designplus"
   },
   {
     "id": "3",
-    "name": "Budowa Plus",
+    "companyLogo": "https://example.com/logos/stylowe-wnetrza-logo.png",
+    "firstName": "Tomasz",
+    "lastName": "Zieliński",
+    "companyName": "Budowa Plus",
+    "address": "ul. Budowlana 5, 00-123 Warszawa, Polska",
+    "email": "tomasz.zielinski@budowaplus.pl",
+    "phone": "+48 600 333 444",
     "description": "Dostawca materiałów budowlanych i wykonawca robót budowlanych specjalizujący się w infrastrukturze zewnętrznej, takich jak elewacje, fundamenty oraz dachy.",
-    "companyLogo": "https://example.com/logos/budowa-plus-logo.png",
-    "address": "ul. Budowlana 5, 00-123 Warszawa, Polska"
+    "website": "https://budowaplus.pl",
+    "socialMedia": "https://linkedin.com/company/budowaplus"
   },
   {
     "id": "4",
-    "name": "Zewnętrzne Rozwiązania",
+    "companyLogo": "https://example.com/logos/stylowe-wnetrza-logo.png",
+    "firstName": "Karolina",
+    "lastName": "Mazur",
+    "companyName": "Zewnętrzne Rozwiązania",
+    "address": "ul. Eksterno 30, 02-345 Wrocław, Polska",
+    "email": "karolina.mazur@zewnetrzne.pl",
+    "phone": "+48 600 444 555",
     "description": "Firma oferująca kompleksową obsługę z zakresu budowy, remontów oraz konserwacji zewnętrznych części obiektów, w tym instalacje fotowoltaiczne.",
-    "companyLogo": "https://example.com/logos/zewnetrzne-rozwiazania-logo.png",
-    "address": "ul. Eksterno 30, 02-345 Wrocław, Polska"
+    "website": "https://zewnetrzne.pl",
+    "socialMedia": "https://facebook.com/zewnetrzne"
   },
   {
     "id": "5",
-    "name": "Świeże Produkty Sp. z o.o.",
+    "companyLogo": "https://example.com/logos/stylowe-wnetrza-logo.png",
+    "firstName": "Michał",
+    "lastName": "Lewandowski",
+    "companyName": "Świeże Produkty Sp. z o.o.",
+    "address": "ul. Spożywcza 3, 01-234 Gdańsk, Polska",
+    "email": "michal.lewandowski@swiezeprodukty.pl",
+    "phone": "+48 600 555 666",
     "description": "Firma zajmująca się dostawami świeżych produktów spożywczych, w tym warzyw, owoców oraz mięsa dla restauracji i hoteli.",
-    "companyLogo": "https://example.com/logos/swieze-produkty-logo.png",
-    "address": "ul. Spożywcza 3, 01-234 Gdańsk, Polska"
+    "website": "https://swiezeprodukty.pl",
+    "socialMedia": "https://instagram.com/swiezeprodukty"
   },
   {
     "id": "6",
-    "name": "Delikatesy Premium",
+    "companyLogo": "https://example.com/logos/stylowe-wnetrza-logo.png",
+    "firstName": "Ewa",
+    "lastName": "Wiśniewska",
+    "companyName": "Delikatesy Premium",
+    "address": "ul. Smakowa 18, 03-567 Poznań, Polska",
+    "email": "ewa.wisniewska@delikatesypremium.pl",
+    "phone": "+48 600 666 777",
     "description": "Dostawca ekskluzywnych produktów spożywczych, w tym wędlin, serów i napojów premium dla restauracji oraz obiektów hotelowych.",
-    "companyLogo": "https://example.com/logos/delikatesy-premium-logo.png",
-    "address": "ul. Smakowa 18, 03-567 Poznań, Polska"
+    "website": "https://delikatesypremium.pl",
+    "socialMedia": "https://facebook.com/delikatesypremium"
   }
 ]

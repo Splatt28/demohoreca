@@ -11,12 +11,11 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsContent } from '@/components/ui/tabs'
 import { Pencil, Save, X } from 'lucide-react'
 import React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { useStore } from '@/store/useStore'
-import type { UserData } from '@/types/types'
 
 export const Route = createFileRoute('/panel-uzytkownika/_layout/twoje-dane')({
   component: TwojeDane,
@@ -27,18 +26,15 @@ export default function TwojeDane() {
   const [editingField, setEditingField] = useState<string | null>(null)
   const [editValue, setEditValue] = useState<string>('')
 
-  const handleEdit = (section: keyof UserData, field: string): void => {
-    setEditingField(`${section}.${field}`)
-    setEditValue((userData as any)[section as any][field])
+  const handleEdit = (field: string): void => {
+    setEditingField(`${field}`)
+    setEditValue((userData as any)[field])
   }
 
-  const handleSave = (section: keyof UserData, field: string): void => {
+  const handleSave = (field: string): void => {
     setUserData({
       ...userData,
-      [section]: {
-        ...userData[section],
-        [field]: editValue,
-      },
+      [field]: editValue,
     })
     setEditingField(null)
   }
@@ -47,13 +43,9 @@ export default function TwojeDane() {
     setEditingField(null)
   }
 
-  const renderField = (
-    section: keyof UserData,
-    field: string,
-    label: string,
-  ): JSX.Element => {
-    const isEditing = editingField === `${section}.${field}`
-    const value = (userData as any)[section as any][field]
+  const renderField = (field: string, label: string): JSX.Element => {
+    const isEditing = editingField === `${field}`
+    const value = (userData as any)[field]
 
     return (
       <div className="flex items-center justify-between py-3 border-b">
@@ -71,7 +63,7 @@ export default function TwojeDane() {
               <Button
                 size="icon"
                 variant="ghost"
-                onClick={() => handleSave(section, field)}
+                onClick={() => handleSave(field)}
               >
                 <Save className="h-4 w-4" />
               </Button>
@@ -85,7 +77,7 @@ export default function TwojeDane() {
               <Button
                 size="icon"
                 variant="ghost"
-                onClick={() => handleEdit(section, field)}
+                onClick={() => handleEdit(field)}
               >
                 <Pencil className="h-4 w-4" />
               </Button>
@@ -105,48 +97,24 @@ export default function TwojeDane() {
       </p>
 
       <Tabs defaultValue="personal" className="w-full">
-        <TabsList className="mb-6">
-          <TabsTrigger value="personal">Dane osobowe</TabsTrigger>
-          <TabsTrigger value="public">Dane publiczne</TabsTrigger>
-        </TabsList>
-
         <TabsContent value="personal">
           <Card>
             <CardHeader>
-              <CardTitle>Dane osobowe</CardTitle>
+              <CardTitle>Twoje dane</CardTitle>
               <CardDescription>
-                Te informacje są używane do kontaktu z Tobą i nie są widoczne
-                publicznie.
+                Tu znajdziesz wszystkie informacje o swojej firmie
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {renderField('personalData', 'firstName', 'Imię')}
-              {renderField('personalData', 'lastName', 'Nazwisko')}
-              {renderField('personalData', 'email', 'Email')}
-              {renderField('personalData', 'phone', 'Telefon')}
-              {renderField('personalData', 'address', 'Adres')}
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="public">
-          <Card>
-            <CardHeader>
-              <CardTitle>Dane publiczne</CardTitle>
-              <CardDescription>
-                Te informacje są widoczne dla klientów na Twojej stronie
-                sprzedawcy.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {renderField('publicData', 'companyName', 'Nazwa firmy')}
-              {renderField('publicData', 'description', 'Opis')}
-              {renderField('publicData', 'website', 'Strona internetowa')}
-              {renderField(
-                'publicData',
-                'socialMedia',
-                'Media społecznościowe',
-              )}
+              {renderField('firstName', 'Imię')}
+              {renderField('lastName', 'Nazwisko')}
+              {renderField('email', 'Email')}
+              {renderField('phone', 'Telefon')}
+              {renderField('address', 'Adres')}
+              {renderField('companyName', 'Nazwa firmy')}
+              {renderField('description', 'Opis')}
+              {renderField('website', 'Strona internetowa')}
+              {renderField('socialMedia', 'Media społecznościowe')}
             </CardContent>
           </Card>
         </TabsContent>

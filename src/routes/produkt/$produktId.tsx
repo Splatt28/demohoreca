@@ -33,10 +33,10 @@ export const Route = createFileRoute('/produkt/$produktId')({
 
 function RouteComponent() {
   const data = useParams({ from: '/produkt/$produktId' })
-  const { products, userData } = useStore(
+  const { products, companies } = useStore(
     useShallow((state) => ({
       products: state.products,
-      userData: state.userData,
+      companies: state.companies,
     })),
   )
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
@@ -61,6 +61,11 @@ function RouteComponent() {
 
   if (!currentProduct) {
     return <>Loading...</>
+  }
+  const getCompanyName = (companyId: string) => {
+    return (
+      companies.find((company) => company.id === companyId)?.companyName || ''
+    )
   }
 
   return (
@@ -142,7 +147,7 @@ function RouteComponent() {
                     onClick={() => setIsDialogOpen(true)}
                     className="text-primary"
                   >
-                    {userData.publicData.companyName}
+                    {getCompanyName(currentProduct.companyId)}
                   </Button>
                 </p>
               </div>
@@ -175,7 +180,7 @@ function RouteComponent() {
               <div className="flex space-x-3">
                 <Button className="flex-1 rounded-full">
                   <ShoppingCart className="mr-2 h-4 w-4" />
-                  Add to Cart
+                  Kup teraz
                 </Button>
                 <Button variant="outline" size="icon" className="rounded-full">
                   <Heart className="h-4 w-4" />
@@ -231,9 +236,8 @@ function RouteComponent() {
           </div>
         </div>
 
-        {/* Similar Products Carousel */}
         <div className="my-12">
-          <h2 className="text-2xl font-bold mb-6">Similar Products</h2>
+          <h2 className="text-2xl font-bold mb-6">Podobne produkty</h2>
           <Carousel className="w-full">
             <CarouselContent>
               {similarProducts.map((product) => (
@@ -277,6 +281,7 @@ function RouteComponent() {
       <SellerModal
         isDialogOpen={isDialogOpen}
         setIsDialogOpen={setIsDialogOpen}
+        companyId={currentProduct.companyId}
       />
     </>
   )

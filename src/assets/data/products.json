@@ -8,7 +8,8 @@
     "available": true,
     "description": "Lorem ipmum",
     "sku": "21521",
-    "originalPrice": 20
+    "originalPrice": 20,
+    "companyId": "1"
   },
   {
     "category": "obiekt",
@@ -19,7 +20,8 @@
     "available": true,
     "description": "Lorem ipmum",
     "sku": "21521",
-    "originalPrice": 20
+    "originalPrice": 20,
+    "companyId": "1"
   },
   {
     "category": "artykuly_spozywcze",
@@ -30,7 +32,8 @@
     "available": true,
     "description": "Lorem ipmum",
     "sku": "21521",
-    "originalPrice": 20
+    "originalPrice": 20,
+    "companyId": "1"
   },
   {
     "category": "obiekt",
@@ -41,6 +44,7 @@
     "available": true,
     "description": "Lorem ipmum",
     "sku": "21521",
-    "originalPrice": 20
+    "originalPrice": 20,
+    "companyId": "1"
   }
 ]

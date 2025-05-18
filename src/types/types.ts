@@ -8,24 +8,19 @@ export type Product = {
   images: string[]
   category: string
   sku: string
+  companyId: string
 }
 
-interface PersonalData {
+export type CompanyData = {
+  id: string
+  companyLogo: string
   firstName: string
   lastName: string
-  email: string
-  phone: string
-  address: string
-}
-
-interface PublicData {
   companyName: string
+  address: string
+  email: string
   description: string
   website: string
   socialMedia: string
-}
-
-export interface UserData {
-  personalData: PersonalData
-  publicData: PublicData
+  phone: string
 }

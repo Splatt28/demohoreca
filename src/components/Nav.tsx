@@ -8,8 +8,16 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { User, LogIn, LogOut } from 'lucide-react'
 import PlaceholderAvatar from '@/assets/placeholder-avatar.png'
 import { Link, useNavigate } from '@tanstack/react-router'
+import { useStore } from '@/store/useStore'
+import { useShallow } from 'zustand/react/shallow'
 
 export const Nav = () => {
+  const { isLoggedIn, setIsLoggedIn } = useStore(
+    useShallow((state) => ({
+      isLoggedIn: state.isLoggedIn,
+      setIsLoggedIn: state.setIsLoggedIn,
+    })),
+  )
   const navigate = useNavigate()
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-primary/70 shadow-sm text-white">
@@ -53,22 +61,27 @@ export const Nav = () => {
               align="end"
               className="w-48 bg-white border border-stone-200 shadow-md"
             >
-              <DropdownMenuItem
-                onClick={() =>
-                  navigate({ to: '/panel-uzytkownika/twoje-dane' })
-                }
-              >
-                <User className="mr-2 h-4 w-4" />
-                Profile
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <LogIn className="mr-2 h-4 w-4" />
-                Log in
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <LogOut className="mr-2 h-4 w-4" />
-                Log out
-              </DropdownMenuItem>
+              {isLoggedIn ? (
+                <>
+                  <DropdownMenuItem
+                    onClick={() =>
+                      navigate({ to: '/panel-uzytkownika/twoje-dane' })
+                    }
+                  >
+                    <User className="mr-2 h-4 w-4" />
+                    Profile
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setIsLoggedIn(false)}>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Log out
+                  </DropdownMenuItem>
+                </>
+              ) : (
+                <DropdownMenuItem onClick={() => setIsLoggedIn(true)}>
+                  <LogIn className="mr-2 h-4 w-4" />
+                  Log in
+                </DropdownMenuItem>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
