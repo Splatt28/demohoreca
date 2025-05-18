@@ -48,7 +48,7 @@ function RouteComponent() {
   useEffect(() => {
     setSimilarProducts(
       products.filter(
-        (product) => product.category === currentProduct?.category,
+        (product) => product.categoryId === currentProduct?.categoryId,
       ),
     )
   }, [currentProduct])
@@ -87,12 +87,12 @@ function RouteComponent() {
               <BreadcrumbLink asChild>
                 <Link
                   to="/kategoria/$categoryId"
-                  params={{ categoryId: currentProduct.category }}
+                  params={{ categoryId: currentProduct.categoryId }}
                   className="capitalize"
                 >
                   {
                     CategoryEnum[
-                      currentProduct.category as keyof typeof CategoryEnum
+                      currentProduct.categoryId as keyof typeof CategoryEnum
                     ]
                   }
                 </Link>
@@ -113,25 +113,28 @@ function RouteComponent() {
           <div className="space-y-4">
             <div className="relative aspect-square overflow-hidden rounded-xl border">
               <img
-                src={currentProduct.images[0]}
-                alt={currentProduct.name}
-                className="object-cover  w-full"
+                  src={currentProduct.images?.[0] || '/images/placeholder.jpg'}
+                  alt={currentProduct.name}
+                  className="object-cover  w-full"
               />
             </div>
             <div className="flex space-x-2 overflow-auto p-2">
-              {currentProduct.images.map((image, index) => (
-                <button
-                  key={index}
-                  className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${selectedImage === index ? 'ring-2 ring-primary' : ''}`}
-                  onClick={() => setSelectedImage(index)}
-                >
-                  <img
-                    src={image}
-                    alt={`${currentProduct.name} view ${index + 1}`}
-                    className="object-cover  w-full"
-                  />
-                </button>
-              ))}
+              {Array.isArray(currentProduct.images) &&
+                  currentProduct.images.map((image, index) => (
+                      <button
+                          key={index}
+                          className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${
+                              selectedImage === index ? 'ring-2 ring-primary' : ''
+                          }`}
+                          onClick={() => setSelectedImage(index)}
+                      >
+                        <img
+                            src={image}
+                            alt={`${currentProduct.name} view ${index + 1}`}
+                            className="object-cover w-full"
+                        />
+                      </button>
+                  ))}
             </div>
           </div>
 
@@ -143,9 +146,9 @@ function RouteComponent() {
                 <p className="text-muted-foreground">
                   By
                   <Button
-                    variant="link"
-                    onClick={() => setIsDialogOpen(true)}
-                    className="text-primary"
+                      variant="link"
+                      onClick={() => setIsDialogOpen(true)}
+                      className="text-primary"
                   >
                     {getCompanyName(currentProduct.companyId)}
                   </Button>
@@ -249,7 +252,7 @@ function RouteComponent() {
                     <CardContent className="p-4 flex flex-col h-full">
                       <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
                         <img
-                          src={product.images[0]}
+                            src={product.images?.[0] || '/images/placeholder.jpg'}
                           alt={product.name}
                           className="object-cover w-full transition-transform hover:scale-105"
                         />

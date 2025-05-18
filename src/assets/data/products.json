@@ -1,50 +1,1418 @@
 [
   {
-    "category": "obiekt",
     "id": "1",
-    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
-    "name": "Krzesło",
-    "price": 20,
+    "name": "Wykładzina dywanowa hotelowa",
+    "price": 119.9,
+    "originalPrice": 149.9,
     "available": true,
-    "description": "Lorem ipmum",
-    "sku": "21521",
-    "originalPrice": 20,
-    "companyId": "1"
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": null,
+    "categoryId": "53",
+    "sku": "WYK-WNE-001",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 0.8,
+      "Szerokość": 400,
+      "Głębokość": 600,
+      "Kolor": "Szary",
+      "Materiał": "Polipropylen",
+      "Waga": 12.5
+    }
   },
   {
-    "category": "obiekt",
     "id": "2",
-    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
-    "name": "Krzesło",
-    "price": 20,
+    "name": "Parkiet drewniany dąb naturalny",
+    "price": 239.9,
+    "originalPrice": 279.9,
     "available": true,
-    "description": "Lorem ipmum",
-    "sku": "21521",
-    "originalPrice": 20,
-    "companyId": "1"
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/parkiet-dab-1.jpg",
+      "https://example.com/images/parkiet-dab-2.jpg"
+    ],
+    "categoryId": "54",
+    "sku": "PAR-WNE-002",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 2,
+      "Szerokość": 15,
+      "Głębokość": 120,
+      "Kolor": "Dąb naturalny",
+      "Materiał": "Drewno",
+      "Waga": 0.9
+    }
   },
   {
-    "category": "artykuly_spozywcze",
     "id": "3",
-    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
-    "name": "Krzesło",
-    "price": 20,
+    "name": "Lampa sufitowa LED Slim",
+    "price": 199.99,
+    "originalPrice": 249.99,
     "available": true,
-    "description": "Lorem ipmum",
-    "sku": "21521",
-    "originalPrice": 20,
-    "companyId": "2"
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/lampa-sufitowa-led-1.jpg",
+      "https://example.com/images/lampa-sufitowa-led-2.jpg"
+    ],
+    "categoryId": "67",
+    "sku": "LAM-WNE-003",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 8,
+      "Szerokość": 60,
+      "Głębokość": 60,
+      "Kolor": "Biały",
+      "Materiał": "Aluminium",
+      "Moc": 24
+    }
   },
   {
-    "category": "obiekt",
     "id": "4",
-    "images": ["/images/skandynawski-fotel-wypoczynkowy.jpg"],
-    "name": "Krzesło",
-    "price": 15,
+    "name": "Żyrandol kryształowy Classic",
+    "price": 449.0,
+    "originalPrice": 549.0,
     "available": true,
-    "description": "Lorem ipmum",
-    "sku": "21521",
-    "originalPrice": 20,
-    "companyId": "3"
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/zyrandol-classic-1.jpg",
+      "https://example.com/images/zyrandol-classic-2.jpg"
+    ],
+    "categoryId": "66",
+    "sku": "ZYR-WNE-004",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 70,
+      "Szerokość": 60,
+      "Głębokość": 60,
+      "Kolor": "Chrom",
+      "Materiał": "Metal, kryształ",
+      "Waga": 8.0
+    }
+  },
+  {
+    "id": "5",
+    "name": "Obraz abstrakcyjny Canvas Blue",
+    "price": 129.9,
+    "originalPrice": 169.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/obraz-abstrakcyjny-1.jpg",
+      "https://example.com/images/obraz-abstrakcyjny-2.jpg"
+    ],
+    "categoryId": "73",
+    "sku": "OBR-WNE-005",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 100,
+      "Szerokość": 70,
+      "Głębokość": 4,
+      "Kolor": "Niebieski",
+      "Materiał": "Płótno, drewno",
+      "Waga": 2.3
+    }
+  },
+  {
+    "id": "6",
+    "name": "Zasłony blackout grafitowe",
+    "price": 89.99,
+    "originalPrice": 119.99,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/zaslony-blackout-1.jpg",
+      "https://example.com/images/zaslony-blackout-2.jpg"
+    ],
+    "categoryId": "87",
+    "sku": "ZAS-WNE-006",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 250,
+      "Szerokość": 140,
+      "Kolor": "Grafitowy",
+      "Materiał": "Polyester",
+      "Waga": 3.6
+    }
+  },
+  {
+    "id": "7",
+    "name": "Termostat ścienny SmartTouch",
+    "price": 159.99,
+    "originalPrice": 199.99,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/termostat-smart-1.jpg",
+      "https://example.com/images/termostat-smart-2.jpg"
+    ],
+    "categoryId": "99",
+    "sku": "TER-WNE-007",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 9,
+      "Szerokość": 9,
+      "Głębokość": 2,
+      "Kolor": "Biały",
+      "Materiał": "ABS",
+      "Waga": 0.2
+    }
+  },
+  {
+    "id": "8",
+    "name": "Dyfuzor zapachowy Citrus Fresh",
+    "price": 49.9,
+    "originalPrice": 69.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/dyfuzor-citrus-1.jpg",
+      "https://example.com/images/dyfuzor-citrus-2.jpg"
+    ],
+    "categoryId": "105",
+    "sku": "DYF-WNE-008",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 20,
+      "Szerokość": 8,
+      "Głębokość": 8,
+      "Kolor": "Transparentny",
+      "Materiał": "Szkło",
+      "Waga": 0.5
+    }
+  },
+  {
+    "id": "9",
+    "name": "Kominek dekoracyjny bioetanol Loft",
+    "price": 699.0,
+    "originalPrice": 799.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/kominek-bio-1.jpg",
+      "https://example.com/images/kominek-bio-2.jpg"
+    ],
+    "categoryId": "110",
+    "sku": "KOM-WNE-009",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 50,
+      "Szerokość": 80,
+      "Głębokość": 30,
+      "Kolor": "Czarny",
+      "Materiał": "Stal",
+      "Waga": 15.0
+    }
+  },
+  {
+    "id": "10",
+    "name": "Tapeta winylowa Geometry Grey",
+    "price": 79.9,
+    "originalPrice": 99.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/tapeta-geometry-grey-1.jpg",
+      "https://example.com/images/tapeta-geometry-grey-2.jpg"
+    ],
+    "categoryId": "60",
+    "sku": "TAP-WNE-010",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 280,
+      "Szerokość": 53,
+      "Głębokość": 0.1,
+      "Kolor": "Szary",
+      "Materiał": "Winyl",
+      "Waga": 1.2
+    }
+  },
+  {
+    "id": "11",
+    "name": "Recepcja modułowa Classic",
+    "price": 3299.0,
+    "originalPrice": 3599.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/recepcja-modulowa-classic-1.jpg",
+      "https://example.com/images/recepcja-modulowa-classic-2.jpg"
+    ],
+    "categoryId": "93",
+    "sku": "REC-WNE-011",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 110,
+      "Szerokość": 300,
+      "Głębokość": 80,
+      "Kolor": "Biały",
+      "Materiał": "MDF, laminat",
+      "Waga": 145.0
+    }
+  },
+  {
+    "id": "12",
+    "name": "Lada barowa Quartz",
+    "price": 2499.0,
+    "originalPrice": 2899.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/lada-barowa-quartz-1.jpg",
+      "https://example.com/images/lada-barowa-quartz-2.jpg"
+    ],
+    "categoryId": "94",
+    "sku": "LAD-WNE-012",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 105,
+      "Szerokość": 250,
+      "Głębokość": 70,
+      "Kolor": "Szary",
+      "Materiał": "Konglomerat, stal",
+      "Waga": 120.0
+    }
+  },
+  {
+    "id": "13",
+    "name": "Stół konferencyjny Compact 8-os.",
+    "price": 1799.0,
+    "originalPrice": 2099.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/stol-konferencyjny-compact-1.jpg",
+      "https://example.com/images/stol-konferencyjny-compact-2.jpg"
+    ],
+    "categoryId": "95",
+    "sku": "STO-WNE-013",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 75,
+      "Szerokość": 240,
+      "Głębokość": 100,
+      "Kolor": "Dąb",
+      "Materiał": "Drewno, stal",
+      "Waga": 85.0
+    }
+  },
+  {
+    "id": "14",
+    "name": "Regał modułowy Loft-4",
+    "price": 849.0,
+    "originalPrice": 999.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/regal-loft-1.jpg",
+      "https://example.com/images/regal-loft-2.jpg"
+    ],
+    "categoryId": "96",
+    "sku": "REG-WNE-014",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 200,
+      "Szerokość": 90,
+      "Głębokość": 40,
+      "Kolor": "Czarny",
+      "Materiał": "Stal, drewno",
+      "Waga": 42.0
+    }
+  },
+  {
+    "id": "15",
+    "name": "Wbudowane siedzisko TapComfort",
+    "price": 699.0,
+    "originalPrice": 799.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/siedzisko-wbudowane-1.jpg",
+      "https://example.com/images/siedzisko-wbudowane-2.jpg"
+    ],
+    "categoryId": "97",
+    "sku": "SIE-WNE-015",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 45,
+      "Szerokość": 180,
+      "Głębokość": 60,
+      "Kolor": "Beżowy",
+      "Materiał": "Sklejka, tkanina",
+      "Waga": 30.0
+    }
+  },
+  {
+    "id": "16",
+    "name": "Stolik kawowy RoundEdge",
+    "price": 399.0,
+    "originalPrice": 449.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/stolik-roundedge-1.jpg",
+      "https://example.com/images/stolik-roundedge-2.jpg"
+    ],
+    "categoryId": "95",
+    "sku": "STO-WNE-016",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 45,
+      "Szerokość": 80,
+      "Głębokość": 80,
+      "Kolor": "Dąb naturalny",
+      "Materiał": "Drewno",
+      "Waga": 12.0
+    }
+  },
+  {
+    "id": "17",
+    "name": "Krzesło tapicerowane Velvet",
+    "price": 249.0,
+    "originalPrice": 289.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/krzeslo-velvet-1.jpg",
+      "https://example.com/images/krzeslo-velvet-2.jpg"
+    ],
+    "categoryId": "58",
+    "sku": "KRZ-WNE-017",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 95,
+      "Szerokość": 50,
+      "Głębokość": 55,
+      "Kolor": "Granatowy",
+      "Materiał": "Metal, welur",
+      "Waga": 7.5
+    }
+  },
+  {
+    "id": "18",
+    "name": "Pufa pikowana Square",
+    "price": 159.0,
+    "originalPrice": 189.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/pufa-square-1.jpg",
+      "https://example.com/images/pufa-square-2.jpg"
+    ],
+    "categoryId": "58",
+    "sku": "PUF-WNE-018",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 45,
+      "Szerokość": 45,
+      "Głębokość": 45,
+      "Kolor": "Szary",
+      "Materiał": "Tkanina, pianka",
+      "Waga": 5.0
+    }
+  },
+  {
+    "id": "19",
+    "name": "Biurko hotelowe SlimDesk",
+    "price": 599.0,
+    "originalPrice": 699.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/biurko-slimdesk-1.jpg",
+      "https://example.com/images/biurko-slimdesk-2.jpg"
+    ],
+    "categoryId": "58",
+    "sku": "BIU-WNE-019",
+    "companyId": "1",
+    "manufacturer": "Stylowe Wnętrza Sp. z o.o.",
+    "attributes": {
+      "Wysokość": 74,
+      "Szerokość": 140,
+      "Głębokość": 60,
+      "Kolor": "Biały",
+      "Materiał": "MDF, metal",
+      "Waga": 28.0
+    }
+  },
+  {
+    "id": "20",
+    "name": "Komoda hotelowa Urban Oak",
+    "price": 949.0,
+    "originalPrice": 1099.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/komoda-urban-oak-1.jpg",
+      "https://example.com/images/komoda-urban-oak-2.jpg"
+    ],
+    "categoryId": "96",
+    "sku": "KOM-WNE-020",
+    "companyId": "2",
+    "manufacturer": "Design Plus",
+    "attributes": {
+      "Wysokość": 85,
+      "Szerokość": 120,
+      "Głębokość": 45,
+      "Kolor": "Dąb",
+      "Materiał": "Drewno",
+      "Waga": 40.0
+    }
+  },
+  {
+    "id": "21",
+    "name": "Sok pomarańczowy 100% tłoczony",
+    "price": 6.49,
+    "originalPrice": 7.99,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/sok-pomaranczowy-1.jpg",
+      "https://example.com/images/sok-pomaranczowy-2.jpg"
+    ],
+    "categoryId": "117",
+    "sku": "SOK-SPO-021",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 1.0,
+      "Opakowanie": "Karton 1 l",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "22",
+    "name": "Kawa ziarnista Espresso 1 kg",
+    "price": 39.9,
+    "originalPrice": 45.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/kawa-espresso-1.jpg",
+      "https://example.com/images/kawa-espresso-2.jpg"
+    ],
+    "categoryId": "123",
+    "sku": "KAW-SPO-022",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 1.0,
+      "Opakowanie": "Worek z zaworkiem",
+      "KrajPochodzenia": "Brazylia",
+      "Bio": false
+    }
+  },
+  {
+    "id": "23",
+    "name": "Mieszanka warzyw mrożona Classic 2,5 kg",
+    "price": 23.5,
+    "originalPrice": 26.99,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/mieszanka-warzyw-mrozona-1.jpg",
+      "https://example.com/images/mieszanka-warzyw-mrozona-2.jpg"
+    ],
+    "categoryId": "128",
+    "sku": "MIX-SPO-023",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 2.5,
+      "Opakowanie": "Worek foliowy",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "24",
+    "name": "Filet z kurczaka świeży MAP 1 kg",
+    "price": 18.9,
+    "originalPrice": 21.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/filet-kurczaka-1.jpg",
+      "https://example.com/images/filet-kurczaka-2.jpg"
+    ],
+    "categoryId": "143",
+    "sku": "FIL-SPO-024",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 1.0,
+      "Opakowanie": "Tacka MAP",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "25",
+    "name": "Marchew świeża 5 kg",
+    "price": 14.5,
+    "originalPrice": 16.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/marchew-1.jpg",
+      "https://example.com/images/marchew-2.jpg"
+    ],
+    "categoryId": "157",
+    "sku": "MAR-SPO-025",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 5.0,
+      "Opakowanie": "Worek siatkowy",
+      "KrajPochodzenia": "Polska",
+      "Bio": true
+    }
+  },
+  {
+    "id": "26",
+    "name": "Ryż basmati 5 kg catering",
+    "price": 44.9,
+    "originalPrice": 52.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/ryz-basmati-1.jpg",
+      "https://example.com/images/ryz-basmati-2.jpg"
+    ],
+    "categoryId": "174",
+    "sku": "RYZ-SPO-026",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 5.0,
+      "Opakowanie": "Worek papierowy",
+      "KrajPochodzenia": "Indie",
+      "Bio": false
+    }
+  },
+  {
+    "id": "27",
+    "name": "Bułki pszenne 50 g – karton 120 szt.",
+    "price": 37.8,
+    "originalPrice": 42.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/bulki-pszenne-1.jpg",
+      "https://example.com/images/bulki-pszenne-2.jpg"
+    ],
+    "categoryId": "179",
+    "sku": "BUL-SPO-027",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 6.0,
+      "Opakowanie": "Karton",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "28",
+    "name": "Makaron penne pełnoziarnisty 3 kg",
+    "price": 22.9,
+    "originalPrice": 26.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/makaron-penne-1.jpg",
+      "https://example.com/images/makaron-penne-2.jpg"
+    ],
+    "categoryId": "173",
+    "sku": "MAK-SPO-028",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 3.0,
+      "Opakowanie": "Worek foliowy",
+      "KrajPochodzenia": "Włochy",
+      "Bio": false
+    }
+  },
+  {
+    "id": "29",
+    "name": "Zupa pomidorowa mrożona 2 l",
+    "price": 16.9,
+    "originalPrice": 19.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/zupa-pomidorowa-1.jpg",
+      "https://example.com/images/zupa-pomidorowa-2.jpg"
+    ],
+    "categoryId": "136",
+    "sku": "ZUP-SPO-029",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 2.0,
+      "Opakowanie": "Wiadro PP",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "30",
+    "name": "Owoce leśne mrożone 1 kg",
+    "price": 13.5,
+    "originalPrice": 15.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/owoce-lesne-mrozone-1.jpg",
+      "https://example.com/images/owoce-lesne-mrozone-2.jpg"
+    ],
+    "categoryId": "132",
+    "sku": "OWL-SPO-030",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 1.0,
+      "Opakowanie": "Worek foliowy",
+      "KrajPochodzenia": "Polska",
+      "Bio": true
+    }
+  },
+  {
+    "id": "31",
+    "name": "Napój izotoniczny cytrynowy 0,7 l",
+    "price": 4.99,
+    "originalPrice": 5.99,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/napoj-izotoniczny-1.jpg",
+      "https://example.com/images/napoj-izotoniczny-2.jpg"
+    ],
+    "categoryId": "121",
+    "sku": "NAP-SPO-031",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 0.7,
+      "Opakowanie": "Butelka PET",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "32",
+    "name": "Wędliny drobiowe premium 1 kg",
+    "price": 26.9,
+    "originalPrice": 29.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/wedliny-drobiowe-1.jpg",
+      "https://example.com/images/wedliny-drobiowe-2.jpg"
+    ],
+    "categoryId": "146",
+    "sku": "WED-SPO-032",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 1.0,
+      "Opakowanie": "Pak próżniowy",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "33",
+    "name": "Olej rzepakowy 10 l horeca",
+    "price": 79.0,
+    "originalPrice": 89.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/olej-rzepakowy-1.jpg",
+      "https://example.com/images/olej-rzepakowy-2.jpg"
+    ],
+    "categoryId": "168",
+    "sku": "OLE-SPO-033",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 9.2,
+      "Opakowanie": "Kanister HDPE",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "34",
+    "name": "Kasza bulgur 3 kg",
+    "price": 18.5,
+    "originalPrice": 22.0,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/kasza-bulgur-1.jpg",
+      "https://example.com/images/kasza-bulgur-2.jpg"
+    ],
+    "categoryId": "175",
+    "sku": "KAS-SPO-034",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 3.0,
+      "Opakowanie": "Worek foliowy",
+      "KrajPochodzenia": "Turcja",
+      "Bio": false
+    }
+  },
+  {
+    "id": "35",
+    "name": "Pieczywo bezglutenowe krojone 0,5 kg",
+    "price": 12.9,
+    "originalPrice": 14.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/pieczywo-bezglutenowe-1.jpg",
+      "https://example.com/images/pieczywo-bezglutenowe-2.jpg"
+    ],
+    "categoryId": "180",
+    "sku": "PIE-SPO-035",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 0.5,
+      "Opakowanie": "Folia",
+      "KrajPochodzenia": "Polska",
+      "Bio": true
+    }
+  },
+  {
+    "id": "36",
+    "name": "Sos sałatkowy jogurtowy 2 l",
+    "price": 22.9,
+    "originalPrice": 26.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/sos-salatkowy-1.jpg",
+      "https://example.com/images/sos-salatkowy-2.jpg"
+    ],
+    "categoryId": "166",
+    "sku": "SOS-SPO-036",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 2.0,
+      "Opakowanie": "Butla PET",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "37",
+    "name": "Sałata rzymska świeża 2 kg",
+    "price": 17.9,
+    "originalPrice": 19.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/salata-rzymska-1.jpg",
+      "https://example.com/images/salata-rzymska-2.jpg"
+    ],
+    "categoryId": "156",
+    "sku": "SAL-SPO-037",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 2.0,
+      "Opakowanie": "Kartonik",
+      "KrajPochodzenia": "Polska",
+      "Bio": true
+    }
+  },
+  {
+    "id": "38",
+    "name": "Pasztet drobiowy 0,8 kg",
+    "price": 11.5,
+    "originalPrice": 13.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/pasztet-drobiowy-1.jpg",
+      "https://example.com/images/pasztet-drobiowy-2.jpg"
+    ],
+    "categoryId": "148",
+    "sku": "PAS-SPO-038",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 0.8,
+      "Opakowanie": "Puszka aluminiowa",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "39",
+    "name": "Herbata zielona sencha 500 g",
+    "price": 24.9,
+    "originalPrice": 28.9,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/herbata-sencha-1.jpg",
+      "https://example.com/images/herbata-sencha-2.jpg"
+    ],
+    "categoryId": "124",
+    "sku": "HER-SPO-039",
+    "companyId": "5",
+    "manufacturer": "Świeże Produkty Sp. z o.o.",
+    "attributes": {
+      "Waga": 0.5,
+      "Opakowanie": "Torebka foliowa",
+      "KrajPochodzenia": "Chiny",
+      "Bio": true
+    }
+  },
+  {
+    "id": "40",
+    "name": "Baton proteinowy czekoladowy 50 g",
+    "price": 3.2,
+    "originalPrice": 3.8,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/baton-proteinowy-1.jpg",
+      "https://example.com/images/baton-proteinowy-2.jpg"
+    ],
+    "categoryId": "164",
+    "sku": "BAT-SPO-040",
+    "companyId": "6",
+    "manufacturer": "Delikatesy Premium",
+    "attributes": {
+      "Waga": 0.05,
+      "Opakowanie": "Flowpack",
+      "KrajPochodzenia": "Polska",
+      "Bio": false
+    }
+  },
+  {
+    "id": "41",
+    "name": "Farba elewacyjna silikonowa biała 10 l",
+    "price": 229.00,
+    "originalPrice": 259.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/farba-elewacyjna-1.jpg",
+      "https://example.com/images/farba-elewacyjna-2.jpg"
+    ],
+    "categoryId": "10",
+    "sku": "FAR-OBE-041",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 30,
+      "Szerokość": 25,
+      "Głębokość": 25,
+      "Kolor": "Biały",
+      "Materiał": "Farba silikonowa",
+      "OdpornośćNaWarunki": "UV, -30 /+70 °C",
+      "Waga": 14.0
+    }
+  },
+  {
+    "id": "42",
+    "name": "Gont bitumiczny grafitowy — paczka 3 m²",
+    "price": 79.90,
+    "originalPrice": 92.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/gont-bitumiczny-1.jpg",
+      "https://example.com/images/gont-bitumiczny-2.jpg"
+    ],
+    "categoryId": "15",
+    "sku": "GON-OBE-042",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 0.5,
+      "Szerokość": 30,
+      "Głębokość": 100,
+      "Kolor": "Grafitowy",
+      "Materiał": "Bitum",
+      "OdpornośćNaWarunki": "UV, grad 25 mm",
+      "Waga": 25.0
+    }
+  },
+  {
+    "id": "43",
+    "name": "Rynna PVC 125 mm 3 m grafit",
+    "price": 34.50,
+    "originalPrice": 39.90,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/rynna-pvc-1.jpg",
+      "https://example.com/images/rynna-pvc-2.jpg"
+    ],
+    "categoryId": "17",
+    "sku": "RYN-OBE-043",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 12,
+      "Szerokość": 300,
+      "Głębokość": 12,
+      "Kolor": "Grafitowy",
+      "Materiał": "PVC",
+      "OdpornośćNaWarunki": "-40 /+60 °C",
+      "Waga": 2.1
+    }
+  },
+  {
+    "id": "44",
+    "name": "Deska tarasowa kompozytowa brąz 4 m",
+    "price": 99.00,
+    "originalPrice": 115.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/deska-kompozytowa-1.jpg",
+      "https://example.com/images/deska-kompozytowa-2.jpg"
+    ],
+    "categoryId": "22",
+    "sku": "DES-OBE-044",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 2.5,
+      "Szerokość": 400,
+      "Głębokość": 14,
+      "Kolor": "Brązowy",
+      "Materiał": "WPC",
+      "OdpornośćNaWarunki": "Antypoślizg, UV",
+      "Waga": 11.0
+    }
+  },
+  {
+    "id": "45",
+    "name": "Donica betonowa kwadrat 60×60×60 cm",
+    "price": 219.00,
+    "originalPrice": 249.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/donica-betonowa-1.jpg",
+      "https://example.com/images/donica-betonowa-2.jpg"
+    ],
+    "categoryId": "28",
+    "sku": "DON-OBE-045",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 60,
+      "Szerokość": 60,
+      "Głębokość": 60,
+      "Kolor": "Szary",
+      "Materiał": "Beton architektoniczny",
+      "OdpornośćNaWarunki": "Mrozoodporność F200",
+      "Waga": 85.0
+    }
+  },
+  {
+    "id": "46",
+    "name": "Ławka parkowa stalowo-drewniana 180 cm",
+    "price": 579.00,
+    "originalPrice": 639.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/lawka-parkowa-1.jpg",
+      "https://example.com/images/lawka-parkowa-2.jpg"
+    ],
+    "categoryId": "31",
+    "sku": "LAW-OBE-046",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 78,
+      "Szerokość": 180,
+      "Głębokość": 60,
+      "Kolor": "Naturalny/Dark Grey",
+      "Materiał": "Stal, drewno świerkowe",
+      "OdpornośćNaWarunki": "Impregnacja ciśnieniowa, ocynk",
+      "Waga": 48.0
+    }
+  },
+  {
+    "id": "47",
+    "name": "Kostka brukowa szara 8 cm – paleta 9 m²",
+    "price": 639.00,
+    "originalPrice": 699.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/kostka-brukowa-1.jpg",
+      "https://example.com/images/kostka-brukowa-2.jpg"
+    ],
+    "categoryId": "39",
+    "sku": "KOS-OBE-047",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 8,
+      "Szerokość": 90,
+      "Głębokość": 120,
+      "Kolor": "Szary",
+      "Materiał": "Beton",
+      "OdpornośćNaWarunki": "C35/45, mrozoodporny",
+      "Waga": 1280.0
+    }
+  },
+  {
+    "id": "48",
+    "name": "Oprawa LED elewacyjna IP65 12 W",
+    "price": 89.90,
+    "originalPrice": 104.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/oprawa-elewacyjna-1.jpg",
+      "https://example.com/images/oprawa-elewacyjna-2.jpg"
+    ],
+    "categoryId": "40",
+    "sku": "OPR-OBE-048",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 20,
+      "Szerokość": 8,
+      "Głębokość": 8,
+      "Kolor": "Antracyt",
+      "Materiał": "Aluminium",
+      "OdpornośćNaWarunki": "IP65",
+      "Waga": 1.5
+    }
+  },
+  {
+    "id": "49",
+    "name": "Drzwi automatyczne szklane 2-skrzydłowe",
+    "price": 7290.00,
+    "originalPrice": 7990.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/drzwi-automatyczne-1.jpg",
+      "https://example.com/images/drzwi-automatyczne-2.jpg"
+    ],
+    "categoryId": "44",
+    "sku": "DRZ-OBE-049",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 220,
+      "Szerokość": 200,
+      "Głębokość": 12,
+      "Kolor": "Srebrny",
+      "Materiał": "Aluminium, szkło hartowane",
+      "OdpornośćNaWarunki": "IP54, -20 /+50 °C",
+      "Waga": 220.0
+    }
+  },
+  {
+    "id": "50",
+    "name": "Zadaszenie wejściowe z poliwęglanu 150×90 cm",
+    "price": 349.00,
+    "originalPrice": 389.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/zadaszenie-wejsciowe-1.jpg",
+      "https://example.com/images/zadaszenie-wejsciowe-2.jpg"
+    ],
+    "categoryId": "45",
+    "sku": "ZAD-OBE-050",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 35,
+      "Szerokość": 150,
+      "Głębokość": 90,
+      "Kolor": "Przezroczysty",
+      "Materiał": "Poliwęglan, aluminium",
+      "OdpornośćNaWarunki": "UV, grad 20 mm",
+      "Waga": 13.0
+    }
+  },
+  {
+    "id": "51",
+    "name": "Okładzina elewacyjna HPL grafit 8 mm (panel 120×60 cm)",
+    "price": 79.00,
+    "originalPrice": 89.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/okladzina-hpl-1.jpg",
+      "https://example.com/images/okladzina-hpl-2.jpg"
+    ],
+    "categoryId": "11",
+    "sku": "OKL-OBE-051",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 120,
+      "Szerokość": 60,
+      "Głębokość": 0.8,
+      "Kolor": "Grafitowy",
+      "Materiał": "HPL",
+      "OdpornośćNaWarunki": "UV, -40 /+80 °C",
+      "Waga": 9.6
+    }
+  },
+  {
+    "id": "52",
+    "name": "System dociepleń EPS grafit 10 cm – komplet 10 m²",
+    "price": 249.00,
+    "originalPrice": 279.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/system-docieplen-1.jpg",
+      "https://example.com/images/system-docieplen-2.jpg"
+    ],
+    "categoryId": "12",
+    "sku": "DOC-OBE-052",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 50,
+      "Szerokość": 100,
+      "Głębokość": 10,
+      "Kolor": "Szary",
+      "Materiał": "EPS grafit",
+      "OdpornośćNaWarunki": "λ 0,032 W/mK",
+      "Waga": 6.0
+    }
+  },
+  {
+    "id": "53",
+    "name": "Listwa aluminiowa cokołowa 2,5 m z kapinosem",
+    "price": 18.90,
+    "originalPrice": 22.50,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/listwa-cokolowa-1.jpg",
+      "https://example.com/images/listwa-cokolowa-2.jpg"
+    ],
+    "categoryId": "13",
+    "sku": "LIS-OBE-053",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 3,
+      "Szerokość": 250,
+      "Głębokość": 6,
+      "Kolor": "Alu natural",
+      "Materiał": "Aluminium",
+      "OdpornośćNaWarunki": "Antykorozyjne",
+      "Waga": 0.7
+    }
+  },
+  {
+    "id": "54",
+    "name": "Blachodachówka modułowa czarna – pakiet 4 m²",
+    "price": 199.00,
+    "originalPrice": 229.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/blachodachowka-1.jpg",
+      "https://example.com/images/blachodachowka-2.jpg"
+    ],
+    "categoryId": "15",
+    "sku": "BLA-OBE-054",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 4,
+      "Szerokość": 120,
+      "Głębokość": 80,
+      "Kolor": "Czarny",
+      "Materiał": "Blacha stalowa 0,5 mm",
+      "OdpornośćNaWarunki": "Powłoka poliester 35 µm",
+      "Waga": 34.0
+    }
+  },
+  {
+    "id": "55",
+    "name": "Okno dachowe drewniane 78×118 cm – pakiet U=1,3",
+    "price": 849.00,
+    "originalPrice": 929.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/okno-dachowe-1.jpg",
+      "https://example.com/images/okno-dachowe-2.jpg"
+    ],
+    "categoryId": "18",
+    "sku": "OKN-OBE-055",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 118,
+      "Szerokość": 78,
+      "Głębokość": 9,
+      "Kolor": "Naturalny lakier",
+      "Materiał": "Drewno sosnowe",
+      "OdpornośćNaWarunki": "Uw 1,3 W/m²K",
+      "Waga": 31.0
+    }
+  },
+  {
+    "id": "56",
+    "name": "Świetlik dachowy akrylowy Ø 90 cm (kopuła opal)",
+    "price": 1249.00,
+    "originalPrice": 1399.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/swietlik-dachowy-1.jpg",
+      "https://example.com/images/swietlik-dachowy-2.jpg"
+    ],
+    "categoryId": "19",
+    "sku": "SWT-OBE-056",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 30,
+      "Szerokość": 90,
+      "Głębokość": 90,
+      "Kolor": "Opal",
+      "Materiał": "Akryl PMMA",
+      "OdpornośćNaWarunki": "UV, grad 25 mm",
+      "Waga": 18.0
+    }
+  },
+  {
+    "id": "57",
+    "name": "Balustrada balkonowa nierdzewna 120 cm (moduł)",
+    "price": 289.00,
+    "originalPrice": 329.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/balustrada-1.jpg",
+      "https://example.com/images/balustrada-2.jpg"
+    ],
+    "categoryId": "23",
+    "sku": "BAL-OBE-057",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 100,
+      "Szerokość": 120,
+      "Głębokość": 5,
+      "Kolor": "Inox",
+      "Materiał": "Stal nierdzewna 304",
+      "OdpornośćNaWarunki": "Korozyjność C4",
+      "Waga": 14.0
+    }
+  },
+  {
+    "id": "58",
+    "name": "Brama przesuwna wjazdowa 4 m – ocynk z automatyką",
+    "price": 4290.00,
+    "originalPrice": 4790.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/brama-przesuwna-1.jpg",
+      "https://example.com/images/brama-przesuwna-2.jpg"
+    ],
+    "categoryId": "39",
+    "sku": "BRA-OBE-058",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 150,
+      "Szerokość": 400,
+      "Głębokość": 8,
+      "Kolor": "Antracyt",
+      "Materiał": "Stal ocynkowana",
+      "OdpornośćNaWarunki": "IP44 napęd",
+      "Waga": 180.0
+    }
+  },
+  {
+    "id": "59",
+    "name": "Oprawa parkowa LED 3 m / 30 W IP66",
+    "price": 679.00,
+    "originalPrice": 749.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/oprawa-parkowa-1.jpg",
+      "https://example.com/images/oprawa-parkowa-2.jpg"
+    ],
+    "categoryId": "40",
+    "sku": "OPP-OBE-059",
+    "companyId": "3",
+    "manufacturer": "Budowa Plus",
+    "attributes": {
+      "Wysokość": 300,
+      "Szerokość": 25,
+      "Głębokość": 25,
+      "Kolor": "Czarny",
+      "Materiał": "Aluminium",
+      "OdpornośćNaWarunki": "IP66, IK08",
+      "Waga": 26.0
+    }
+  },
+  {
+    "id": "60",
+    "name": "Stojak rowerowy 5-stanowiskowy stal ocynk",
+    "price": 249.00,
+    "originalPrice": 279.00,
+    "available": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "images": [
+      "https://example.com/images/stojak-rowerowy-1.jpg",
+      "https://example.com/images/stojak-rowerowy-2.jpg"
+    ],
+    "categoryId": "48",
+    "sku": "STO-OBE-060",
+    "companyId": "4",
+    "manufacturer": "Zewnętrzne Rozwiązania",
+    "attributes": {
+      "Wysokość": 35,
+      "Szerokość": 150,
+      "Głębokość": 40,
+      "Kolor": "Stal ocynk",
+      "Materiał": "Stal ocynkowana",
+      "OdpornośćNaWarunki": "Korozja C3",
+      "Waga": 22.0
+    }
   }
 ]

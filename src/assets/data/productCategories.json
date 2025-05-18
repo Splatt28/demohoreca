@@ -10,29 +10,35 @@
           {
             "id": 3,
             "name": "Beto",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "beto"
           },
           {
             "id": 4,
             "name": "Zbrojenia",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zbrojenia"
           },
           {
             "id": 5,
             "name": "Hydroizolacje",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "hydroizolacje"
           },
           {
             "id": 6,
             "name": "Szalunki",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "szalunki"
           },
           {
             "id": 7,
             "name": "Izolacje przeciwwilgociowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "izolacje_przeciwwilgociowe"
           }
-        ]
+        ],
+        "slug": "fundamenty_i_konstrukcja"
       },
       {
         "id": 8,
@@ -41,29 +47,35 @@
           {
             "id": 9,
             "name": "Tynki",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "tynki"
           },
           {
             "id": 10,
             "name": "Farby",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "farby"
           },
           {
             "id": 11,
             "name": "Okładziny",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "okladziny"
           },
           {
             "id": 12,
             "name": "Systemy dociepleń",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "systemy_docieplen"
           },
           {
             "id": 13,
             "name": "Listwy i profile wykończeniowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "listwy_i_profile_wykonczeniowe"
           }
-        ]
+        ],
+        "slug": "elewacja_i_sciany_zewnetrzne"
       },
       {
         "id": 14,
@@ -72,29 +84,35 @@
           {
             "id": 15,
             "name": "Pokrycia dachowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "pokrycia_dachowe"
           },
           {
             "id": 16,
             "name": "Akcesoria dachowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "akcesoria_dachowe"
           },
           {
             "id": 17,
             "name": "Rynny i odwodnienie",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "rynny_i_odwodnienie"
           },
           {
             "id": 18,
             "name": "Okna dachowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "okna_dachowe"
           },
           {
             "id": 19,
             "name": "Świetliki i pasma świetlne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "swietliki_i_pasma_swietlne"
           }
-        ]
+        ],
+        "slug": "dachy_i_pokrycia_dachowe"
       },
       {
         "id": 20,
@@ -103,29 +121,35 @@
           {
             "id": 21,
             "name": "Nawierzchnie tarasowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "nawierzchnie_tarasowe"
           },
           {
             "id": 22,
             "name": "Deski kompozytowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "deski_kompozytowe"
           },
           {
             "id": 23,
             "name": "Balustrady",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "balustrady"
           },
           {
             "id": 24,
             "name": "Zadaszenia",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zadaszenia"
           },
           {
             "id": 25,
             "name": "Meble tarasowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "meble_tarasowe"
           }
-        ]
+        ],
+        "slug": "tarasy_i_balkony"
       },
       {
         "id": 26,
@@ -134,29 +158,35 @@
           {
             "id": 27,
             "name": "Roślinność",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "roslinnosc"
           },
           {
             "id": 28,
             "name": "Elementy zieleni",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "elementy_zieleni"
           },
           {
             "id": 29,
             "name": "Systemy nawadniania",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "systemy_nawadniania"
           },
           {
             "id": 30,
             "name": "Dekoracje",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "dekoracje"
           },
           {
             "id": 31,
             "name": "Mała architektura",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "mala_architektura"
           }
-        ]
+        ],
+        "slug": "ogrod_i_tereny_zielone"
       },
       {
         "id": 32,
@@ -165,29 +195,35 @@
           {
             "id": 33,
             "name": "Baseny",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "baseny"
           },
           {
             "id": 34,
             "name": "Jacuzzi",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "jacuzzi"
           },
           {
             "id": 35,
             "name": "Sauny",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "sauny"
           },
           {
             "id": 36,
             "name": "Leżaki i fotele",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "lezaki_i_fotele"
           },
           {
             "id": 37,
             "name": "Ogrzewacze",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "ogrzewacze"
           }
-        ]
+        ],
+        "slug": "zewnetrzna_strefa_spa_i_relaksu"
       },
       {
         "id": 38,
@@ -196,24 +232,29 @@
           {
             "id": 39,
             "name": "Systemy wjazdu",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "systemy_wjazdu"
           },
           {
             "id": 40,
             "name": "Oświetlenie zewnętrzne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "oswietlenie_zewnetrzne"
           },
           {
             "id": 41,
             "name": "Oznakowanie",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "oznakowanie"
           },
           {
             "id": 42,
             "name": "Wentylacja i zabezpieczenia",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "wentylacja_i_zabezpieczenia"
           }
-        ]
+        ],
+        "slug": "nawierzchnie"
       },
       {
         "id": 43,
@@ -222,41 +263,50 @@
           {
             "id": 44,
             "name": "Drzwi automatyczne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "drzwi_automatyczne"
           },
           {
             "id": 45,
             "name": "Zadaszenia",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zadaszenia"
           },
           {
             "id": 46,
             "name": "Kosze na śmieci",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "kosze_na_smieci"
           },
           {
             "id": 47,
             "name": "Popielniczki",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "popielniczki"
           },
           {
             "id": 48,
             "name": "Stojaki rowerowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "stojaki_rowerowe"
           },
           {
             "id": 49,
             "name": "Tablice informacyjne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "tablice_informacyjne"
           },
           {
             "id": 50,
             "name": "Oświetlenie elewacyjne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "oswietlenie_elewacyjne"
           }
-        ]
+        ],
+        "slug": "wejscie_glowne_i_otoczenie"
       }
-    ]
+    ],
+    "slug": "obiekt_od_zewnatrz"
   },
   {
     "id": 51,
@@ -269,29 +319,35 @@
           {
             "id": 53,
             "name": "Wykładziny dywanowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "wykladziny_dywanowe"
           },
           {
             "id": 54,
             "name": "Parkiety drewniane",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "parkiety_drewniane"
           },
           {
             "id": 55,
             "name": "Panele winylowe/LVT",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "panele_winylowe_lvt"
           },
           {
             "id": 56,
             "name": "Płytki ceramiczne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "plytki_ceramiczne"
           },
           {
             "id": 57,
             "name": "Gres",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "gres"
           }
-        ]
+        ],
+        "slug": "podlogi"
       },
       {
         "id": 58,
@@ -300,34 +356,41 @@
           {
             "id": 59,
             "name": "Malowane powierzchnie",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "malowane_powierzchnie"
           },
           {
             "id": 60,
             "name": "Tapety (klasyczne, nowoczesne, winylowe)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "tapety_klasyczne_nowoczesne_winylowe"
           },
           {
             "id": 61,
             "name": "Panele dekoracyjne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "panele_dekoracyjne"
           },
           {
             "id": 62,
             "name": "Tynki ozdobne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "tynki_ozdobne"
           },
           {
             "id": 63,
             "name": "Sufity podwieszane",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "sufity_podwieszane"
           },
           {
             "id": 64,
             "name": "Sufity napinane",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "sufity_napinane"
           }
-        ]
+        ],
+        "slug": "sciany_i_sufity"
       },
       {
         "id": 65,
@@ -336,34 +399,41 @@
           {
             "id": 66,
             "name": "Żyrandole",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zyrandole"
           },
           {
             "id": 67,
             "name": "Lampy sufitowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "lampy_sufitowe"
           },
           {
             "id": 68,
             "name": "Kinkiety",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "kinkiety"
           },
           {
             "id": 69,
             "name": "Oświetlenie LED (panelowe, paskowe)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "oswietlenie_led_panelowe_paskowe"
           },
           {
             "id": 70,
             "name": "Lampki stołowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "lampki_stolowe"
           },
           {
             "id": 71,
             "name": "Lampy stojące",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "lampy_stojace"
           }
-        ]
+        ],
+        "slug": "oswietlenie"
       },
       {
         "id": 72,
@@ -372,44 +442,53 @@
           {
             "id": 73,
             "name": "Obrazy i plakaty",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "obrazy_i_plakaty"
           },
           {
             "id": 74,
             "name": "Rzeźby",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "rzezby"
           },
           {
             "id": 75,
             "name": "Lustra",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "lustra"
           },
           {
             "id": 76,
             "name": "Rośliny dekoracyjne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "rosliny_dekoracyjne"
           },
           {
             "id": 77,
             "name": "Zasłony, rolety, firany",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zaslony_rolety_firany"
           },
           {
             "id": 78,
             "name": "Dywany",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "dywany"
           },
           {
             "id": 79,
             "name": "Poduszki dekoracyjne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "poduszki_dekoracyjne"
           },
           {
             "id": 80,
             "name": "Elementy dekoracji ściennej (np. panele 3D, mozaiki)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "elementy_dekoracji_sciennej_np_panele_3d_mozaiki"
           }
-        ]
+        ],
+        "slug": "dekoracje_i_akcenty"
       },
       {
         "id": 81,
@@ -418,24 +497,29 @@
           {
             "id": 82,
             "name": "Drzwi wewnętrzne (pełne, przeszklone, przesuwne)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "drzwi_wewnetrzne_pelne_przeszklone_przesuwne"
           },
           {
             "id": 83,
             "name": "Ościeżnice i listwy przypodłogowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "oscieznice_i_listwy_przypodlogowe"
           },
           {
             "id": 84,
             "name": "Ramy okienne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "ramy_okienne"
           },
           {
             "id": 85,
             "name": "Zabudowy meblowe (np. ściany z szafkami, aneksy)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zabudowy_meblowe_np_sciany_z_szafkami_aneksy"
           }
-        ]
+        ],
+        "slug": "stolarka_i_zabudowy"
       },
       {
         "id": 86,
@@ -444,29 +528,35 @@
           {
             "id": 87,
             "name": "Zasłony blackout",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "zaslony_blackout"
           },
           {
             "id": 88,
             "name": "Narzuty i pledy",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "narzuty_i_pledy"
           },
           {
             "id": 89,
             "name": "Dywaniki łazienkowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "dywaniki_lazienkowe"
           },
           {
             "id": 90,
             "name": "Obrusy i bieżniki",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "obrusy_i_biezniki"
           },
           {
             "id": 91,
             "name": "Pokrowce na krzesła",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "pokrowce_na_krzesla"
           }
-        ]
+        ],
+        "slug": "tekstylia_wnetrzarskie"
       },
       {
         "id": 92,
@@ -475,29 +565,35 @@
           {
             "id": 93,
             "name": "Recepcje modułowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "recepcje_modulowe"
           },
           {
             "id": 94,
             "name": "Lady barowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "lady_barowe"
           },
           {
             "id": 95,
             "name": "Stoły konferencyjne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "stoly_konferencyjne"
           },
           {
             "id": 96,
             "name": "Regały i półki na katalogi",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "regaly_i_polki_na_katalogi"
           },
           {
             "id": 97,
             "name": "Wbudowane siedziska",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "wbudowane_siedziska"
           }
-        ]
+        ],
+        "slug": "meble_zabudowane_i_wolnostojace_niepokojowe"
       },
       {
         "id": 98,
@@ -506,29 +602,35 @@
           {
             "id": 99,
             "name": "Termostaty ścienne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "termostaty_scienne"
           },
           {
             "id": 100,
             "name": "Panele kontrolne do światła i klimatyzacji",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "panele_kontrolne_do_swiatla_i_klimatyzacji"
           },
           {
             "id": 101,
             "name": "Gniazdka z USB i porty HDMI",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "gniazdka_z_usb_i_porty_hdmi"
           },
           {
             "id": 102,
             "name": "Stacje ładowania telefonów",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "stacje_ladowania_telefonow"
           },
           {
             "id": 103,
             "name": "Systemy audio/wideo (np. projektory, głośniki sufitowe)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "systemy_audio_wideo_np_projektory_glosniki_sufitowe"
           }
-        ]
+        ],
+        "slug": "wyposazenie_techniczne_i_uzytkowe"
       },
       {
         "id": 104,
@@ -537,24 +639,29 @@
           {
             "id": 105,
             "name": "Dyfuzory zapachowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "dyfuzory_zapachowe"
           },
           {
             "id": 106,
             "name": "Automatyczne odświeżacze powietrza",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "automatyczne_odswiezacze_powietrza"
           },
           {
             "id": 107,
             "name": "Panele akustyczne ścienne i sufitowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "panele_akustyczne_scienne_i_sufitowe"
           },
           {
             "id": 108,
             "name": "Kotary akustyczne",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "kotary_akustyczne"
           }
-        ]
+        ],
+        "slug": "aranzacja_zapachowa_i_akustyczna"
       },
       {
         "id": 109,
@@ -563,26 +670,32 @@
           {
             "id": 110,
             "name": "Kominki dekoracyjne (elektryczne, bio)",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "kominki_dekoracyjne_elektryczne_bio"
           },
           {
             "id": 111,
             "name": "Ogrzewanie podłogowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "ogrzewanie_podlogowe"
           },
           {
             "id": 112,
             "name": "Nawilżacze i oczyszczacze powietrza",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "nawilzacze_i_oczyszczacze_powietrza"
           },
           {
             "id": 113,
             "name": "Wentylatory sufitowe",
-            "subCategories": []
+            "subCategories": [],
+            "slug": "wentylatory_sufitowe"
           }
-        ]
+        ],
+        "slug": "elementy_wellness_i_komfortu"
       }
-    ]
+    ],
+    "slug": "elementy_wykonczenia_wnetrz"
   },
   {
     "id": 114,
@@ -599,29 +712,35 @@
               {
                 "id": 117,
                 "name": "Soki owocowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "soki_owocowe"
               },
               {
                 "id": 118,
                 "name": "Napoje warzywne",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "napoje_warzywne"
               },
               {
                 "id": 119,
                 "name": "Napoje gazowane",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "napoje_gazowane"
               },
               {
                 "id": 120,
                 "name": "Wody mineralne i smakowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "wody_mineralne_i_smakowe"
               },
               {
                 "id": 121,
                 "name": "Napoje izotoniczne i energetyczne",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "napoje_izotoniczne_i_energetyczne"
               }
-            ]
+            ],
+            "slug": "napoje_bezalkoholowe"
           },
           {
             "id": 122,
@@ -630,21 +749,26 @@
               {
                 "id": 123,
                 "name": "Kawa ziarnista, mielona, kapsułki",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "kawa_ziarnista_mielona_kapsulki"
               },
               {
                 "id": 124,
                 "name": "Herbata czarna, zielona, ziołowa, owocowa",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "herbata_czarna_zielona_ziolowa_owocowa"
               },
               {
                 "id": 125,
                 "name": "Herbaty specialty",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "herbaty_specialty"
               }
-            ]
+            ],
+            "slug": "kawa_i_herbata"
           }
-        ]
+        ],
+        "slug": "napoje"
       },
       {
         "id": 126,
@@ -657,19 +781,23 @@
               {
                 "id": 128,
                 "name": "Mieszanki warzywne",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "mieszanki_warzywne"
               },
               {
                 "id": 129,
                 "name": "Pojedyncze warzywa",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "pojedyncze_warzywa"
               },
               {
                 "id": 130,
                 "name": "Gotowe mieszanki do sałatek mrożonych",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "gotowe_mieszanki_do_salatek_mrozonych"
               }
-            ]
+            ],
+            "slug": "warzywa_mrozone"
           },
           {
             "id": 131,
@@ -678,19 +806,23 @@
               {
                 "id": 132,
                 "name": "Jagody, truskawki, maliny",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "jagody_truskawki_maliny"
               },
               {
                 "id": 133,
                 "name": "Mieszanki owocowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "mieszanki_owocowe"
               },
               {
                 "id": 134,
                 "name": "Awokado mrożone",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "awokado_mrozone"
               }
-            ]
+            ],
+            "slug": "owoce_mrozone"
           },
           {
             "id": 135,
@@ -699,21 +831,26 @@
               {
                 "id": 136,
                 "name": "Zupy mrożone",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "zupy_mrozone"
               },
               {
                 "id": 137,
                 "name": "Dania jednogarnkowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "dania_jednogarnkowe"
               },
               {
                 "id": 138,
                 "name": "Potrawy regionalne gotowe do podgrzania",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "potrawy_regionalne_gotowe_do_podgrzania"
               }
-            ]
+            ],
+            "slug": "gotowe_mrozone_dania"
           }
-        ]
+        ],
+        "slug": "produkty_mrozone"
       },
       {
         "id": 139,
@@ -726,24 +863,29 @@
               {
                 "id": 141,
                 "name": "Wołowina",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "wolowina"
               },
               {
                 "id": 142,
                 "name": "Wieprzowina",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "wieprzowina"
               },
               {
                 "id": 143,
                 "name": "Drób",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "drob"
               },
               {
                 "id": 144,
                 "name": "Ryby",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "ryby"
               }
-            ]
+            ],
+            "slug": "swieze_mieso"
           },
           {
             "id": 145,
@@ -752,26 +894,32 @@
               {
                 "id": 146,
                 "name": "Wędliny",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "wedliny"
               },
               {
                 "id": 147,
                 "name": "Kiełbasy",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "kielbasy"
               },
               {
                 "id": 148,
                 "name": "Pasztety i terriny",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "pasztety_i_terriny"
               },
               {
                 "id": 149,
                 "name": "Produkty gotowe do podania",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "produkty_gotowe_do_podania"
               }
-            ]
+            ],
+            "slug": "wyroby_miesne"
           }
-        ]
+        ],
+        "slug": "mieso_i_wyroby_miesne"
       },
       {
         "id": 150,
@@ -784,19 +932,23 @@
               {
                 "id": 152,
                 "name": "Cytrusy",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "cytrusy"
               },
               {
                 "id": 153,
                 "name": "Owoce Pestkowe i Jagodowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "owoce_pestkowe_i_jagodowe"
               },
               {
                 "id": 154,
                 "name": "Owoce Tropikalne i Inne",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "owoce_tropikalne_i_inne"
               }
-            ]
+            ],
+            "slug": "swieze_owoce"
           },
           {
             "id": 155,
@@ -805,21 +957,26 @@
               {
                 "id": 156,
                 "name": "Warzywa Liściaste i Zielenina",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "warzywa_lisciaste_i_zielenina"
               },
               {
                 "id": 157,
                 "name": "Warzywa Korzeniowe i Kapustne",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "warzywa_korzeniowe_i_kapustne"
               },
               {
                 "id": 158,
                 "name": "Warzywa Owocowe i Pozostałe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "warzywa_owocowe_i_pozostale"
               }
-            ]
+            ],
+            "slug": "swieze_warzywa"
           }
-        ]
+        ],
+        "slug": "swieze_warzywa_i_owoce"
       },
       {
         "id": 159,
@@ -832,24 +989,29 @@
               {
                 "id": 161,
                 "name": "Sól, pieprz, papryka",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "sol_pieprz_papryka"
               },
               {
                 "id": 162,
                 "name": "Zioła suszone",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "ziola_suszone"
               },
               {
                 "id": 163,
                 "name": "Mieszanki przypraw",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "mieszanki_przypraw"
               },
               {
                 "id": 164,
                 "name": "Curry, kurkuma, gałka muszkatołowa",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "curry_kurkuma_galka_muszkatolowa"
               }
-            ]
+            ],
+            "slug": "przyprawy_suche_i_ziola"
           },
           {
             "id": 165,
@@ -858,31 +1020,38 @@
               {
                 "id": 166,
                 "name": "Sosy sałatkowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "sosy_salatkowe"
               },
               {
                 "id": 167,
                 "name": "Marynaty",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "marynaty"
               },
               {
                 "id": 168,
                 "name": "Oleje roślinne",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "oleje_roslinne"
               },
               {
                 "id": 169,
                 "name": "Octy",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "octy"
               },
               {
                 "id": 170,
                 "name": "Dipy i pasty",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "dipy_i_pasty"
               }
-            ]
+            ],
+            "slug": "sosy_marynaty_i_dodatki"
           }
-        ]
+        ],
+        "slug": "przyprawy_i_dodatki_spozywcze"
       },
       {
         "id": 171,
@@ -895,24 +1064,29 @@
               {
                 "id": 173,
                 "name": "Makarony",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "makarony"
               },
               {
                 "id": 174,
                 "name": "Ryż",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "ryz"
               },
               {
                 "id": 175,
                 "name": "Kasze",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "kasze"
               },
               {
                 "id": 176,
                 "name": "Płatki śniadaniowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "platki_sniadaniowe"
               }
-            ]
+            ],
+            "slug": "produkty_zbozowe_i_makarony"
           },
           {
             "id": 177,
@@ -921,22 +1095,28 @@
               {
                 "id": 178,
                 "name": "Chleby świeże",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "chleby_swieze"
               },
               {
                 "id": 179,
                 "name": "Bułki, bagietki, focaccia",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "bulki_bagietki_focaccia"
               },
               {
                 "id": 180,
                 "name": "Pieczywo na zakwasie i pieczywo bezglutenowe",
-                "subCategories": []
+                "subCategories": [],
+                "slug": "pieczywo_na_zakwasie_i_pieczywo_bezglutenowe"
               }
-            ]
+            ],
+            "slug": "pieczywo_i_produkty_maczne"
           }
-        ]
+        ],
+        "slug": "produkty_zbozowe"
       }
-    ]
+    ],
+    "slug": "artykuly_spozywcze"
   }
 ]

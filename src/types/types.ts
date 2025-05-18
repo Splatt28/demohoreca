@@ -1,15 +1,17 @@
 export type Product = {
-  id: string
-  name: string
-  price: number
-  originalPrice: number
-  available: boolean
-  description: string
-  images: string[]
-  category: string
-  sku: string
-  companyId: string
-}
+  id: string;
+  name: string;
+  price: number;
+  originalPrice: number;
+  available: boolean;
+  description: string;
+  images: string[] | null;
+  categoryId: string;
+  sku: string;
+  companyId: string;
+  manufacturer: string;
+  attributes: Record<string, string | number | boolean | undefined>;
+};
 
 export type CompanyData = {
   id: string
@@ -31,6 +33,7 @@ export type Category = {
   id: number | string
   name: string
   subCategories: Category[]
+  slug: string
 }
 
 export type NavigationItem = {
