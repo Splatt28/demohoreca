@@ -33,7 +33,7 @@
     "description": "Lorem ipmum",
     "sku": "21521",
     "originalPrice": 20,
-    "companyId": "1"
+    "companyId": "2"
   },
   {
     "category": "obiekt",
@@ -45,6 +45,6 @@
     "description": "Lorem ipmum",
     "sku": "21521",
     "originalPrice": 20,
-    "companyId": "1"
+    "companyId": "3"
   }
 ]

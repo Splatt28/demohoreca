@@ -24,7 +24,7 @@ import { CategoryEnum } from '@/types/enums'
 import type { Product } from '@/types/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { Edit, Plus, TrashIcon } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 export const Route = createFileRoute(
@@ -34,11 +34,19 @@ export const Route = createFileRoute(
 })
 
 export default function TwojeProdukty() {
-  const { products, setProducts, removeProduct } = useStore()
+  const { products, setProducts, removeProduct, userData } = useStore()
 
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
   const [editedProduct, setEditedProduct] = useState<Product | null>(null)
+
+  const [yourProducts, setYourProducts] = useState<Product[]>([])
+
+  useEffect(() => {
+    setYourProducts(
+      products.filter((product) => product.companyId === userData.id),
+    )
+  }, [products])
 
   const handleEditProduct = (product: Product): void => {
     setCurrentProduct(product)
@@ -60,6 +68,7 @@ export default function TwojeProdukty() {
       images: ['/placeholder.svg'],
       category: '',
       sku: '',
+      companyId: userData.id,
     }
     setCurrentProduct(null)
     setEditedProduct(newProduct)
@@ -71,9 +80,12 @@ export default function TwojeProdukty() {
 
     if (currentProduct) {
       // Edit existing product
-      setProducts(
-        products.map((p) => (p.id === currentProduct.id ? editedProduct : p)),
-      )
+      setProducts([
+        ...products,
+        ...yourProducts.map((p) =>
+          p.id === currentProduct.id ? editedProduct : p,
+        ),
+      ])
     } else {
       // Add new product
       setProducts([...products, editedProduct])
@@ -116,7 +128,7 @@ export default function TwojeProdukty() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {products.map((product) => (
+            {yourProducts.map((product) => (
               <TableRow key={product.id}>
                 <TableCell className="font-medium">{product.name}</TableCell>
                 <TableCell>{product.price.toFixed(2)} zł</TableCell>
