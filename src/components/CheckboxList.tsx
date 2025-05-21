@@ -58,7 +58,7 @@ export const CheckboxList = <T,>({
                         }}
                       />
                     </FormControl>
-                    <FormLabel className="text-sm font-normal">
+                    <FormLabel className="text-sm font-normal capitalize">
                       {item.label} <span>{item.labelDescription}</span>
                     </FormLabel>
                   </FormItem>

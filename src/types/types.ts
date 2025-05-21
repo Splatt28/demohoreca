@@ -10,7 +10,7 @@ export type Product = {
   sku: string
   companyId: string
   manufacturer: string
-  attributes: Record<string, string | number | boolean | undefined>
+  attributes: Record<string, string | number | boolean>
 }
 
 export type CompanyData = {

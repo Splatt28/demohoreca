@@ -94,7 +94,6 @@ function RouteComponent() {
     if (!categoryPath?.navigationStack) {
       return null
     }
-    console.log(categoryPath.navigationStack)
     return categoryPath.navigationStack.map((stack) => {
       return (
         <>
