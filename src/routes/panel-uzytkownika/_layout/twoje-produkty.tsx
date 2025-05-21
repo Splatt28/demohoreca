@@ -19,8 +19,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { findCategoryByNormalizedName } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
-import { CategoryEnum } from '@/types/enums'
+import productCategoryList from '@/assets/data/productCategories.json'
 import type { Product } from '@/types/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { Edit, Plus, TrashIcon } from 'lucide-react'
@@ -66,9 +67,11 @@ export default function TwojeProdukty() {
       available: true,
       description: '',
       images: ['/placeholder.svg'],
-      category: '',
+      categoryId: '',
       sku: '',
       companyId: userData.id,
+      manufacturer: '',
+      attributes: {},
     }
     setCurrentProduct(null)
     setEditedProduct(newProduct)
@@ -138,7 +141,12 @@ export default function TwojeProdukty() {
                   </Badge>
                 </TableCell>
                 <TableCell>
-                  {CategoryEnum[product.category as keyof typeof CategoryEnum]}
+                  {
+                    findCategoryByNormalizedName(
+                      productCategoryList,
+                      product.categoryId,
+                    )?.name
+                  }
                 </TableCell>
                 <TableCell className="text-right">
                   <Button
@@ -221,9 +229,9 @@ export default function TwojeProdukty() {
                   <Label htmlFor="category">Kategoria</Label>
                   <Input
                     id="category"
-                    value={editedProduct.category}
+                    value={editedProduct.categoryId}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange('category', e.target.value)
+                      handleInputChange('categoryId', e.target.value)
                     }
                   />
                 </div>
@@ -245,7 +253,7 @@ export default function TwojeProdukty() {
                   <Label htmlFor="image">URL obrazka</Label>
                   <Input
                     id="image"
-                    value={editedProduct.images}
+                    value={editedProduct.images?.[0]}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleInputChange('images', [e.target.value])
                     }

@@ -1,5 +1,5 @@
 import { useStore } from '@/store/useStore'
-import type { Category } from '@/types/types.ts'
+import type { Category, Product } from '@/types/types.ts'
 import productCategoryList from '@/assets/data/productCategories.json'
 
 const findCategoryBySlug = (
@@ -41,7 +41,14 @@ export const useProducts = () => {
     )
   }
 
+  const getFiltersFromProducts = (products: Product[]) => {
+    return Array.from(
+      new Set(products.flatMap((product) => Object.keys(product.attributes))),
+    )
+  }
+
   return {
     getItemsByCategory,
+    getFiltersFromProducts,
   }
 }

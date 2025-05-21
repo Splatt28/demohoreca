@@ -88,14 +88,14 @@ export const findCategoryByNormalizedName = (
   return null
 }
 
-enum FilterType {
+export enum FilterType {
   Input,
   Range,
   Selection,
   MultiSelection,
 }
 
-export const filterMap = {
+export const filterMap: Record<string, { type: FilterType; label: string }> = {
   height: {
     type: FilterType.Range,
     label: 'Wysokość',
@@ -114,11 +114,11 @@ export const filterMap = {
   },
   color: {
     type: FilterType.MultiSelection,
-    lable: 'Kolor',
+    label: 'Kolor',
   },
   material: {
     type: FilterType.MultiSelection,
-    lable: 'Materiał',
+    label: 'Materiał',
   },
   resistance: {
     type: FilterType.MultiSelection,

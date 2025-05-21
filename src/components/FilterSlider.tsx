@@ -7,16 +7,16 @@ import {
 } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
 
-export const PriceSlider = () => {
+export const FilterSlider = ({ label }: { label: string }) => {
   const form = useFormContext()
   return (
     <FormItem>
       <FormLabel className="text-lg text-black/80 font-semibold mb-2">
-        Cena
+        {label}
       </FormLabel>
       <FormField
         control={form.control}
-        name="price"
+        name={label}
         render={({ field }) => {
           return (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0 text-gray-700">
