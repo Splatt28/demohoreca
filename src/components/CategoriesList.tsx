@@ -7,11 +7,7 @@ import { useFormContext } from 'react-hook-form'
 import { useNavigate, useRouterState } from '@tanstack/react-router'
 import productCategoryList from '@/assets/data/productCategories.json'
 import serviceCategoryList from '@/assets/data/serviceCategories.json'
-import {
-  findCategoryByNormalizedName,
-  findCategoryPath,
-  normalizePolishString,
-} from '@/lib/utils'
+import { findCategoryByNormalizedName, findCategoryPath } from '@/lib/utils'
 import type {
   Category,
   CategorySidebarProps,
@@ -72,7 +68,7 @@ export const CategoriesList = ({
   }, [urlCategory])
 
   const handleCategoryClick = (category: Category) => {
-    const normalizedCategory = normalizePolishString(category.name)
+    const normalizedCategory = category.slug
     navigate({
       to:
         type === 'PRODUCT'
@@ -90,12 +86,8 @@ export const CategoriesList = ({
           ...navigationStack,
           {
             categories: currentCategories,
-            title:
-              navigationStack.length === 0
-                ? 'Main Categories'
-                : navigationStack[navigationStack.length - 1]
-                    .selectedCategory || '',
-            selectedCategory: category.name,
+            currentCategory:
+              navigationStack[navigationStack.length - 1].currentCategory,
           },
         ])
         setCurrentCategories(category.subCategories)
@@ -106,12 +98,19 @@ export const CategoriesList = ({
 
   const handleBack = () => {
     if (navigationStack.length > 0) {
-      setSlideDirection('slide-right')
+      if (
+        !navigationStack[navigationStack.length - 1].categories.some(
+          (category) => category.slug === urlCategory,
+        )
+      ) {
+        setSlideDirection('slide-right')
+      }
       setTimeout(() => {
         const newStack = [...navigationStack]
+        newStack.pop() // remove current
         const previous = newStack.pop()
-        if (previous?.title) {
-          const normalizedCategory = normalizePolishString(previous.title)
+        if (previous?.currentCategory) {
+          const normalizedCategory = previous.currentCategory.slug
           navigate({
             to:
               type === 'PRODUCT'

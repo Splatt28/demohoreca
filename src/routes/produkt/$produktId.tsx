@@ -22,10 +22,12 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { useStore } from '@/store/useStore'
 import { useShallow } from 'zustand/react/shallow'
-import type { Product } from '@/types/types'
-import { CategoryEnum } from '@/types/enums'
+import type { Category, Product } from '@/types/types'
 import { SellerModal } from '@/components/SellerModal'
 import { Badge } from '@/components/ui/badge'
+import categoryList from '@/assets/data/productCategories.json'
+import productCategoryList from '@/assets/data/productCategories.json'
+import { findCategoryPath } from '@/lib/utils'
 
 export const Route = createFileRoute('/produkt/$produktId')({
   component: RouteComponent,
@@ -68,10 +70,57 @@ function RouteComponent() {
     )
   }
 
+  function findById(data: Category[], id: number): Category | undefined {
+    for (const cat of data) {
+      if (cat.id === id) {
+        return cat
+      }
+      const found = findById(cat.subCategories, id)
+      if (found) {
+        return found
+      }
+    }
+    return undefined
+  }
+  const getBreadcrumbs = () => {
+    const productCategory = findById(
+      categoryList,
+      parseInt(currentProduct.categoryId),
+    )
+    const categoryPath = findCategoryPath(
+      productCategoryList,
+      productCategory?.slug || '',
+    )
+    if (!categoryPath?.navigationStack) {
+      return null
+    }
+    console.log(categoryPath.navigationStack)
+    return categoryPath.navigationStack.map((stack) => {
+      return (
+        <>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link
+                to={`/kategoria/$categoryId`}
+                params={{
+                  categoryId: stack.currentCategory.slug,
+                }}
+              >
+                {stack.currentCategory.name}
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator>
+            <ChevronRight className="h-4 w-4" />
+          </BreadcrumbSeparator>
+        </>
+      )
+    })
+  }
+
   return (
     <>
       <div className="container mx-auto px-4 py-8">
-        {/* Breadcrumbs */}
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -79,28 +128,10 @@ function RouteComponent() {
                 <Link to="/">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-
             <BreadcrumbSeparator>
               <ChevronRight className="h-4 w-4" />
             </BreadcrumbSeparator>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link
-                  to="/kategoria/$categoryId"
-                  params={{ categoryId: currentProduct.categoryId }}
-                  className="capitalize"
-                >
-                  {
-                    CategoryEnum[
-                      currentProduct.categoryId as keyof typeof CategoryEnum
-                    ]
-                  }
-                </Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator>
-              <ChevronRight className="h-4 w-4" />
-            </BreadcrumbSeparator>
+            {getBreadcrumbs()}
             <BreadcrumbItem>
               <BreadcrumbPage>{currentProduct.name}</BreadcrumbPage>
             </BreadcrumbItem>
@@ -113,28 +144,28 @@ function RouteComponent() {
           <div className="space-y-4">
             <div className="relative aspect-square overflow-hidden rounded-xl border">
               <img
-                  src={currentProduct.images?.[0] || '/images/placeholder.jpg'}
-                  alt={currentProduct.name}
-                  className="object-cover  w-full"
+                src={currentProduct.images?.[0] || '/images/placeholder.jpg'}
+                alt={currentProduct.name}
+                className="object-cover  w-full"
               />
             </div>
             <div className="flex space-x-2 overflow-auto p-2">
               {Array.isArray(currentProduct.images) &&
-                  currentProduct.images.map((image, index) => (
-                      <button
-                          key={index}
-                          className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${
-                              selectedImage === index ? 'ring-2 ring-primary' : ''
-                          }`}
-                          onClick={() => setSelectedImage(index)}
-                      >
-                        <img
-                            src={image}
-                            alt={`${currentProduct.name} view ${index + 1}`}
-                            className="object-cover w-full"
-                        />
-                      </button>
-                  ))}
+                currentProduct.images.map((image, index) => (
+                  <button
+                    key={index}
+                    className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${
+                      selectedImage === index ? 'ring-2 ring-primary' : ''
+                    }`}
+                    onClick={() => setSelectedImage(index)}
+                  >
+                    <img
+                      src={image}
+                      alt={`${currentProduct.name} view ${index + 1}`}
+                      className="object-cover w-full"
+                    />
+                  </button>
+                ))}
             </div>
           </div>
 
@@ -146,9 +177,9 @@ function RouteComponent() {
                 <p className="text-muted-foreground">
                   By
                   <Button
-                      variant="link"
-                      onClick={() => setIsDialogOpen(true)}
-                      className="text-primary"
+                    variant="link"
+                    onClick={() => setIsDialogOpen(true)}
+                    className="text-primary"
                   >
                     {getCompanyName(currentProduct.companyId)}
                   </Button>
@@ -167,12 +198,13 @@ function RouteComponent() {
               )}
               {currentProduct.price !== currentProduct.originalPrice && (
                 <Badge className="rounded-full px-3 bg-green-100 text-green-800 hover:bg-green-100">
+                  -
                   {Math.round(
                     ((currentProduct.originalPrice - currentProduct.price) /
                       currentProduct.originalPrice) *
                       100,
                   )}
-                  % OFF
+                  %
                 </Badge>
               )}
             </div>
@@ -252,7 +284,7 @@ function RouteComponent() {
                     <CardContent className="p-4 flex flex-col h-full">
                       <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
                         <img
-                            src={product.images?.[0] || '/images/placeholder.jpg'}
+                          src={product.images?.[0] || '/images/placeholder.jpg'}
                           alt={product.name}
                           className="object-cover w-full transition-transform hover:scale-105"
                         />

@@ -2,8 +2,6 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import categories from '@/assets/data/serviceCategories.json'
 import Placeholder from '@/assets/placeholder.jpg'
 import { Map } from '@/components/Map'
-import { normalizePolishString } from '@/lib/utils'
-
 export const Route = createFileRoute('/uslugi/')({
   component: RouteComponent,
 })
@@ -44,7 +42,7 @@ export default function RouteComponent() {
                 key={category.id}
                 to={`/uslugi/$categoryId`}
                 params={{
-                  categoryId: normalizePolishString(category.name),
+                  categoryId: category.slug,
                 }}
                 className="group"
               >

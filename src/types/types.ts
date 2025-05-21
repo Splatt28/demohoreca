@@ -1,17 +1,17 @@
 export type Product = {
-  id: string;
-  name: string;
-  price: number;
-  originalPrice: number;
-  available: boolean;
-  description: string;
-  images: string[] | null;
-  categoryId: string;
-  sku: string;
-  companyId: string;
-  manufacturer: string;
-  attributes: Record<string, string | number | boolean | undefined>;
-};
+  id: string
+  name: string
+  price: number
+  originalPrice: number
+  available: boolean
+  description: string
+  images: string[] | null
+  categoryId: string
+  sku: string
+  companyId: string
+  manufacturer: string
+  attributes: Record<string, string | number | boolean | undefined>
+}
 
 export type CompanyData = {
   id: string
@@ -38,8 +38,7 @@ export type Category = {
 
 export type NavigationItem = {
   categories: Category[]
-  title: string
-  selectedCategory?: string
+  currentCategory: Category
 }
 
 export type SlideDirection = '' | 'slide-left' | 'slide-right'

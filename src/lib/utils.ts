@@ -10,19 +10,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const normalizePolishString = (str: string) => {
-  return str
-    .split('(')[0] // Remove everything after "("
-    .trim() // Clean up trailing spaces
-    .normalize('NFD') // Decompose characters
-    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-    .replace(/ł/g, 'l') // Fix for ł
-    .replace(/Ł/g, 'L')
-    .replace(/\//g, '') // Escape forward slashes
-    .replace(/\s+/g, '_') // Replace spaces with underscores
-    .toLowerCase()
-}
-
 export const findCategoryPath = (
   categories: Category[],
   target: string,
@@ -30,19 +17,15 @@ export const findCategoryPath = (
   parentCategories: Category[] = [],
 ): CategoryPathResult | null => {
   for (const category of categories) {
-    const normalizedName = normalizePolishString(category.name)
+    const normalizedName = category.slug
     const hasSubcategories = category.subCategories?.length > 0
-
-    const newPath = hasSubcategories
-      ? [
-          ...path,
-          {
-            categories,
-            title: path[path.length - 1]?.selectedCategory || '',
-            selectedCategory: category.name,
-          },
-        ]
-      : [...path]
+    const newPath: NavigationItem[] = [
+      ...path,
+      {
+        categories,
+        currentCategory: category,
+      },
+    ]
 
     if (normalizedName === target) {
       // currentCategories = siblings (i.e., parent's subcategories)
@@ -74,7 +57,7 @@ export const findCategorySubcategories = (
   target: string,
 ): Category[] | null => {
   for (const category of categories) {
-    const normalizedName = normalizePolishString(category.name)
+    const normalizedName = category.slug
 
     if (normalizedName === target) {
       return category.subCategories || []
@@ -94,7 +77,7 @@ export const findCategoryByNormalizedName = (
   target: string,
 ): Category | null => {
   for (const category of categories) {
-    const normalized = normalizePolishString(category.name)
+    const normalized = category.slug
     if (normalized === target) return category
 
     if (category.subCategories?.length) {
@@ -103,4 +86,50 @@ export const findCategoryByNormalizedName = (
     }
   }
   return null
+}
+
+enum FilterType {
+  Input,
+  Range,
+  Selection,
+  MultiSelection,
+}
+
+export const filterMap = {
+  height: {
+    type: FilterType.Range,
+    label: 'Wysokość',
+  },
+  width: {
+    type: FilterType.Range,
+    label: 'Szerokość',
+  },
+  depth: {
+    type: FilterType.Range,
+    label: 'Głębokość',
+  },
+  weigth: {
+    type: FilterType.Range,
+    label: 'Waga',
+  },
+  color: {
+    type: FilterType.MultiSelection,
+    lable: 'Kolor',
+  },
+  material: {
+    type: FilterType.MultiSelection,
+    lable: 'Materiał',
+  },
+  resistance: {
+    type: FilterType.MultiSelection,
+    label: 'Odporność Na Warunki',
+  },
+  bio: {
+    type: FilterType.Selection,
+    label: 'Bio',
+  },
+  price: {
+    type: FilterType.Selection,
+    label: 'Cena',
+  },
 }

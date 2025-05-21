@@ -1,8 +1,11 @@
 import { useStore } from '@/store/useStore'
-import type {Category} from "@/types/types.ts";
+import type { Category } from '@/types/types.ts'
 import productCategoryList from '@/assets/data/productCategories.json'
 
-const findCategoryBySlug = (slug: string, categories: Category[]): Category | null => {
+const findCategoryBySlug = (
+  slug: string,
+  categories: Category[],
+): Category | null => {
   for (const cat of categories) {
     if (cat.slug === slug) return cat
     if (cat.subCategories?.length) {
@@ -34,11 +37,11 @@ export const useProducts = () => {
     const categoryIds = collectCategoryIds(matchedCategory)
 
     return products.filter((product) =>
-        categoryIds.includes(String(product.categoryId))
+      categoryIds.includes(String(product.categoryId)),
     )
   }
 
   return {
-    getItemsByCategory
+    getItemsByCategory,
   }
 }
