@@ -18,16 +18,18 @@ type ItemType = {
 export const CheckboxList = <T,>({
   listLabel,
   items,
+  fieldName,
 }: {
   listLabel: string
   items: T & ItemType
+  fieldName: string
 }) => {
   const form = useFormContext()
 
   return (
     <FormField
       control={form.control}
-      name="items"
+      name={fieldName}
       render={() => (
         <FormItem>
           <FormLabel className="text-lg text-black/80 font-semibold mb-2">
@@ -37,7 +39,8 @@ export const CheckboxList = <T,>({
             <FormField
               key={item.id}
               control={form.control}
-              name="items"
+              name={fieldName}
+              defaultValue={[]}
               render={({ field }) => {
                 return (
                   <FormItem

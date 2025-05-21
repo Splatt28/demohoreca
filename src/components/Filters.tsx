@@ -4,7 +4,7 @@ import { FilterSlider } from '@/components/FilterSlider'
 import { Input } from '@/components/ui/input'
 import { useProducts } from '@/hooks/use-products'
 import { filterMap, FilterType } from '@/lib/utils'
-import type { ListType, Product } from '@/types/types'
+import type { ListType } from '@/types/types'
 import { useParams } from '@tanstack/react-router'
 
 const items = [
@@ -47,17 +47,6 @@ export const Filters = ({ type }: { type: ListType }) => {
     })
     .filter(Boolean)
 
-  const getOptionItems = (type: string) => {
-    return Array.from(
-      new Set(
-        getItemsByCategory(data.categoryId).map((product) => ({
-          label: product.attributes[type],
-          id: product.attributes[type],
-        })),
-      ),
-    )
-  }
-
   const getUniqueAttributeValues = (attributeName: string) => {
     const rawValues = getItemsByCategory(data.categoryId).flatMap(
       (product): (string | number | boolean)[] => {
@@ -93,13 +82,14 @@ export const Filters = ({ type }: { type: ListType }) => {
         return <Input />
       case FilterType.MultiSelection:
         return (
-          <CheckboxList<string | number | boolean | undefined>
+          <CheckboxList
             listLabel={label}
             items={getUniqueAttributeValues(type) as any}
+            fieldName={type}
           />
         )
       case FilterType.Selection:
-        return <CheckboxList listLabel={label} items={items} />
+        return <CheckboxList listLabel={label} items={items} fieldName={type} />
       case FilterType.Range:
         return <FilterSlider label={label} />
     }

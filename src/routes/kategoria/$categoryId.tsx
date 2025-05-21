@@ -4,9 +4,10 @@ import Placeholder from '@/assets/interior.jpg'
 import { createFileRoute, useParams } from '@tanstack/react-router'
 import { useForm } from 'react-hook-form'
 import { Form } from '@/components/ui/form'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { CategoryBanner } from '@/components/CategoryBaner'
 import { useProducts } from '@/hooks/use-products'
+import type { Product } from '@/types/types'
 
 export const Route = createFileRoute('/kategoria/$categoryId')({
   component: RouteComponent,
@@ -15,6 +16,10 @@ export const Route = createFileRoute('/kategoria/$categoryId')({
 function RouteComponent() {
   const data = useParams({ from: '/kategoria/$categoryId' })
   const { getItemsByCategory } = useProducts()
+
+  const [currentProducts, setCurrentProducts] = useState<Product[]>(
+    getItemsByCategory(data.categoryId),
+  )
 
   const { watch, ...form } = useForm({
     defaultValues: {
@@ -50,10 +55,7 @@ function RouteComponent() {
       <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
         <Form watch={watch} {...form}>
           <Filters type="PRODUCT" />
-          <ProductList
-            products={getItemsByCategory(data.categoryId)}
-            type="PRODUCT"
-          />
+          <ProductList products={currentProducts} type="PRODUCT" />
         </Form>
       </div>
     </section>
