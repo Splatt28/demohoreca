@@ -21,17 +21,63 @@ function RouteComponent() {
     getItemsByCategory(data.categoryId),
   )
 
-  const { watch, ...form } = useForm({
-    defaultValues: {
-      items: [],
-      price: [],
-      category: '',
-    },
-  })
+  const { watch, ...form } = useForm()
+  function isFilterActive(value: any): boolean {
+    if (value === undefined || value === null) return false
+    if (Array.isArray(value)) return value.length > 0
+    if (typeof value === 'string') return value.trim() !== ''
+    return true
+  }
+  function filterProducts(
+    products: Product[],
+    filters: { [x: string]: any },
+  ): Product[] {
+    const hasNonCategoryFilters = Object.entries(filters).some(
+      ([key, value]) => {
+        return key !== 'category' && isFilterActive(value)
+      },
+    )
+    if (!hasNonCategoryFilters) {
+      return products
+    }
+    return products.filter((product) => {
+      for (const [filterKey, filterValue] of Object.entries(filters)) {
+        if (filterValue === undefined || filterKey === 'category') {
+          continue
+        }
+
+        const productValue = product.attributes[filterKey]
+
+        if (Array.isArray(filterValue)) {
+          if (typeof productValue === 'string') {
+            const matches = filterValue.some((val) =>
+              productValue
+                .toLocaleLowerCase()
+                .includes(val.toLocaleLowerCase()),
+            )
+            if (!matches) return false
+          } else {
+            return false
+          }
+        } else {
+          if (
+            typeof productValue === 'string' &&
+            !productValue
+              .toLocaleLowerCase()
+              .includes(String(filterValue).toLocaleLowerCase())
+          ) {
+            return false
+          }
+        }
+      }
+
+      return true
+    })
+  }
 
   useEffect(() => {
     const { unsubscribe } = watch((value) => {
-      console.log(value)
+      setCurrentProducts(filterProducts(currentProducts, value))
     })
     return () => unsubscribe()
   }, [watch])

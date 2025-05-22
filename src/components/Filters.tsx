@@ -91,7 +91,7 @@ export const Filters = ({ type }: { type: ListType }) => {
       case FilterType.Selection:
         return <CheckboxList listLabel={label} items={items} fieldName={type} />
       case FilterType.Range:
-        return <FilterSlider label={label} />
+        return <FilterSlider label={label} fieldName={type} />
     }
   }
   return (

@@ -7,7 +7,13 @@ import {
 } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
 
-export const FilterSlider = ({ label }: { label: string }) => {
+export const FilterSlider = ({
+  label,
+  fieldName,
+}: {
+  label: string
+  fieldName: string
+}) => {
   const form = useFormContext()
   return (
     <FormItem>
@@ -16,7 +22,7 @@ export const FilterSlider = ({ label }: { label: string }) => {
       </FormLabel>
       <FormField
         control={form.control}
-        name={label}
+        name={fieldName}
         render={({ field }) => {
           return (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0 text-gray-700">
