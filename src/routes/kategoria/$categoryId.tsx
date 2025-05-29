@@ -21,6 +21,10 @@ function RouteComponent() {
     getItemsByCategory(data.categoryId),
   )
 
+  useEffect(() => {
+    setCurrentProducts(getItemsByCategory(data.categoryId))
+  }, [data])
+
   const { watch, ...form } = useForm()
   function isFilterActive(value: any): boolean {
     if (value === undefined || value === null) return false
@@ -28,10 +32,11 @@ function RouteComponent() {
     if (typeof value === 'string') return value.trim() !== ''
     return true
   }
-  function filterProducts(
+
+  const filterProducts = (
     products: Product[],
     filters: { [x: string]: any },
-  ): Product[] {
+  ): Product[] => {
     const hasNonCategoryFilters = Object.entries(filters).some(
       ([key, value]) => {
         return key !== 'category' && isFilterActive(value)
@@ -42,12 +47,14 @@ function RouteComponent() {
     }
     return products.filter((product) => {
       for (const [filterKey, filterValue] of Object.entries(filters)) {
-        if (filterValue === undefined || filterKey === 'category') {
+        if (
+          filterValue === undefined ||
+          filterKey === 'category' ||
+          !filterValue.length
+        ) {
           continue
         }
-
         const productValue = product.attributes[filterKey]
-
         if (Array.isArray(filterValue)) {
           if (typeof productValue === 'string') {
             const matches = filterValue.some((val) =>

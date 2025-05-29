@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { FormField, FormLabel } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
-import { useNavigate, useRouterState } from '@tanstack/react-router'
+import { useMatch, useNavigate } from '@tanstack/react-router'
 import productCategoryList from '@/assets/data/productCategories.json'
 import serviceCategoryList from '@/assets/data/serviceCategories.json'
 import { findCategoryByNormalizedName, findCategoryPath } from '@/lib/utils'
@@ -21,7 +21,9 @@ export const CategoriesList = ({
 }: CategorySidebarProps) => {
   const navigate = useNavigate()
   const form = useFormContext()
-  const [categoryList, setCategoryList] = useState(productCategoryList)
+  const [categoryList, setCategoryList] = useState(
+    type === 'PRODUCT' ? productCategoryList : serviceCategoryList,
+  )
   const [navigationStack, setNavigationStack] = useState<NavigationItem[]>([])
   const [currentCategories, setCurrentCategories] =
     useState<Category[]>(categoryList)
@@ -30,8 +32,9 @@ export const CategoriesList = ({
     type === 'PRODUCT',
   )
 
-  const { location } = useRouterState()
-  const urlCategory = location.pathname.split('/kategoria/')[1]
+  const { params: urlCategory } = useMatch({
+    from: type === 'PRODUCT' ? '/kategoria/$categoryId' : '/uslugi/$categoryId',
+  })
 
   useEffect(() => {
     setCategoryList(
@@ -44,16 +47,13 @@ export const CategoriesList = ({
   }, [categoryList])
 
   useEffect(() => {
-    if (!urlCategory) return
+    if (!urlCategory.categoryId) return
 
-    const normalizedTarget = urlCategory.toLowerCase()
+    const normalizedTarget = urlCategory.categoryId.toLowerCase()
     const result = findCategoryPath(categoryList, normalizedTarget)
-
     if (result) {
       const { navigationStack, currentCategories } = result
-      setIsBackDisabled(
-        type === 'PRODUCT' ? navigationStack.length === 1 : false,
-      )
+      setIsBackDisabled(navigationStack.length === 1)
       setNavigationStack(navigationStack)
       setCurrentCategories(currentCategories)
       const targetCategory = findCategoryByNormalizedName(
@@ -80,14 +80,13 @@ export const CategoriesList = ({
     }
 
     if (category.subCategories && category.subCategories.length > 0) {
-      setSlideDirection('slide-left')
       setTimeout(() => {
         setNavigationStack([
           ...navigationStack,
           {
             categories: currentCategories,
             currentCategory:
-              navigationStack[navigationStack.length - 1].currentCategory,
+              navigationStack[navigationStack.length - 1]?.currentCategory,
           },
         ])
         setCurrentCategories(category.subCategories)
@@ -100,7 +99,7 @@ export const CategoriesList = ({
     if (navigationStack.length > 0) {
       if (
         !navigationStack[navigationStack.length - 1].categories.some(
-          (category) => category.slug === urlCategory,
+          (category) => category.slug === urlCategory.categoryId,
         )
       ) {
         setSlideDirection('slide-right')

@@ -34,7 +34,9 @@ const items = [
   },
 ]
 export const Filters = ({ type }: { type: ListType }) => {
-  const data = useParams({ from: '/kategoria/$categoryId' })
+  const data = useParams({
+    from: type === 'PRODUCT' ? '/kategoria/$categoryId' : '/uslugi/$categoryId',
+  })
   const { getItemsByCategory, getFiltersFromProducts } = useProducts()
   const filtersList = getFiltersFromProducts(
     getItemsByCategory(data.categoryId),
