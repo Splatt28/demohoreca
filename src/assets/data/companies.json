@@ -76,5 +76,31 @@
     "description": "Dostawca ekskluzywnych produktów spożywczych, w tym wędlin, serów i napojów premium dla restauracji oraz obiektów hotelowych.",
     "website": "https://delikatesypremium.pl",
     "socialMedia": "https://facebook.com/delikatesypremium"
+  },
+  {
+    "id": "7",
+    "companyLogo": "https://example.com/logos/techsolutions-logo.png",
+    "firstName": "Tomasz",
+    "lastName": "Kowalczyk",
+    "companyName": "TechSolutions",
+    "address": "ul. Nowoczesna 12, 00-001 Warszawa, Polska",
+    "email": "kontakt@techsolutions.pl",
+    "phone": "+48 500 100 200",
+    "description": "Nowoczesne rozwiązania IT dla hoteli i restauracji – od stron internetowych po systemy automatyzacji.",
+    "website": "https://techsolutions.pl",
+    "socialMedia": "https://linkedin.com/company/techsolutions"
+  },
+  {
+    "id": "8",
+    "companyLogo": "https://example.com/logos/zielenplus-logo.png",
+    "firstName": "Anna",
+    "lastName": "Zielińska",
+    "companyName": "Zieleń+",
+    "address": "ul. Leśna 5, 20-123 Lublin, Polska",
+    "email": "biuro@zielenplus.pl",
+    "phone": "+48 510 310 410",
+    "description": "Specjaliści od aranżacji terenów zielonych oraz pielęgnacji przestrzeni zewnętrznych w branży HoReCa.",
+    "website": "https://zielenplus.pl",
+    "socialMedia": "https://facebook.com/zielenplus"
   }
 ]

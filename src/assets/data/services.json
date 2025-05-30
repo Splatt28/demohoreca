@@ -1,0 +1,253 @@
+[
+  {
+    "id": 1,
+    "name": "Projektowanie stron internetowych",
+    "price": 4000,
+    "originalPrice": 5000,
+    "available": true,
+    "description": "Kompleksowe projektowanie nowoczesnych stron dla hoteli i restauracji.",
+    "images": [
+      "https://example.com/images/projektowanie1.jpg"
+    ],
+    "categoryId": 22,
+    "companyId": 7,
+    "attributes": {
+      "wojewodztwa": [
+        "dolnośląskie",
+        "kujawsko-pomorskie",
+        "lubelskie",
+        "lubuskie",
+        "łódzkie",
+        "małopolskie",
+        "mazowieckie",
+        "opolskie",
+        "podkarpackie",
+        "podlaskie",
+        "pomorskie",
+        "śląskie",
+        "świętokrzyskie",
+        "warmińsko-mazurskie",
+        "wielkopolskie",
+        "zachodniopomorskie"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "System rezerwacyjny PMS",
+    "price": 12000,
+    "originalPrice": 15000,
+    "available": true,
+    "description": "Integracja systemu rezerwacyjnego PMS z istniejącą stroną.",
+    "images": [
+      "https://example.com/images/pms.jpg"
+    ],
+    "categoryId": 24,
+    "companyId": 7,
+    "attributes": {
+      "wojewodztwa": [
+        "dolnośląskie",
+        "kujawsko-pomorskie",
+        "lubelskie",
+        "lubuskie",
+        "łódzkie",
+        "małopolskie",
+        "mazowieckie",
+        "opolskie"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Montaż oświetlenia ogrodowego LED",
+    "price": 2500,
+    "originalPrice": 2900,
+    "available": true,
+    "description": "Instalacja energooszczędnego oświetlenia LED w przestrzeniach zewnętrznych.",
+    "images": [
+      "https://example.com/images/oswietlenie-led.jpg"
+    ],
+    "categoryId": 21,
+    "companyId": 8,
+    "attributes": {
+      "wojewodztwa": [
+        "łódzkie",
+        "małopolskie",
+        "mazowieckie",
+        "opolskie",
+        "podkarpackie",
+        "podlaskie",
+        "pomorskie",
+        "śląskie"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Pielęgnacja terenów zielonych",
+    "price": 1800,
+    "originalPrice": 2200,
+    "available": true,
+    "description": "Regularna pielęgnacja zieleni hotelowej: koszenie, nawożenie, przycinanie.",
+    "images": [
+      "https://example.com/images/zielen.jpg"
+    ],
+    "categoryId": 17,
+    "companyId": 8,
+    "attributes": {
+      "wojewodztwa": [
+        "mazowieckie",
+        "lubelskie"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Sprzątanie powierzchni wspólnych",
+    "price": 1000,
+    "originalPrice": 1200,
+    "available": true,
+    "description": "Usługi sprzątające dla hoteli, lobby, korytarzy i stref SPA.",
+    "images": [
+      "https://example.com/images/sprzatanie.jpg"
+    ],
+    "categoryId": 12,
+    "companyId": 8,
+    "attributes": {
+      "wojewodztwa": [
+        "śląskie",
+        "świętokrzyskie",
+        "warmińsko-mazurskie",
+        "wielkopolskie",
+        "zachodniopomorskie"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "name": "Zarządzanie kampaniami reklamowymi",
+    "price": 3000,
+    "originalPrice": 4000,
+    "available": true,
+    "description": "Prowadzenie reklam w Google i social media.",
+    "images": [
+      "https://example.com/images/reklamy.jpg"
+    ],
+    "categoryId": 46,
+    "companyId": 7,
+    "attributes": {
+      "wojewodztwa": [
+        "dolnośląskie",
+        "kujawsko-pomorskie",
+        "lubelskie",
+        "lubuskie",
+        "łódzkie",
+        "małopolskie",
+        "mazowieckie",
+        "opolskie",
+        "podkarpackie",
+        "podlaskie",
+        "pomorskie",
+        "śląskie",
+        "świętokrzyskie",
+        "warmińsko-mazurskie",
+        "wielkopolskie",
+        "zachodniopomorskie"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "name": "System kontroli dostępu",
+    "price": 7500,
+    "originalPrice": 8200,
+    "available": false,
+    "description": "Nowoczesne systemy z kartami RFID i zarządzaniem dostępem online.",
+    "images": [
+      "https://example.com/images/dostep.jpg"
+    ],
+    "categoryId": 42,
+    "companyId": 7,
+    "attributes": {
+      "wojewodztwa": [
+        "mazowieckie",
+        "dolnośląskie"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "name": "Instalacje fotowoltaiczne",
+    "price": 30000,
+    "originalPrice": 35000,
+    "available": true,
+    "description": "Instalacje PV na dachach hoteli i restauracji, doradztwo i montaż.",
+    "images": [
+      "https://example.com/images/pv.jpg"
+    ],
+    "categoryId": 37,
+    "companyId": 7,
+    "attributes": {
+      "wojewodztwa": [
+        "dolnośląskie",
+        "kujawsko-pomorskie",
+        "lubelskie",
+        "lubuskie",
+        "łódzkie"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "name": "Audyty personelu",
+    "price": 1800,
+    "originalPrice": 2000,
+    "available": true,
+    "description": "Weryfikacja jakości obsługi, profesjonalne raporty i rekomendacje.",
+    "images": [
+      "https://example.com/images/audyty.jpg"
+    ],
+    "categoryId": 51,
+    "companyId": 8,
+    "attributes": {
+      "wojewodztwa": [
+        "małopolskie",
+        "śląskie",
+        "podkarpackie"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "name": "Fotografia wnętrz hotelowych",
+    "price": 2200,
+    "originalPrice": 2500,
+    "available": true,
+    "description": "Profesjonalna sesja zdjęciowa pokojów, restauracji i SPA.",
+    "images": [
+      "https://example.com/images/foto.jpg"
+    ],
+    "categoryId": 47,
+    "companyId": 8,
+    "attributes": {
+      "wojewodztwa": [
+        "dolnośląskie",
+        "kujawsko-pomorskie",
+        "lubelskie",
+        "lubuskie",
+        "łódzkie",
+        "małopolskie",
+        "mazowieckie",
+        "opolskie",
+        "podkarpackie",
+        "podlaskie",
+        "pomorskie",
+        "śląskie",
+        "świętokrzyskie",
+        "warmińsko-mazurskie",
+        "wielkopolskie",
+        "zachodniopomorskie"
+      ]
+    }
+  }
+]
