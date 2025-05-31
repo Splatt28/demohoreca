@@ -21,7 +21,7 @@ export default function PanelLayout() {
     if (!isLoggedIn) {
       navigate({ to: '/' })
     }
-  }, [isLoggedIn])
+  }, [isLoggedIn, navigate])
 
   return (
     <SidebarProvider>

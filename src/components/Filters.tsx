@@ -2,46 +2,20 @@ import { CategoriesList } from '@/components/CategoriesList'
 import { CheckboxList } from '@/components/CheckboxList'
 import { FilterSlider } from '@/components/FilterSlider'
 import { Radio } from '@/components/Radio'
-import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { useProducts } from '@/hooks/use-products'
 import { filterMap, FilterType } from '@/lib/utils'
 import type { ListType } from '@/types/types'
 import { useParams } from '@tanstack/react-router'
 
-const items = [
-  {
-    id: 'recents',
-    label: 'Recents',
-  },
-  {
-    id: 'home',
-    label: 'Home',
-  },
-  {
-    id: 'applications',
-    label: 'Applications',
-  },
-  {
-    id: 'desktop',
-    label: 'Desktop',
-  },
-  {
-    id: 'downloads',
-    label: 'Downloads',
-  },
-  {
-    id: 'documents',
-    label: 'Documents',
-  },
-]
 export const Filters = ({ type }: { type: ListType }) => {
   const data = useParams({
     from: type === 'PRODUCT' ? '/kategoria/$categoryId' : '/uslugi/$categoryId',
+    shouldThrow: false,
   })
   const { getItemsByCategory, getFiltersFromProducts } = useProducts()
   const filtersList = getFiltersFromProducts(
-    getItemsByCategory(data.categoryId, type),
+    getItemsByCategory(data?.categoryId, type),
   )
     .map((filter) => {
       return {
@@ -52,7 +26,7 @@ export const Filters = ({ type }: { type: ListType }) => {
     .filter(Boolean)
 
   const getUniqueAttributeValues = (attributeName: string) => {
-    const rawValues = getItemsByCategory(data.categoryId, type).flatMap(
+    const rawValues = getItemsByCategory(data?.categoryId, type).flatMap(
       (product): (string | number | boolean)[] => {
         const value = product.attributes[attributeName]
 
@@ -77,7 +51,7 @@ export const Filters = ({ type }: { type: ListType }) => {
   }
 
   const getRangeValues = (attributeName: string) => {
-    const rawValues = getItemsByCategory(data.categoryId, type).flatMap(
+    const rawValues = getItemsByCategory(data?.categoryId, type).flatMap(
       (product): (string | number | boolean)[] => {
         const value = product.attributes[attributeName]
 
@@ -137,6 +111,7 @@ export const Filters = ({ type }: { type: ListType }) => {
         )
     }
   }
+
   return (
     <div className="flex gap-6 flex-col">
       <CategoriesList type={type} />

@@ -9,7 +9,7 @@ import {
 } from '@tanstack/react-router'
 import { useForm } from 'react-hook-form'
 import { Form } from '@/components/ui/form'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { CategoryBanner } from '@/components/CategoryBaner'
 import { useProducts } from '@/hooks/use-products'
 import type { Item } from '@/types/types'
@@ -30,28 +30,35 @@ function RouteComponent() {
   const [currentProducts, setCurrentProducts] = useState<Item[]>(
     getItemsByCategory(data.categoryId, 'PRODUCT'),
   )
+  const { watch, ...form } = useForm()
+  const { setValue } = form
 
   useEffect(() => {
     setCurrentProducts(getItemsByCategory(data.categoryId, 'PRODUCT'))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data])
 
-  const { watch, ...form } = useForm()
-
-  const getProducts = (filters: { [x: string]: any }) => {
-    const hasNonCategoryFilters = Object.entries(filters).some(
-      ([key, value]) => {
-        return key !== 'category' && isFilterActive(value)
-      },
-    )
-    if (!hasNonCategoryFilters) {
-      return setCurrentProducts(getItemsByCategory(data.categoryId, 'PRODUCT'))
-    }
-    setCurrentProducts(filterProducts(currentProducts, filters))
-  }
+  const getProducts = useCallback(
+    (filters: { [x: string]: any }) => {
+      const hasNonCategoryFilters = Object.entries(filters).some(
+        ([key, value]) => {
+          return key !== 'category' && isFilterActive(value)
+        },
+      )
+      if (!hasNonCategoryFilters) {
+        return setCurrentProducts(
+          getItemsByCategory(data.categoryId, 'PRODUCT'),
+        )
+      }
+      setCurrentProducts(filterProducts(currentProducts, filters))
+    },
+    [currentProducts, data.categoryId, getItemsByCategory],
+  )
 
   useEffect(() => {
-    Object.entries(search).forEach(([key, value]) => form.setValue(key, value))
+    Object.entries(search).forEach(([key, value]) => setValue(key, value))
     getProducts(search)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -72,7 +79,7 @@ function RouteComponent() {
       })
     })
     return () => unsubscribe()
-  }, [watch])
+  }, [watch, getProducts, navigate])
 
   //TODO: Handle category banners based on url data.categoryid
   return (

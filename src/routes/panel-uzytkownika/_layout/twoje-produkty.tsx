@@ -22,7 +22,7 @@ import {
 import { findCategoryByNormalizedName } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import productCategoryList from '@/assets/data/productCategories.json'
-import type { Product } from '@/types/types'
+import type { Item } from '@/types/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { Edit, Plus, TrashIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -38,28 +38,28 @@ export default function TwojeProdukty() {
   const { products, setProducts, removeProduct, userData } = useStore()
 
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
-  const [currentProduct, setCurrentProduct] = useState<Product | null>(null)
-  const [editedProduct, setEditedProduct] = useState<Product | null>(null)
+  const [currentProduct, setCurrentProduct] = useState<Item | null>(null)
+  const [editedProduct, setEditedProduct] = useState<Item | null>(null)
 
-  const [yourProducts, setYourProducts] = useState<Product[]>([])
+  const [yourProducts, setYourProducts] = useState<Item[]>([])
 
   useEffect(() => {
     setYourProducts(
       products.filter((product) => product.companyId === userData.id),
     )
-  }, [products])
+  }, [products, userData.id])
 
-  const handleEditProduct = (product: Product): void => {
+  const handleEditProduct = (product: Item): void => {
     setCurrentProduct(product)
     setEditedProduct({ ...product })
     setIsDialogOpen(true)
   }
-  const handleRemoveProduct = (product: Product): void => {
+  const handleRemoveProduct = (product: Item): void => {
     removeProduct(product.id)
   }
 
   const handleAddProduct = (): void => {
-    const newProduct: Product = {
+    const newProduct: Item = {
       id: uuidv4(),
       name: '',
       price: 0,
@@ -97,9 +97,9 @@ export default function TwojeProdukty() {
     setIsDialogOpen(false)
   }
 
-  const handleInputChange = <K extends keyof Product>(
+  const handleInputChange = <K extends keyof Item>(
     field: K,
-    value: Product[K],
+    value: Item[K],
   ): void => {
     if (!editedProduct) return
 

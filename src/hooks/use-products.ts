@@ -30,7 +30,10 @@ const collectCategoryIds = (category: Category): string[] => {
 export const useProducts = () => {
   const { products, services } = useStore()
 
-  const getItemsByCategory = (slug: string, type: ListType) => {
+  const getItemsByCategory = (slug: string | undefined, type: ListType) => {
+    if (!slug) {
+      return type === 'PRODUCT' ? products : services
+    }
     const matchedCategory = findCategoryBySlug(
       slug,
       type === 'PRODUCT' ? productCategoryList : serviceCategoryList,

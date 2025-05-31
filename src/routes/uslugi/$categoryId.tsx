@@ -1,51 +1,41 @@
-import { Filters } from '@/components/Filters'
 import { ProductList } from '@/components/ProductList'
-import { Form } from '@/components/ui/form'
 import { useProducts } from '@/hooks/use-products'
 import { filterProducts, isFilterActive } from '@/lib/utils'
 import type { Item } from '@/types/types'
-import {
-  createFileRoute,
-  useNavigate,
-  useParams,
-  useSearch,
-} from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { createFileRoute, useNavigate, useParams } from '@tanstack/react-router'
+import { useCallback, useEffect, useState } from 'react'
+import { useFormContext } from 'react-hook-form'
 
 export const Route = createFileRoute('/uslugi/$categoryId')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  const data = useParams({ from: Route.fullPath })
   const navigate = useNavigate({ from: Route.fullPath })
-  const search = useSearch({
-    from: Route.fullPath,
-  })
+  const data = useParams({ from: Route.fullPath })
   const { getItemsByCategory } = useProducts()
-  const { watch, ...form } = useForm()
+  const { watch } = useFormContext()
 
   const [currentProducts, setCurrentProducts] = useState<Item[]>(
     getItemsByCategory(data.categoryId, 'SERVICE'),
   )
 
-  const getProducts = (filters: { [x: string]: any }) => {
-    const hasNonCategoryFilters = Object.entries(filters).some(
-      ([key, value]) => {
-        return key !== 'category' && isFilterActive(value)
-      },
-    )
-    if (!hasNonCategoryFilters) {
-      return setCurrentProducts(getItemsByCategory(data.categoryId, 'SERVICE'))
-    }
-    setCurrentProducts(filterProducts(currentProducts, filters))
-  }
-
-  useEffect(() => {
-    Object.entries(search).forEach(([key, value]) => form.setValue(key, value))
-    getProducts(search)
-  }, [])
+  const getProducts = useCallback(
+    (filters: { [x: string]: any }) => {
+      const hasNonCategoryFilters = Object.entries(filters).some(
+        ([key, value]) => {
+          return key !== 'category' && isFilterActive(value)
+        },
+      )
+      if (!hasNonCategoryFilters) {
+        return setCurrentProducts(
+          getItemsByCategory(data.categoryId, 'SERVICE'),
+        )
+      }
+      setCurrentProducts(filterProducts(currentProducts, filters))
+    },
+    [currentProducts, data.categoryId, getItemsByCategory],
+  )
 
   useEffect(() => {
     const { unsubscribe } = watch((filters) => {
@@ -59,6 +49,7 @@ function RouteComponent() {
             value.length,
         ),
       )
+
       navigate({
         search: filteredSearch as any,
         replace: true,
@@ -66,16 +57,7 @@ function RouteComponent() {
       })
     })
     return () => unsubscribe()
-  }, [watch])
+  }, [watch, navigate, getProducts])
 
-  return (
-    <section className="container">
-      <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
-        <Form watch={watch} {...form}>
-          <Filters type="SERVICE" />
-          <ProductList products={currentProducts} type="SERVICE" />
-        </Form>
-      </div>
-    </section>
-  )
+  return <ProductList products={currentProducts} type="SERVICE" />
 }

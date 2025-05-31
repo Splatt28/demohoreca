@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { createFileRoute } from '@tanstack/react-router'
-import { CategoryEnum } from '@/types/enums'
 import { SellerModal } from '@/components/SellerModal'
 
 export const Route = createFileRoute(
@@ -18,25 +17,6 @@ export const Route = createFileRoute(
 )({
   component: TwojaStronaSprzedawcy,
 })
-
-interface SellerContact {
-  phone: string
-  email: string
-}
-
-interface SellerData {
-  name: string
-  logo: string
-  rating: number
-  reviewCount: number
-  description: string
-  location: string
-  website: string
-  social: string
-  contact: SellerContact
-  categories: string[]
-  joinDate: string
-}
 
 export default function TwojaStronaSprzedawcy(): JSX.Element {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)

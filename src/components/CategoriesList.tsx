@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { FormField, FormLabel } from '@/components/ui/form'
 import { useFormContext } from 'react-hook-form'
-import { useMatch, useNavigate } from '@tanstack/react-router'
+import { useNavigate, useParams } from '@tanstack/react-router'
 import productCategoryList from '@/assets/data/productCategories.json'
 import serviceCategoryList from '@/assets/data/serviceCategories.json'
 import { findCategoryByNormalizedName, findCategoryPath } from '@/lib/utils'
@@ -21,6 +21,7 @@ export const CategoriesList = ({
 }: CategorySidebarProps) => {
   const navigate = useNavigate()
   const form = useFormContext()
+  const { setValue } = form
   const [categoryList, setCategoryList] = useState(
     type === 'PRODUCT' ? productCategoryList : serviceCategoryList,
   )
@@ -32,8 +33,9 @@ export const CategoriesList = ({
     type === 'PRODUCT',
   )
 
-  const { params: urlCategory } = useMatch({
+  const data = useParams({
     from: type === 'PRODUCT' ? '/kategoria/$categoryId' : '/uslugi/$categoryId',
+    shouldThrow: false,
   })
 
   useEffect(() => {
@@ -47,13 +49,18 @@ export const CategoriesList = ({
   }, [categoryList])
 
   useEffect(() => {
-    if (!urlCategory.categoryId) return
+    if (!data?.categoryId) {
+      setCurrentCategories(categoryList)
+      return
+    }
 
-    const normalizedTarget = urlCategory.categoryId.toLowerCase()
+    const normalizedTarget = data.categoryId.toLowerCase()
     const result = findCategoryPath(categoryList, normalizedTarget)
     if (result) {
       const { navigationStack, currentCategories } = result
-      setIsBackDisabled(navigationStack.length === 1)
+      setIsBackDisabled(
+        type === 'SERVICE' ? !data.categoryId : navigationStack.length === 1,
+      )
       setNavigationStack(navigationStack)
       setCurrentCategories(currentCategories)
       const targetCategory = findCategoryByNormalizedName(
@@ -61,11 +68,11 @@ export const CategoriesList = ({
         normalizedTarget,
       )
       if (targetCategory) {
-        form.setValue('category', targetCategory.name)
+        setValue('category', targetCategory.name)
         if (onCategorySelect) onCategorySelect(targetCategory)
       }
     }
-  }, [urlCategory])
+  }, [data, categoryList, setValue, onCategorySelect, type])
 
   const handleCategoryClick = (category: Category) => {
     const normalizedCategory = category.slug
@@ -96,10 +103,13 @@ export const CategoriesList = ({
   }
 
   const handleBack = () => {
+    if (!data?.categoryId) {
+      return
+    }
     if (navigationStack.length > 0) {
       if (
         !navigationStack[navigationStack.length - 1].categories.some(
-          (category) => category.slug === urlCategory.categoryId,
+          (category) => category.slug === data.categoryId,
         )
       ) {
         setSlideDirection('slide-right')
@@ -115,6 +125,11 @@ export const CategoriesList = ({
               type === 'PRODUCT'
                 ? `/kategoria/${normalizedCategory}`
                 : `/uslugi/${normalizedCategory}`,
+          })
+        } else if (type === 'SERVICE') {
+          setNavigationStack([])
+          navigate({
+            to: '/uslugi',
           })
         }
         setSlideDirection('')

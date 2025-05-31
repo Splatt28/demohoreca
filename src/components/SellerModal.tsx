@@ -28,7 +28,7 @@ export const SellerModal = ({
   useEffect(() => {
     const tempCompany = companies.find((company) => company.id === companyId)
     setCurrentyCompany(tempCompany)
-  }, [companyId])
+  }, [companyId, companies])
 
   if (!currentCompany) {
     return <></>
@@ -62,13 +62,6 @@ export const SellerModal = ({
                 <MapPin className="h-3 w-3" />
                 <span>{currentCompany.address}</span>
               </div>
-              {/* <div className="flex flex-wrap gap-2 mt-2">
-                {currentCompany.categories.map((category) => (
-                  <Badge key={category} variant="default">
-                    {category}
-                  </Badge>
-                ))}
-              </div> */}
             </div>
           </div>
 
