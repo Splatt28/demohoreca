@@ -143,7 +143,7 @@ export const filterMap: Record<string, { type: FilterType; label: string }> = {
   },
 }
 
-const isFilterActive = (value: any): boolean => {
+export const isFilterActive = (value: any): boolean => {
   if (value === undefined || value === null) return false
   if (Array.isArray(value)) return value.length > 0
   if (typeof value === 'string') return value.trim() !== ''
@@ -154,12 +154,6 @@ export const filterProducts = (
   products: Item[],
   filters: { [x: string]: any },
 ): Item[] => {
-  const hasNonCategoryFilters = Object.entries(filters).some(([key, value]) => {
-    return key !== 'category' && isFilterActive(value)
-  })
-  if (!hasNonCategoryFilters) {
-    return products
-  }
   return products.filter((product) => {
     for (const [filterKey, filterValue] of Object.entries(filters)) {
       if (

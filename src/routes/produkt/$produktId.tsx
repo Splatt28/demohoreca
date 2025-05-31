@@ -22,7 +22,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { useStore } from '@/store/useStore'
 import { useShallow } from 'zustand/react/shallow'
-import type { Category, Product } from '@/types/types'
+import type { Category, Item } from '@/types/types'
 import { SellerModal } from '@/components/SellerModal'
 import { Badge } from '@/components/ui/badge'
 import categoryList from '@/assets/data/productCategories.json'
@@ -42,10 +42,10 @@ function RouteComponent() {
     })),
   )
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
-  const [currentProduct, setCurrentProduct] = useState<Product | undefined>(
+  const [currentProduct, setCurrentProduct] = useState<Item | undefined>(
     undefined,
   )
-  const [similarProducts, setSimilarProducts] = useState<Product[]>([])
+  const [similarProducts, setSimilarProducts] = useState<Item[]>([])
 
   useEffect(() => {
     setSimilarProducts(

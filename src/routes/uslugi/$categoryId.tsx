@@ -2,9 +2,14 @@ import { Filters } from '@/components/Filters'
 import { ProductList } from '@/components/ProductList'
 import { Form } from '@/components/ui/form'
 import { useProducts } from '@/hooks/use-products'
-import { filterProducts } from '@/lib/utils'
+import { filterProducts, isFilterActive } from '@/lib/utils'
 import type { Item } from '@/types/types'
-import { createFileRoute, useParams } from '@tanstack/react-router'
+import {
+  createFileRoute,
+  useNavigate,
+  useParams,
+  useSearch,
+} from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -13,22 +18,52 @@ export const Route = createFileRoute('/uslugi/$categoryId')({
 })
 
 function RouteComponent() {
-  const data = useParams({ from: '/uslugi/$categoryId' })
+  const data = useParams({ from: Route.fullPath })
+  const navigate = useNavigate({ from: Route.fullPath })
+  const search = useSearch({
+    from: Route.fullPath,
+  })
   const { getItemsByCategory } = useProducts()
+  const { watch, ...form } = useForm()
 
   const [currentProducts, setCurrentProducts] = useState<Item[]>(
     getItemsByCategory(data.categoryId, 'SERVICE'),
   )
 
-  useEffect(() => {
-    setCurrentProducts(getItemsByCategory(data.categoryId, 'SERVICE'))
-  }, [data])
+  const getProducts = (filters: { [x: string]: any }) => {
+    const hasNonCategoryFilters = Object.entries(filters).some(
+      ([key, value]) => {
+        return key !== 'category' && isFilterActive(value)
+      },
+    )
+    if (!hasNonCategoryFilters) {
+      return setCurrentProducts(getItemsByCategory(data.categoryId, 'SERVICE'))
+    }
+    setCurrentProducts(filterProducts(currentProducts, filters))
+  }
 
-  const { watch, ...form } = useForm()
+  useEffect(() => {
+    Object.entries(search).forEach(([key, value]) => form.setValue(key, value))
+    getProducts(search)
+  }, [])
 
   useEffect(() => {
-    const { unsubscribe } = watch((value) => {
-      setCurrentProducts(filterProducts(currentProducts, value))
+    const { unsubscribe } = watch((filters) => {
+      getProducts(filters)
+      const filteredSearch = Object.fromEntries(
+        Object.entries(filters).filter(
+          ([key, value]) =>
+            key !== 'category' &&
+            !!value &&
+            Array.isArray(value) &&
+            value.length,
+        ),
+      )
+      navigate({
+        search: filteredSearch as any,
+        replace: true,
+        resetScroll: false,
+      })
     })
     return () => unsubscribe()
   }, [watch])
