@@ -13,7 +13,12 @@ import { useCallback, useEffect, useState } from 'react'
 import { CategoryBanner } from '@/components/CategoryBaner'
 import { useProducts } from '@/hooks/use-products'
 import type { Item } from '@/types/types'
-import { filterProducts, isFilterActive } from '@/lib/utils'
+import {
+  filterProducts,
+  findCategoryByNormalizedName,
+  isFilterActive,
+} from '@/lib/utils'
+import productCategoryList from '@/assets/data/productCategories.json'
 
 export const Route = createFileRoute('/kategoria/$categoryId')({
   component: RouteComponent,
@@ -84,23 +89,24 @@ function RouteComponent() {
   //TODO: Handle category banners based on url data.categoryid
   return (
     <section className="container">
-      <CategoryBanner imageSrc={Placeholder}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed
-          convallis magna. In hac habitasse platea dictumst. Suspendisse
-          dapibus, lorem eget sodales rhoncus, augue ante imperdiet ipsum, quis
-          rutrum elit velit viverra nibh. Pellentesque et sem eget nulla
-          elementum aliquam nec posuere sapien. Nullam et fringilla libero.
-          Curabitur eget nisi blandit, porttitor magna ut, tempor nunc. Etiam
-          gravida erat volutpat felis pellentesque, aliquam gravida sapien
-          egestas. Fusce at purus sit amet nisl lacinia imperdiet ac nec erat.
-          Nunc suscipit tempor molestie.
-        </p>
-      </CategoryBanner>
       <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
         <Form watch={watch} {...form}>
           <Filters type="PRODUCT" />
-          <ProductList products={currentProducts} type="PRODUCT" />
+          <div>
+            <CategoryBanner imageSrc={Placeholder}>
+              <>
+                <h1 className="font-bold text-3xl mb-1">
+                  {data?.categoryId
+                    ? findCategoryByNormalizedName(
+                        productCategoryList,
+                        data.categoryId,
+                      )?.name
+                    : ''}
+                </h1>
+              </>
+            </CategoryBanner>
+            <ProductList products={currentProducts} type="PRODUCT" />
+          </div>
         </Form>
       </div>
     </section>

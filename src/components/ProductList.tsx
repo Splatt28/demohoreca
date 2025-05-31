@@ -34,14 +34,6 @@ export const ProductList = ({
   return (
     <section className="">
       <div className="mb-8">
-        <h1 className="text-primary font-bold text-3xl mb-1">
-          {data?.categoryId
-            ? findCategoryByNormalizedName(
-                type === 'PRODUCT' ? productCategoryList : serviceCategoryList,
-                data.categoryId,
-              )?.name
-            : ''}
-        </h1>
         <p className="text-black/30">{getProductNumber(products.length)}</p>
       </div>
       <div className="grid grid-cols-3 gap-6">
