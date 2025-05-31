@@ -45,6 +45,10 @@ export const useProducts = () => {
     )
   }
 
+  const getAllItems = (type: ListType) => {
+    return type === 'PRODUCT' ? products : services
+  }
+
   const getFiltersFromProducts = (products: Item[]) => {
     return Array.from(
       new Set(products.flatMap((product) => Object.keys(product.attributes))),
@@ -54,5 +58,6 @@ export const useProducts = () => {
   return {
     getItemsByCategory,
     getFiltersFromProducts,
+    getAllItems
   }
 }

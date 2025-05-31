@@ -53,7 +53,7 @@ export const Nav = () => {
           >
             Artykuły Spożywcze
           </Link>
-          <Link to="/uslugi" className="hover:text-accent transition-colors">
+          <Link to="/mapa-uslug" className="hover:text-accent transition-colors">
             Usługi
           </Link>
         </nav>

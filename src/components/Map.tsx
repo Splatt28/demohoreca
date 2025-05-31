@@ -89,6 +89,10 @@ export const Map = () => {
                     pointerEvents: 'none',
                   },
                 }}
+                onMouseDown={() => {
+                    const { name } = geo.properties
+                    console.log(name)
+                }}
               />
             ))
           }

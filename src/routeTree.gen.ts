@@ -13,8 +13,9 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as UslugiImport } from './routes/uslugi'
 import { Route as IndexImport } from './routes/index'
-import { Route as UslugiIndexImport } from './routes/uslugi/index'
+import { Route as MapaUslugIndexImport } from './routes/mapa-uslug/index'
 import { Route as UslugiCategoryIdImport } from './routes/uslugi/$categoryId'
 import { Route as ProduktProduktIdImport } from './routes/produkt/$produktId'
 import { Route as PanelUzytkownikaLayoutImport } from './routes/panel-uzytkownika/_layout'
@@ -36,22 +37,28 @@ const PanelUzytkownikaRoute = PanelUzytkownikaImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const UslugiRoute = UslugiImport.update({
+  id: '/uslugi',
+  path: '/uslugi',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const UslugiIndexRoute = UslugiIndexImport.update({
-  id: '/uslugi/',
-  path: '/uslugi/',
+const MapaUslugIndexRoute = MapaUslugIndexImport.update({
+  id: '/mapa-uslug/',
+  path: '/mapa-uslug/',
   getParentRoute: () => rootRoute,
 } as any)
 
 const UslugiCategoryIdRoute = UslugiCategoryIdImport.update({
-  id: '/uslugi/$categoryId',
-  path: '/uslugi/$categoryId',
-  getParentRoute: () => rootRoute,
+  id: '/$categoryId',
+  path: '/$categoryId',
+  getParentRoute: () => UslugiRoute,
 } as any)
 
 const ProduktProduktIdRoute = ProduktProduktIdImport.update({
@@ -110,6 +117,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/uslugi': {
+      id: '/uslugi'
+      path: '/uslugi'
+      fullPath: '/uslugi'
+      preLoaderRoute: typeof UslugiImport
+      parentRoute: typeof rootRoute
+    }
     '/kategoria/$categoryId': {
       id: '/kategoria/$categoryId'
       path: '/kategoria/$categoryId'
@@ -140,16 +154,16 @@ declare module '@tanstack/react-router' {
     }
     '/uslugi/$categoryId': {
       id: '/uslugi/$categoryId'
-      path: '/uslugi/$categoryId'
+      path: '/$categoryId'
       fullPath: '/uslugi/$categoryId'
       preLoaderRoute: typeof UslugiCategoryIdImport
-      parentRoute: typeof rootRoute
+      parentRoute: typeof UslugiImport
     }
-    '/uslugi/': {
-      id: '/uslugi/'
-      path: '/uslugi'
-      fullPath: '/uslugi'
-      preLoaderRoute: typeof UslugiIndexImport
+    '/mapa-uslug/': {
+      id: '/mapa-uslug/'
+      path: '/mapa-uslug'
+      fullPath: '/mapa-uslug'
+      preLoaderRoute: typeof MapaUslugIndexImport
       parentRoute: typeof rootRoute
     }
     '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy': {
@@ -184,6 +198,17 @@ declare module '@tanstack/react-router' {
 }
 
 // Create and export the route tree
+
+interface UslugiRouteChildren {
+  UslugiCategoryIdRoute: typeof UslugiCategoryIdRoute
+}
+
+const UslugiRouteChildren: UslugiRouteChildren = {
+  UslugiCategoryIdRoute: UslugiCategoryIdRoute,
+}
+
+const UslugiRouteWithChildren =
+  UslugiRoute._addFileChildren(UslugiRouteChildren)
 
 interface PanelUzytkownikaLayoutRouteChildren {
   PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute: typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
@@ -221,11 +246,12 @@ const PanelUzytkownikaRouteWithChildren =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/uslugi': typeof UslugiRouteWithChildren
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
   '/panel-uzytkownika': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
   '/uslugi/$categoryId': typeof UslugiCategoryIdRoute
-  '/uslugi': typeof UslugiIndexRoute
+  '/mapa-uslug': typeof MapaUslugIndexRoute
   '/panel-uzytkownika/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   '/panel-uzytkownika/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
@@ -234,11 +260,12 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/uslugi': typeof UslugiRouteWithChildren
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
   '/panel-uzytkownika': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
   '/uslugi/$categoryId': typeof UslugiCategoryIdRoute
-  '/uslugi': typeof UslugiIndexRoute
+  '/mapa-uslug': typeof MapaUslugIndexRoute
   '/panel-uzytkownika/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   '/panel-uzytkownika/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
@@ -248,12 +275,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/uslugi': typeof UslugiRouteWithChildren
   '/kategoria/$categoryId': typeof KategoriaCategoryIdRoute
   '/panel-uzytkownika': typeof PanelUzytkownikaRouteWithChildren
   '/panel-uzytkownika/_layout': typeof PanelUzytkownikaLayoutRouteWithChildren
   '/produkt/$produktId': typeof ProduktProduktIdRoute
   '/uslugi/$categoryId': typeof UslugiCategoryIdRoute
-  '/uslugi/': typeof UslugiIndexRoute
+  '/mapa-uslug/': typeof MapaUslugIndexRoute
   '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   '/panel-uzytkownika/_layout/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/_layout/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
@@ -264,11 +292,12 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/uslugi'
     | '/kategoria/$categoryId'
     | '/panel-uzytkownika'
     | '/produkt/$produktId'
     | '/uslugi/$categoryId'
-    | '/uslugi'
+    | '/mapa-uslug'
     | '/panel-uzytkownika/twoja-strona-sprzedawcy'
     | '/panel-uzytkownika/twoja-umowa'
     | '/panel-uzytkownika/twoje-dane'
@@ -276,11 +305,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/uslugi'
     | '/kategoria/$categoryId'
     | '/panel-uzytkownika'
     | '/produkt/$produktId'
     | '/uslugi/$categoryId'
-    | '/uslugi'
+    | '/mapa-uslug'
     | '/panel-uzytkownika/twoja-strona-sprzedawcy'
     | '/panel-uzytkownika/twoja-umowa'
     | '/panel-uzytkownika/twoje-dane'
@@ -288,12 +318,13 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/uslugi'
     | '/kategoria/$categoryId'
     | '/panel-uzytkownika'
     | '/panel-uzytkownika/_layout'
     | '/produkt/$produktId'
     | '/uslugi/$categoryId'
-    | '/uslugi/'
+    | '/mapa-uslug/'
     | '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
     | '/panel-uzytkownika/_layout/twoja-umowa'
     | '/panel-uzytkownika/_layout/twoje-dane'
@@ -303,20 +334,20 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  UslugiRoute: typeof UslugiRouteWithChildren
   KategoriaCategoryIdRoute: typeof KategoriaCategoryIdRoute
   PanelUzytkownikaRoute: typeof PanelUzytkownikaRouteWithChildren
   ProduktProduktIdRoute: typeof ProduktProduktIdRoute
-  UslugiCategoryIdRoute: typeof UslugiCategoryIdRoute
-  UslugiIndexRoute: typeof UslugiIndexRoute
+  MapaUslugIndexRoute: typeof MapaUslugIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  UslugiRoute: UslugiRouteWithChildren,
   KategoriaCategoryIdRoute: KategoriaCategoryIdRoute,
   PanelUzytkownikaRoute: PanelUzytkownikaRouteWithChildren,
   ProduktProduktIdRoute: ProduktProduktIdRoute,
-  UslugiCategoryIdRoute: UslugiCategoryIdRoute,
-  UslugiIndexRoute: UslugiIndexRoute,
+  MapaUslugIndexRoute: MapaUslugIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -330,15 +361,21 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/uslugi",
         "/kategoria/$categoryId",
         "/panel-uzytkownika",
         "/produkt/$produktId",
-        "/uslugi/$categoryId",
-        "/uslugi/"
+        "/mapa-uslug/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/uslugi": {
+      "filePath": "uslugi.tsx",
+      "children": [
+        "/uslugi/$categoryId"
+      ]
     },
     "/kategoria/$categoryId": {
       "filePath": "kategoria/$categoryId.tsx"
@@ -363,10 +400,11 @@ export const routeTree = rootRoute
       "filePath": "produkt/$produktId.tsx"
     },
     "/uslugi/$categoryId": {
-      "filePath": "uslugi/$categoryId.tsx"
+      "filePath": "uslugi/$categoryId.tsx",
+      "parent": "/uslugi"
     },
-    "/uslugi/": {
-      "filePath": "uslugi/index.tsx"
+    "/mapa-uslug/": {
+      "filePath": "mapa-uslug/index.tsx"
     },
     "/panel-uzytkownika/_layout/twoja-strona-sprzedawcy": {
       "filePath": "panel-uzytkownika/_layout/twoja-strona-sprzedawcy.tsx",
