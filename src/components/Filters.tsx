@@ -48,6 +48,7 @@ export const Filters = ({ type }: { type: ListType }) => {
       }
     })
     .filter(Boolean)
+
   const getUniqueAttributeValues = (attributeName: string) => {
     const rawValues = getItemsByCategory(data.categoryId, type).flatMap(
       (product): (string | number | boolean)[] => {
@@ -72,6 +73,32 @@ export const Filters = ({ type }: { type: ListType }) => {
 
     return uniqueValues.map((val) => ({ label: val, id: val }))
   }
+
+  const getRangeValues = (attributeName: string) => {
+    const rawValues = getItemsByCategory(data.categoryId, type).flatMap(
+      (product): (string | number | boolean)[] => {
+        const value = product.attributes[attributeName]
+
+        if (typeof value === 'string') {
+          return value
+            .split(',')
+            .map((v) => v.trim().toLowerCase())
+            .filter((v) => v.length > 0) // Split comma-separated strings
+        }
+
+        if (value !== undefined) {
+          return Array.isArray(value) ? value : [value] // Include numbers, booleans
+        }
+
+        return []
+      },
+    )
+    return [
+      Math.min(...(rawValues as number[])),
+      Math.max(...(rawValues as number[])),
+    ]
+  }
+
   const getFilterComponent = (
     type: string,
     filterType: FilterType,
@@ -97,7 +124,15 @@ export const Filters = ({ type }: { type: ListType }) => {
           />
         )
       case FilterType.Range:
-        return <FilterSlider label={label} fieldName={type} />
+        const range = getRangeValues(type)
+        return (
+          <FilterSlider
+            label={label}
+            fieldName={type}
+            min={range[0]}
+            max={range[1]}
+          />
+        )
     }
   }
   return (

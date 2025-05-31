@@ -163,7 +163,20 @@ export const filterProducts = (
       ) {
         continue
       }
-      const productValue = product.attributes[filterKey]
+      const productValue = product.attributes[filterKey] // ✅ NEW: Check if it's a range filter
+      if (
+        Array.isArray(filterValue) &&
+        filterValue.length === 2 &&
+        filterValue.every((val) => typeof val === 'number')
+      ) {
+        const [min, max] = filterValue
+        const numericValue = Number(productValue)
+
+        if (isNaN(numericValue) || numericValue < min || numericValue > max) {
+          return false
+        }
+        continue
+      }
       if (Array.isArray(filterValue)) {
         if (typeof productValue === 'string') {
           const matches = filterValue.some((val) =>

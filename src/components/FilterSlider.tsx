@@ -10,9 +10,13 @@ import { useFormContext } from 'react-hook-form'
 export const FilterSlider = ({
   label,
   fieldName,
+  min,
+  max,
 }: {
   label: string
   fieldName: string
+  min: number
+  max: number
 }) => {
   const form = useFormContext()
   return (
@@ -25,14 +29,21 @@ export const FilterSlider = ({
         name={fieldName}
         render={({ field }) => {
           return (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 text-gray-700">
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 text-gray-700 mt-12">
               <FormControl>
                 <Slider
                   value={field.value}
-                  min={0}
-                  max={100}
-                  setExternalValue={(val) => field.onChange(val)}
+                  min={min}
+                  max={max}
+                  setExternalValue={(val) => {
+                    if (val[0] === min && val[1] === max) {
+                      return field.onChange(undefined)
+                    }
+                    field.onChange(val)
+                  }}
                   range
+                  showInput
+                  showTooltip
                 />
               </FormControl>
             </FormItem>

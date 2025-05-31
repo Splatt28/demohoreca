@@ -49,13 +49,15 @@ const Slider = forwardRef<
           )}
           value={value}
           onValueChange={(val) => handleValueChange(val)}
+          // onMouseUp={() => props.setExternalValue(value)}
+          onValueCommit={(val) => props.setExternalValue(val)}
           max={props.max}
           min={props.min}
           defaultValue={props.defaultValue}
         >
-          <SliderPrimitive.Track className="relative p-[0.3rem] h-2 w-full grow overflow-hidden rounded-full bg-blue-800 border border-white/10">
+          <SliderPrimitive.Track className="relative p-[0.3rem] h-2 w-full grow overflow-hidden rounded-full bg-orange-800 border border-white/10">
             <SliderPrimitive.Range
-              className={cn('absolute h-full  top-0', range && 'bg-blue-300')}
+              className={cn('absolute h-full  top-0', range && 'bg-orange-300')}
             />
           </SliderPrimitive.Track>
           <div className="absolute w-full">
@@ -74,7 +76,7 @@ const Slider = forwardRef<
                     )}
                   >
                     <Dot
-                      size={12}
+                      size={10}
                       color="white"
                       className={cn(
                         'h-7 w-7 -top-3 -left-3 absolute rounded-full',
@@ -83,7 +85,7 @@ const Slider = forwardRef<
                     />
 
                     {!disabled && (
-                      <div className="absolute hidden bottom-full left-1/2 -translate-x-1/2 group-hover:block -translate-y-4 bg-blue-900 border p-2 rounded text-sm whitespace-nowrap tooltip">
+                      <div className="absolute hidden bottom-full left-1/2 -translate-x-1/2 group-hover:block -translate-y-4 bg-orange-900 border p-2 rounded text-sm whitespace-nowrap tooltip">
                         <p className="w-8 text-white text-center">{step}</p>
                       </div>
                     )}
@@ -95,10 +97,10 @@ const Slider = forwardRef<
           {value.map((_, index) => (
             <SliderPrimitive.Thumb
               key={index}
-              className="block group h-7 w-7 rounded-full bg-blue-300 ring-offset-background transition-colors cursor-grab focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:bg-blue-900 active:cursor-grabbing"
+              className="block group h-7 w-7 rounded-full bg-orange-300 ring-offset-background transition-colors cursor-grab focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:bg-orange-900 active:cursor-grabbing"
             >
               {showTooltip && (
-                <div className="absolute transition-colors bottom-full left-1/2 -translate-x-1/2 -translate-y-3 bg-blue-300 px-2 py-1 rounded text-sm whitespace-nowrap tooltip group-active:bg-blue-900">
+                <div className="absolute transition-colors bottom-full left-1/2 -translate-x-1/2 -translate-y-3 bg-orange-300 px-2 py-1 rounded text-sm whitespace-nowrap tooltip group-active:bg-orange-900">
                   {showInput ? (
                     <input
                       value={inputValues[index]}
@@ -128,7 +130,7 @@ const Slider = forwardRef<
                       {value[index]}
                     </p>
                   )}
-                  <span className="absolute top-full transition-colors -translate-y-2 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-blue-300 rotate-45 rounded-[3px] group-active:bg-blue-900"></span>
+                  <span className="absolute top-full transition-colors -translate-y-2 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-orange-300 rotate-45 rounded-[3px] group-active:bg-orange-900"></span>
                 </div>
               )}
             </SliderPrimitive.Thumb>

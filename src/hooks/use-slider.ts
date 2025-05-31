@@ -42,7 +42,7 @@ export const useSlider = ({
       })
 
       setValue(validated)
-      setExternalValue?.(validated)
+      setInputValues(validated)
     },
     [value, setExternalValue, disabledSteps],
   )
