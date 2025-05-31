@@ -126,7 +126,7 @@ export const filterMap: Record<string, { type: FilterType; label: string }> = {
     label: 'Odporność Na Warunki',
   },
   bio: {
-    type: FilterType.MultiSelection,
+    type: FilterType.Selection,
     label: 'Bio',
   },
   price: {
@@ -134,7 +134,7 @@ export const filterMap: Record<string, { type: FilterType; label: string }> = {
     label: 'Cena',
   },
   power: {
-    type: FilterType.MultiSelection,
+    type: FilterType.Range,
     label: 'Moc',
   },
   wojewodztwa: {
@@ -159,11 +159,18 @@ export const filterProducts = (
       if (
         filterValue === undefined ||
         filterKey === 'category' ||
-        !filterValue.length
+        (Array.isArray(filterValue) && !filterValue?.length)
       ) {
         continue
       }
-      const productValue = product.attributes[filterKey] // ✅ NEW: Check if it's a range filter
+      const productValue = product.attributes[filterKey]
+      if (typeof filterValue === 'boolean') {
+        const hasProperty = productValue !== undefined && productValue !== null
+
+        if (filterValue === true && !hasProperty) return false
+        if (filterValue === false && hasProperty) return false
+        continue
+      }
       if (
         Array.isArray(filterValue) &&
         filterValue.length === 2 &&

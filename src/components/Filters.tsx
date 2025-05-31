@@ -1,6 +1,8 @@
 import { CategoriesList } from '@/components/CategoriesList'
 import { CheckboxList } from '@/components/CheckboxList'
 import { FilterSlider } from '@/components/FilterSlider'
+import { Radio } from '@/components/Radio'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { useProducts } from '@/hooks/use-products'
 import { filterMap, FilterType } from '@/lib/utils'
@@ -113,20 +115,20 @@ export const Filters = ({ type }: { type: ListType }) => {
             listLabel={label}
             items={getUniqueAttributeValues(type) as any}
             fieldName={type}
+            key={type}
           />
         )
       case FilterType.Selection:
-        return (
-          <CheckboxList
-            listLabel={label}
-            items={getUniqueAttributeValues(type) as any}
-            fieldName={type}
-          />
-        )
+        return <Radio key={type} listLabel={type} fieldName={type} />
+
       case FilterType.Range:
         const range = getRangeValues(type)
+        if (range.length < 2 || range[0] === range[1]) {
+          return
+        }
         return (
           <FilterSlider
+            key={type}
             label={label}
             fieldName={type}
             min={range[0]}
@@ -138,9 +140,9 @@ export const Filters = ({ type }: { type: ListType }) => {
   return (
     <div className="flex gap-6 flex-col">
       <CategoriesList type={type} />
-      {filtersList.map((filter) => (
-        <>{getFilterComponent(filter.value, filter.type, filter.label)}</>
-      ))}
+      {filtersList.map((filter) =>
+        getFilterComponent(filter.value, filter.type, filter.label),
+      )}
     </div>
   )
 }

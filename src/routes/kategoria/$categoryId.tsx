@@ -58,13 +58,12 @@ function RouteComponent() {
     const { unsubscribe } = watch((filters) => {
       getProducts(filters)
       const filteredSearch = Object.fromEntries(
-        Object.entries(filters).filter(
-          ([key, value]) =>
+        Object.entries(filters).filter(([key, value]) => {
+          return (
             key !== 'category' &&
-            !!value &&
-            Array.isArray(value) &&
-            value.length,
-        ),
+            ((Array.isArray(value) && value.length > 0) || value === true)
+          )
+        }),
       )
       navigate({
         search: filteredSearch as any,
