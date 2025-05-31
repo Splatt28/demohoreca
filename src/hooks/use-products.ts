@@ -1,6 +1,7 @@
 import { useStore } from '@/store/useStore'
-import type { Category, Product } from '@/types/types.ts'
+import type { Category, ListType, Item } from '@/types/types.ts'
 import productCategoryList from '@/assets/data/productCategories.json'
+import serviceCategoryList from '@/assets/data/serviceCategories.json'
 
 const findCategoryBySlug = (
   slug: string,
@@ -27,21 +28,24 @@ const collectCategoryIds = (category: Category): string[] => {
 }
 
 export const useProducts = () => {
-  const { products } = useStore()
+  const { products, services } = useStore()
 
-  const getItemsByCategory = (slug: string) => {
-    const matchedCategory = findCategoryBySlug(slug, productCategoryList)
+  const getItemsByCategory = (slug: string, type: ListType) => {
+    const matchedCategory = findCategoryBySlug(
+      slug,
+      type === 'PRODUCT' ? productCategoryList : serviceCategoryList,
+    )
 
     if (!matchedCategory) return []
 
     const categoryIds = collectCategoryIds(matchedCategory)
-
-    return products.filter((product) =>
+    const itemSet = type === 'PRODUCT' ? products : services
+    return itemSet.filter((product) =>
       categoryIds.includes(String(product.categoryId)),
     )
   }
 
-  const getFiltersFromProducts = (products: Product[]) => {
+  const getFiltersFromProducts = (products: Item[]) => {
     return Array.from(
       new Set(products.flatMap((product) => Object.keys(product.attributes))),
     )

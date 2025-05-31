@@ -2,6 +2,7 @@ import type {
   Category,
   CategoryPathResult,
   NavigationItem,
+  Item,
 } from '@/types/types'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
@@ -125,11 +126,78 @@ export const filterMap: Record<string, { type: FilterType; label: string }> = {
     label: 'Odporność Na Warunki',
   },
   bio: {
-    type: FilterType.Selection,
+    type: FilterType.MultiSelection,
     label: 'Bio',
   },
   price: {
     type: FilterType.Selection,
     label: 'Cena',
   },
+  power: {
+    type: FilterType.MultiSelection,
+    label: 'Moc',
+  },
+  wojewodztwa: {
+    type: FilterType.MultiSelection,
+    label: 'Województwa',
+  },
+}
+
+const isFilterActive = (value: any): boolean => {
+  if (value === undefined || value === null) return false
+  if (Array.isArray(value)) return value.length > 0
+  if (typeof value === 'string') return value.trim() !== ''
+  return true
+}
+
+export const filterProducts = (
+  products: Item[],
+  filters: { [x: string]: any },
+): Item[] => {
+  const hasNonCategoryFilters = Object.entries(filters).some(([key, value]) => {
+    return key !== 'category' && isFilterActive(value)
+  })
+  if (!hasNonCategoryFilters) {
+    return products
+  }
+  return products.filter((product) => {
+    for (const [filterKey, filterValue] of Object.entries(filters)) {
+      if (
+        filterValue === undefined ||
+        filterKey === 'category' ||
+        !filterValue.length
+      ) {
+        continue
+      }
+      const productValue = product.attributes[filterKey]
+      if (Array.isArray(filterValue)) {
+        if (typeof productValue === 'string') {
+          const matches = filterValue.some((val) =>
+            productValue.toLocaleLowerCase().includes(val.toLocaleLowerCase()),
+          )
+          if (!matches) return false
+        } else if (Array.isArray(productValue)) {
+          const matches = filterValue.some((val) =>
+            productValue.some((pVal) =>
+              pVal.toLocaleLowerCase().includes(val.toLocaleLowerCase()),
+            ),
+          )
+          if (!matches) return false
+        } else {
+          return false
+        }
+      } else {
+        if (
+          typeof productValue === 'string' &&
+          !productValue
+            .toLocaleLowerCase()
+            .includes(String(filterValue).toLocaleLowerCase())
+        ) {
+          return false
+        }
+      }
+    }
+
+    return true
+  })
 }

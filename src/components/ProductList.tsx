@@ -1,6 +1,6 @@
 import { Product } from '@/components/Product'
 import { findCategoryByNormalizedName } from '@/lib/utils'
-import type { Category, ListType, Product as ProductType } from '@/types/types'
+import type { Category, ListType, Item as ProductType } from '@/types/types'
 import { useParams } from '@tanstack/react-router'
 import productCategoryList from '@/assets/data/productCategories.json'
 import serviceCategoryList from '@/assets/data/serviceCategories.json'

@@ -39,7 +39,7 @@ export const Filters = ({ type }: { type: ListType }) => {
   })
   const { getItemsByCategory, getFiltersFromProducts } = useProducts()
   const filtersList = getFiltersFromProducts(
-    getItemsByCategory(data.categoryId),
+    getItemsByCategory(data.categoryId, type),
   )
     .map((filter) => {
       return {
@@ -48,9 +48,8 @@ export const Filters = ({ type }: { type: ListType }) => {
       }
     })
     .filter(Boolean)
-
   const getUniqueAttributeValues = (attributeName: string) => {
-    const rawValues = getItemsByCategory(data.categoryId).flatMap(
+    const rawValues = getItemsByCategory(data.categoryId, type).flatMap(
       (product): (string | number | boolean)[] => {
         const value = product.attributes[attributeName]
 
@@ -62,7 +61,7 @@ export const Filters = ({ type }: { type: ListType }) => {
         }
 
         if (value !== undefined) {
-          return [value] // Include numbers, booleans
+          return Array.isArray(value) ? value : [value] // Include numbers, booleans
         }
 
         return []
@@ -73,7 +72,6 @@ export const Filters = ({ type }: { type: ListType }) => {
 
     return uniqueValues.map((val) => ({ label: val, id: val }))
   }
-
   const getFilterComponent = (
     type: string,
     filterType: FilterType,
@@ -91,7 +89,13 @@ export const Filters = ({ type }: { type: ListType }) => {
           />
         )
       case FilterType.Selection:
-        return <CheckboxList listLabel={label} items={items} fieldName={type} />
+        return (
+          <CheckboxList
+            listLabel={label}
+            items={getUniqueAttributeValues(type) as any}
+            fieldName={type}
+          />
+        )
       case FilterType.Range:
         return <FilterSlider label={label} fieldName={type} />
     }

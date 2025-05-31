@@ -1,4 +1,4 @@
-export type Product = {
+export type Item = {
   id: string
   name: string
   price: number
@@ -10,7 +10,7 @@ export type Product = {
   sku: string
   companyId: string
   manufacturer: string
-  attributes: Record<string, string | number | boolean>
+  attributes: Record<string, string | number | boolean | undefined | string[]>
 }
 
 export type CompanyData = {

@@ -1,15 +1,17 @@
-import type { CompanyData, Product } from '@/types/types'
+import type { CompanyData, Item } from '@/types/types'
 import { create } from 'zustand'
 import productList from '@/assets/data/products.json'
+import serviceList from '@/assets/data/services.json'
 import companyList from '@/assets/data/companies.json'
 
 type ProductStore = {
-  products: Product[]
+  products: Item[]
+  services: Item[]
   companies: CompanyData[]
   isLoggedIn: boolean
   setIsLoggedIn: (isLogged: boolean) => void
-  setProducts: (newProducts: Product[]) => void
-  addProduct: (newProduct: Product) => void
+  setProducts: (newProducts: Item[]) => void
+  addProduct: (newProduct: Item) => void
   removeProduct: (productId: string | number) => void
   userData: CompanyData
   setUserData: (userData: CompanyData) => void
@@ -18,6 +20,7 @@ type ProductStore = {
 //TODO: Handle filter
 export const useStore = create<ProductStore>((set) => ({
   products: productList,
+  services: serviceList as any as Item[],
   isLoggedIn: false,
   setIsLoggedIn: (isLoggedIn) => set(() => ({ isLoggedIn: isLoggedIn })),
   companies: companyList,

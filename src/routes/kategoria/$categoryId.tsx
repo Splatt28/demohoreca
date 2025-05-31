@@ -7,7 +7,8 @@ import { Form } from '@/components/ui/form'
 import { useEffect, useState } from 'react'
 import { CategoryBanner } from '@/components/CategoryBaner'
 import { useProducts } from '@/hooks/use-products'
-import type { Product } from '@/types/types'
+import type { Item } from '@/types/types'
+import { filterProducts } from '@/lib/utils'
 
 export const Route = createFileRoute('/kategoria/$categoryId')({
   component: RouteComponent,
@@ -17,70 +18,15 @@ function RouteComponent() {
   const data = useParams({ from: '/kategoria/$categoryId' })
   const { getItemsByCategory } = useProducts()
 
-  const [currentProducts, setCurrentProducts] = useState<Product[]>(
-    getItemsByCategory(data.categoryId),
+  const [currentProducts, setCurrentProducts] = useState<Item[]>(
+    getItemsByCategory(data.categoryId, 'PRODUCT'),
   )
 
   useEffect(() => {
-    setCurrentProducts(getItemsByCategory(data.categoryId))
+    setCurrentProducts(getItemsByCategory(data.categoryId, 'PRODUCT'))
   }, [data])
 
   const { watch, ...form } = useForm()
-  function isFilterActive(value: any): boolean {
-    if (value === undefined || value === null) return false
-    if (Array.isArray(value)) return value.length > 0
-    if (typeof value === 'string') return value.trim() !== ''
-    return true
-  }
-
-  const filterProducts = (
-    products: Product[],
-    filters: { [x: string]: any },
-  ): Product[] => {
-    const hasNonCategoryFilters = Object.entries(filters).some(
-      ([key, value]) => {
-        return key !== 'category' && isFilterActive(value)
-      },
-    )
-    if (!hasNonCategoryFilters) {
-      return products
-    }
-    return products.filter((product) => {
-      for (const [filterKey, filterValue] of Object.entries(filters)) {
-        if (
-          filterValue === undefined ||
-          filterKey === 'category' ||
-          !filterValue.length
-        ) {
-          continue
-        }
-        const productValue = product.attributes[filterKey]
-        if (Array.isArray(filterValue)) {
-          if (typeof productValue === 'string') {
-            const matches = filterValue.some((val) =>
-              productValue
-                .toLocaleLowerCase()
-                .includes(val.toLocaleLowerCase()),
-            )
-            if (!matches) return false
-          } else {
-            return false
-          }
-        } else {
-          if (
-            typeof productValue === 'string' &&
-            !productValue
-              .toLocaleLowerCase()
-              .includes(String(filterValue).toLocaleLowerCase())
-          ) {
-            return false
-          }
-        }
-      }
-
-      return true
-    })
-  }
 
   useEffect(() => {
     const { unsubscribe } = watch((value) => {
