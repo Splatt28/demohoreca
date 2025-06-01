@@ -19,6 +19,7 @@ function RouteComponent() {
   const [currentProducts, setCurrentProducts] = useState<Item[]>(
     getItemsByCategory(data.categoryId, 'SERVICE'),
   )
+  const categoryProducts = getItemsByCategory(data.categoryId, 'SERVICE')
 
   const getProducts = useCallback(
     (filters: { [x: string]: any }) => {
@@ -28,13 +29,11 @@ function RouteComponent() {
         },
       )
       if (!hasNonCategoryFilters) {
-        return setCurrentProducts(
-          getItemsByCategory(data.categoryId, 'SERVICE'),
-        )
+        return setCurrentProducts(categoryProducts)
       }
-      setCurrentProducts(filterProducts(currentProducts, filters))
+      setCurrentProducts(filterProducts(categoryProducts, filters))
     },
-    [currentProducts, data.categoryId, getItemsByCategory],
+    [categoryProducts],
   )
 
   useEffect(() => {

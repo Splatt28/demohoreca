@@ -37,6 +37,7 @@ function RouteComponent() {
   )
   const { watch, ...form } = useForm()
   const { setValue } = form
+  const categoryProducts = getItemsByCategory(data.categoryId, 'PRODUCT')
 
   useEffect(() => {
     setCurrentProducts(getItemsByCategory(data.categoryId, 'PRODUCT'))
@@ -51,13 +52,11 @@ function RouteComponent() {
         },
       )
       if (!hasNonCategoryFilters) {
-        return setCurrentProducts(
-          getItemsByCategory(data.categoryId, 'PRODUCT'),
-        )
+        return setCurrentProducts(categoryProducts)
       }
-      setCurrentProducts(filterProducts(currentProducts, filters))
+      setCurrentProducts(filterProducts(categoryProducts, filters))
     },
-    [currentProducts, data.categoryId, getItemsByCategory],
+    [categoryProducts],
   )
 
   useEffect(() => {

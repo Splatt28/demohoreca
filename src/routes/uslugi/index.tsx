@@ -16,20 +16,17 @@ export default function RouteComponent() {
   const [currentProducts, setCurrentProducts] = useState<Item[]>(
     services as any as Item[],
   )
-  const getProducts = useCallback(
-    (filters: { [x: string]: any }) => {
-      const hasNonCategoryFilters = Object.entries(filters).some(
-        ([key, value]) => {
-          return key !== 'category' && isFilterActive(value)
-        },
-      )
-      if (!hasNonCategoryFilters) {
-        return setCurrentProducts(services as any as Item[])
-      }
-      setCurrentProducts(filterProducts(currentProducts, filters))
-    },
-    [currentProducts],
-  )
+  const getProducts = useCallback((filters: { [x: string]: any }) => {
+    const hasNonCategoryFilters = Object.entries(filters).some(
+      ([key, value]) => {
+        return key !== 'category' && isFilterActive(value)
+      },
+    )
+    if (!hasNonCategoryFilters) {
+      return setCurrentProducts(services as any as Item[])
+    }
+    setCurrentProducts(filterProducts(services as any as Item[], filters))
+  }, [])
 
   useEffect(() => {
     const { unsubscribe } = watch((filters) => {

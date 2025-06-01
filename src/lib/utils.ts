@@ -186,7 +186,6 @@ export const filterProducts = (
       ) {
         const [min, max] = filterValue
         const numericValue = Number(productValue)
-
         if (isNaN(numericValue) || numericValue < min || numericValue > max) {
           return false
         }

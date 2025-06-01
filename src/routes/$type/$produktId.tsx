@@ -263,7 +263,7 @@ function RouteComponent() {
                               <TableCell className="font-medium capitalize">
                                 {filterMap[key as keyof typeof filterMap].label}
                               </TableCell>
-                              <TableCell>
+                              <TableCell className="capitalize">
                                 {Array.isArray(value)
                                   ? value.join(', ')
                                   : String(value)}

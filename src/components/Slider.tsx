@@ -55,7 +55,7 @@ const Slider = forwardRef<
           min={props.min}
           defaultValue={props.defaultValue}
         >
-          <SliderPrimitive.Track className="relative p-[0.1rem] h-2 w-full grow overflow-hidden rounded-full bg-gray-400 border border-white/10">
+          <SliderPrimitive.Track className="relative h-[5px] w-full grow overflow-hidden rounded-full bg-gray-400 border border-white/10">
             <SliderPrimitive.Range
               className={cn('absolute h-full top-0', range && 'bg-gray-800')}
             />
@@ -97,7 +97,7 @@ const Slider = forwardRef<
           {value.map((_, index) => (
             <SliderPrimitive.Thumb
               key={index}
-              className="block group h-7 w-7 rounded-full bg-gray-800 ring-offset-background transition-colors cursor-grab focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:bg-gray-900 active:cursor-grabbing"
+              className="block group h-3 w-3 rounded-full bg-gray-800 ring-offset-background transition-colors cursor-grab focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:bg-gray-900 active:cursor-grabbing"
             >
               {showTooltip && (
                 <div className="absolute transition-colors bottom-full left-1/2 -translate-x-1/2 -translate-y-3 bg-gray-800 px-2 py-1 rounded text-sm whitespace-nowrap tooltip group-active:bg-gray-900">
