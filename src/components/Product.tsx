@@ -1,28 +1,24 @@
-import { Button } from '@/components/ui/button'
-import type { Product as ProductProps } from '@/types/types'
+import type { Item } from '@/types/types'
 import { Link } from '@tanstack/react-router'
 
-export const Product = ({ id, images, name, price }: ProductProps) => {
+export const Product = ({ id, images, name, price }: Item) => {
   return (
-    <div className="group relative bg-white shadow-md p-4 rounded-xl transition-all hover:shadow-xl overflow-hidden">
+    <div className="group relative  transition-all hover:scale-[1.05] overflow-hidden">
       <Link
         to="/produkt/$produktId"
         params={{ produktId: id }}
         className="block h-full flex flex-col"
       >
-        <div className=" rounded-xl  mb-3">
-          <img
-            src={images && images[0] ? images[0] : '/images/placeholder.jpg'}
-            className="h-64 mx-auto py-4"
-          />
-        </div>
-        <div className="flex flex-col gap-2 flex-1 justify-between">
+        <div
+          className="mb-3 h-92 shadow-md bg-cover bg-center bg-no-repeat rounded-sm"
+          style={{
+            backgroundImage: `url(${images && images[0] ? images[0] : '/images/placeholder.jpg'})`,
+          }}
+        ></div>
+        <div className="flex flex-col gap-[5px] flex-1 justify-between">
           <p className="text-primary-text font-semibold text-xl">{name}</p>
-          <p className="text-primary-text font-thin text-xl">{price} zł</p>
+          <p className="text-black/40 font-thin text-xl">{price} zł</p>
         </div>
-        <Button className="bg-primary/80 font-bold text-md text-white absolute py-6 rounded-r-none rounded-b-none translate-x-[150%] right-0 bottom-0 opacity-90 group-hover:translate-x-0">
-          Zobacz więcej
-        </Button>
       </Link>
     </div>
   )

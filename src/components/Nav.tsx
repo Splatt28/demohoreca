@@ -5,11 +5,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { User, LogIn, LogOut } from 'lucide-react'
+import { User, LogIn, LogOut, Search } from 'lucide-react'
 import PlaceholderAvatar from '@/assets/placeholder-avatar.png'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useStore } from '@/store/useStore'
 import { useShallow } from 'zustand/react/shallow'
+import { Input } from '@/components/ui/input'
 
 export const Nav = () => {
   const { isLoggedIn, setIsLoggedIn } = useStore(
@@ -20,49 +21,57 @@ export const Nav = () => {
   )
   const navigate = useNavigate()
   return (
-    <header className="sticky top-0 z-50 backdrop-blur bg-primary/70 shadow-sm text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 backdrop-blur bg-white/70 shadow-sm text-black/70">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-lg font-semibold tracking-tight text-white flex-1">
-          MyLogo
+        <div className="flex gap-6 items-center">
+          <div className="text-lg font-semibold tracking-tight flex-1">
+            MyLogo
+          </div>
+
+          {/* Navigation Menu */}
+          <nav className="space-x-6 hidden md:flex">
+            <Link to="/" className="hover:text-accent transition-colors">
+              Home
+            </Link>
+            <Link
+              to="/kategoria/$categoryId"
+              params={{ categoryId: 'obiekt_od_zewnatrz' }}
+              className="hover:text-accent transition-colors"
+            >
+              Obiekt od zewnątrz
+            </Link>
+            <Link
+              to="/kategoria/$categoryId"
+              params={{ categoryId: 'elementy_wykonczenia_wnetrz' }}
+              className="hover:text-accent transition-colors"
+            >
+              Elementy wykończenia wnętrz
+            </Link>
+            <Link
+              to="/kategoria/$categoryId"
+              params={{ categoryId: 'artykuly_spozywcze' }}
+              className="hover:text-accent transition-colors"
+            >
+              Artykuły Spożywcze
+            </Link>
+            <Link
+              to="/mapa-uslug"
+              className="hover:text-accent transition-colors"
+            >
+              Usługi
+            </Link>
+          </nav>
         </div>
-
-        {/* Navigation Menu */}
-        <nav className="space-x-6 text-white hidden md:flex">
-          <Link to="/" className="hover:text-accent transition-colors">
-            Home
-          </Link>
-          <Link
-            to="/kategoria/$categoryId"
-            params={{ categoryId: 'obiekt_od_zewnatrz' }}
-            className="hover:text-accent transition-colors"
-          >
-            Obiekt od zewnątrz
-          </Link>
-          <Link
-            to="/kategoria/$categoryId"
-            params={{ categoryId: 'elementy_wykonczenia_wnetrz' }}
-            className="hover:text-accent transition-colors"
-          >
-            Elementy wykończenia wnętrz
-          </Link>
-          <Link
-            to="/kategoria/$categoryId"
-            params={{ categoryId: 'artykuly_spozywcze' }}
-            className="hover:text-accent transition-colors"
-          >
-            Artykuły Spożywcze
-          </Link>
-          <Link
-            to="/mapa-uslug"
-            className="hover:text-accent transition-colors"
-          >
-            Usługi
-          </Link>
-        </nav>
-
         {/* Right Side Icons */}
         <div className="flex items-center space-x-4 flex-grow justify-end">
+          <div className="relative">
+            <Input placeholder="Wyszukaj" className="bg-black/10" />
+            <Search
+              className="absolute top-[9px] right-3 text-black/30"
+              size={16}
+            />
+          </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Avatar className="cursor-pointer">
