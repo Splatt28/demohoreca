@@ -5,12 +5,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { User, LogIn, LogOut, Search } from 'lucide-react'
+import { User, LogIn, LogOut } from 'lucide-react'
 import PlaceholderAvatar from '@/assets/placeholder-avatar.png'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useStore } from '@/store/useStore'
 import { useShallow } from 'zustand/react/shallow'
-import { Input } from '@/components/ui/input'
+import { SearchInput } from '@/components/Search'
 
 export const Nav = () => {
   const { isLoggedIn, setIsLoggedIn } = useStore(
@@ -65,13 +65,7 @@ export const Nav = () => {
         </div>
         {/* Right Side Icons */}
         <div className="flex items-center space-x-4 flex-grow justify-end">
-          <div className="relative">
-            <Input placeholder="Wyszukaj" className="bg-black/10" />
-            <Search
-              className="absolute top-[9px] right-3 text-black/30"
-              size={16}
-            />
-          </div>
+          <SearchInput />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Avatar className="cursor-pointer">
