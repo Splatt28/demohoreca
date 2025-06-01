@@ -1,21 +1,13 @@
 import { Product } from '@/components/Product'
-import { findCategoryByNormalizedName } from '@/lib/utils'
-import type { ListType, Item as ProductType } from '@/types/types'
-import { useParams } from '@tanstack/react-router'
-import productCategoryList from '@/assets/data/productCategories.json'
-import serviceCategoryList from '@/assets/data/serviceCategories.json'
+import type { Item as ProductType } from '@/types/types'
 
 export const ProductList = ({
   products,
   type,
 }: {
   products: ProductType[]
-  type: ListType
+  type: string
 }) => {
-  const data = useParams({
-    from: type === 'PRODUCT' ? '/kategoria/$categoryId' : '/uslugi/$categoryId',
-    shouldThrow: false,
-  })
   const getProductNumber = (liczba: number): string => {
     const mod10 = liczba % 10
     const mod100 = liczba % 100
@@ -40,7 +32,7 @@ export const ProductList = ({
         {products
           .filter((product) => product.available)
           .map((product) => (
-            <Product key={product.id} {...product} />
+            <Product key={product.id} type={type} {...product} />
           ))}
       </div>
     </section>

@@ -105,7 +105,7 @@ function RouteComponent() {
                 </h1>
               </>
             </CategoryBanner>
-            <ProductList products={currentProducts} type="PRODUCT" />
+            <ProductList products={currentProducts} type="produkt" />
           </div>
         </Form>
       </div>

@@ -25,7 +25,6 @@ export default function ServicesLayout() {
       setValue(key, '')
     })
     Object.entries(search).forEach(([key, value]) => {
-      console.log(key, value)
       setValue(key, value)
     })
   }, [getValues, search, setValue])

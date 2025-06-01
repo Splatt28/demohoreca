@@ -59,8 +59,8 @@ export const SearchInput = () => {
     setSearchResults([])
     setInput('')
     navigate({
-      to: '/produkt/$produktId',
-      params: { produktId: productId },
+      to: '/$type/$produktId',
+      params: { produktId: productId, type: 'produkt' },
     })
   }
 

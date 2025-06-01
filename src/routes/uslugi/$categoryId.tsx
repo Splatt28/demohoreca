@@ -59,5 +59,5 @@ function RouteComponent() {
     return () => unsubscribe()
   }, [watch, navigate, getProducts])
 
-  return <ProductList products={currentProducts} type="SERVICE" />
+  return <ProductList products={currentProducts} type="usluga" />
 }

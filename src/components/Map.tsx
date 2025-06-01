@@ -8,6 +8,8 @@ import {
 import { Tooltip } from 'react-tooltip'
 import GeoPoland from '@/lib/geo-poland.json'
 import servicesList from '@/assets/data/services.json'
+import { useNavigate } from '@tanstack/react-router'
+import { Route } from '@/routes'
 
 // Example voivodeship data with coordinates and a number
 const voivodeshipsInit = [
@@ -30,6 +32,7 @@ const voivodeshipsInit = [
 ]
 
 export const Map = () => {
+  const navigate = useNavigate({ from: Route.fullPath })
   const [tooltipContent, setTooltipContent] = useState('')
   const [voivodeships, setVoivodeships] = useState(voivodeshipsInit)
 
@@ -73,6 +76,14 @@ export const Map = () => {
                 onMouseEnter={() => {
                   const { name } = geo.properties
                   setTooltipContent(`${name}`)
+                }}
+                onMouseDown={() => {
+                  navigate({
+                    to: '/uslugi',
+                    search: {
+                      wojewodztwa: [geo.properties.name],
+                    },
+                  })
                 }}
                 onMouseLeave={() => setTooltipContent('')}
                 style={{

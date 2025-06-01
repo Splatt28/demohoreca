@@ -1,12 +1,18 @@
 import type { Item } from '@/types/types'
 import { Link } from '@tanstack/react-router'
 
-export const Product = ({ id, images, name, price }: Item) => {
+export const Product = ({
+  id,
+  images,
+  name,
+  price,
+  type,
+}: Item & { type: string }) => {
   return (
     <div className="group relative  transition-all hover:scale-[1.05] overflow-hidden">
       <Link
-        to="/produkt/$produktId"
-        params={{ produktId: id }}
+        to="/$type/$produktId"
+        params={{ produktId: id, type }}
         className="block h-full flex flex-col"
       >
         <div

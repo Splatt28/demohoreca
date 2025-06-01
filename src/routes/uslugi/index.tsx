@@ -55,5 +55,5 @@ export default function RouteComponent() {
     }
   }, [watch, navigate, getProducts])
 
-  return <ProductList products={currentProducts} type="SERVICE" />
+  return <ProductList products={currentProducts} type="usluga" />
 }

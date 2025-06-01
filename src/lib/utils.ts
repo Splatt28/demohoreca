@@ -97,6 +97,14 @@ export enum FilterType {
 }
 
 export const filterMap: Record<string, { type: FilterType; label: string }> = {
+  packing: {
+    type: FilterType.MultiSelection,
+    label: 'Opakowanie',
+  },
+  originCountry: {
+    type: FilterType.MultiSelection,
+    label: 'Kraj pochodzenia',
+  },
   height: {
     type: FilterType.Range,
     label: 'Wysokość',

@@ -25,22 +25,27 @@ import { useShallow } from 'zustand/react/shallow'
 import type { Category, Item } from '@/types/types'
 import { SellerModal } from '@/components/SellerModal'
 import { Badge } from '@/components/ui/badge'
-import categoryList from '@/assets/data/productCategories.json'
+import serviceCategoryList from '@/assets/data/serviceCategories.json'
 import productCategoryList from '@/assets/data/productCategories.json'
-import { findCategoryPath } from '@/lib/utils'
+import { filterMap, findCategoryPath } from '@/lib/utils'
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
 
-export const Route = createFileRoute('/produkt/$produktId')({
+export const Route = createFileRoute('/$type/$produktId')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  const data = useParams({ from: '/produkt/$produktId' })
-  const { products, companies } = useStore(
+  const data = useParams({ from: '/$type/$produktId' })
+  const { products, services, companies } = useStore(
     useShallow((state) => ({
       products: state.products,
+      services: state.services,
       companies: state.companies,
     })),
   )
+  const typeItems = data.type === 'produkt' ? products : services
+  const categoryItems =
+    data.type === 'produkt' ? productCategoryList : serviceCategoryList
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [currentProduct, setCurrentProduct] = useState<Item | undefined>(
     undefined,
@@ -49,15 +54,17 @@ function RouteComponent() {
 
   useEffect(() => {
     setSimilarProducts(
-      products.filter(
+      typeItems.filter(
         (product) => product.categoryId === currentProduct?.categoryId,
       ),
     )
-  }, [currentProduct])
+  }, [currentProduct, typeItems])
 
   useEffect(() => {
-    setCurrentProduct(products.find((product) => product.id === data.produktId))
-  }, [setCurrentProduct, data.produktId])
+    setCurrentProduct(
+      typeItems.find((product) => product.id === data.produktId),
+    )
+  }, [setCurrentProduct, data.produktId, typeItems])
 
   const [selectedImage, setSelectedImage] = useState(0)
 
@@ -84,11 +91,11 @@ function RouteComponent() {
   }
   const getBreadcrumbs = () => {
     const productCategory = findById(
-      categoryList,
+      categoryItems,
       parseInt(currentProduct.categoryId),
     )
     const categoryPath = findCategoryPath(
-      productCategoryList,
+      categoryItems,
       productCategory?.slug || '',
     )
     if (!categoryPath?.navigationStack) {
@@ -100,7 +107,11 @@ function RouteComponent() {
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
               <Link
-                to={`/kategoria/$categoryId`}
+                to={
+                  data.type === 'prodult'
+                    ? `/kategoria/$categoryId`
+                    : '/uslugi/$categoryId'
+                }
                 params={{
                   categoryId: stack.currentCategory.slug,
                 }}
@@ -225,13 +236,13 @@ function RouteComponent() {
             <Tabs defaultValue="description" className="mt-6">
               <TabsList className="grid w-full grid-cols-3 rounded-lg">
                 <TabsTrigger value="description" className="rounded-lg">
-                  Description
+                  Opis
                 </TabsTrigger>
                 <TabsTrigger value="features" className="rounded-lg">
-                  Features
+                  Szczegóły
                 </TabsTrigger>
                 <TabsTrigger value="specifications" className="rounded-lg">
-                  Specifications
+                  Specyfikacja
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="description" className="mt-4">
@@ -241,31 +252,60 @@ function RouteComponent() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              {/* <TabsContent value="features" className="mt-4">
-              <Card className="border-0 shadow-none">
-                <CardContent className="pt-4">
-                  <ul className="list-disc pl-5 space-y-2">
-                    {currentProduct.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="specifications" className="mt-4">
-              <Card className="border-0 shadow-none">
-                <CardContent className="pt-4">
-                  <div className="space-y-2">
-                    {currentProduct.specifications.map((spec, index) => (
-                      <div key={index} className="grid grid-cols-2">
-                        <span className="font-medium">{spec.name}</span>
-                        <span>{spec.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent> */}
+              <TabsContent value="features" className="mt-4">
+                <Card className="border-0 shadow-none">
+                  <CardContent className="pt-4">
+                    <Table>
+                      <TableBody>
+                        {Object.entries(currentProduct.attributes).map(
+                          ([key, value]) => (
+                            <TableRow key={key}>
+                              <TableCell className="font-medium capitalize">
+                                {filterMap[key as keyof typeof filterMap].label}
+                              </TableCell>
+                              <TableCell>
+                                {Array.isArray(value)
+                                  ? value.join(', ')
+                                  : String(value)}
+                              </TableCell>
+                            </TableRow>
+                          ),
+                        )}
+                      </TableBody>
+                    </Table>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="specifications" className="mt-4">
+                <Card className="border-0 shadow-none">
+                  <CardContent className="pt-4">
+                    <Table>
+                      <TableBody>
+                        <TableRow key={currentProduct.sku}>
+                          <TableCell className="font-medium capitalize">
+                            SKU
+                          </TableCell>
+                          <TableCell>{currentProduct.sku}</TableCell>
+                        </TableRow>
+                        <TableRow key={currentProduct.manufacturer}>
+                          <TableCell className="font-medium capitalize">
+                            Producent
+                          </TableCell>
+                          <TableCell>{currentProduct.manufacturer}</TableCell>
+                        </TableRow>
+                        <TableRow key="available">
+                          <TableCell className="font-medium capitalize">
+                            Dostępność
+                          </TableCell>
+                          <TableCell>
+                            {currentProduct.available ? 'Tak' : 'Nie'}
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </CardContent>
+                </Card>
+              </TabsContent>
             </Tabs>
           </div>
         </div>
