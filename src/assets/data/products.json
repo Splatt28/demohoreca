@@ -131,10 +131,7 @@
     "originalPrice": 199.99,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/termostat-smart-1.jpg",
-      "https://example.com/images/termostat-smart-2.jpg"
-    ],
+    "images": ["/images/smarttouch.jpg"],
     "categoryId": "99",
     "sku": "TER-WNE-007",
     "companyId": "1",
@@ -155,10 +152,7 @@
     "originalPrice": 69.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/dyfuzor-citrus-1.jpg",
-      "https://example.com/images/dyfuzor-citrus-2.jpg"
-    ],
+    "images": ["/images/citrusfresh.jpg"],
     "categoryId": "105",
     "sku": "DYF-WNE-008",
     "companyId": "2",
@@ -179,10 +173,7 @@
     "originalPrice": 799.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/kominek-bio-1.jpg",
-      "https://example.com/images/kominek-bio-2.jpg"
-    ],
+    "images": ["/images/bioetanolLoft.jpg"],
     "categoryId": "110",
     "sku": "KOM-WNE-009",
     "companyId": "1",
@@ -203,10 +194,7 @@
     "originalPrice": 99.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/tapeta-geometry-grey-1.jpg",
-      "https://example.com/images/tapeta-geometry-grey-2.jpg"
-    ],
+    "images": ["/images/geometryGrey.jpg"],
     "categoryId": "60",
     "sku": "TAP-WNE-010",
     "companyId": "2",
@@ -227,10 +215,7 @@
     "originalPrice": 3599.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/recepcja-modulowa-classic-1.jpg",
-      "https://example.com/images/recepcja-modulowa-classic-2.jpg"
-    ],
+    "images": ["/images/recepcjaClassic.jpg"],
     "categoryId": "93",
     "sku": "REC-WNE-011",
     "companyId": "1",
@@ -251,10 +236,7 @@
     "originalPrice": 2899.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/lada-barowa-quartz-1.jpg",
-      "https://example.com/images/lada-barowa-quartz-2.jpg"
-    ],
+    "images": ["/images/ladaQuartz.jpg"],
     "categoryId": "94",
     "sku": "LAD-WNE-012",
     "companyId": "2",
@@ -275,10 +257,7 @@
     "originalPrice": 2099.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/stol-konferencyjny-compact-1.jpg",
-      "https://example.com/images/stol-konferencyjny-compact-2.jpg"
-    ],
+    "images": ["/images/stol8os.jpg"],
     "categoryId": "95",
     "sku": "STO-WNE-013",
     "companyId": "1",
@@ -299,10 +278,7 @@
     "originalPrice": 999.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/regal-loft-1.jpg",
-      "https://example.com/images/regal-loft-2.jpg"
-    ],
+    "images": ["/images/regaloft4.jpg"],
     "categoryId": "96",
     "sku": "REG-WNE-014",
     "companyId": "2",
@@ -323,10 +299,7 @@
     "originalPrice": 799.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/siedzisko-wbudowane-1.jpg",
-      "https://example.com/images/siedzisko-wbudowane-2.jpg"
-    ],
+    "images": ["/images/tapcomfort.jpg"],
     "categoryId": "97",
     "sku": "SIE-WNE-015",
     "companyId": "1",
@@ -347,10 +320,7 @@
     "originalPrice": 449.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/stolik-roundedge-1.jpg",
-      "https://example.com/images/stolik-roundedge-2.jpg"
-    ],
+    "images": ["/images/roundEdge.jpg"],
     "categoryId": "95",
     "sku": "STO-WNE-016",
     "companyId": "2",
@@ -371,10 +341,7 @@
     "originalPrice": 289.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/krzeslo-velvet-1.jpg",
-      "https://example.com/images/krzeslo-velvet-2.jpg"
-    ],
+    "images": ["/images/krzesloVelvet.jpg"],
     "categoryId": "58",
     "sku": "KRZ-WNE-017",
     "companyId": "1",
@@ -395,10 +362,7 @@
     "originalPrice": 189.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/pufa-square-1.jpg",
-      "https://example.com/images/pufa-square-2.jpg"
-    ],
+    "images": ["/images/pufaSquare.jpg"],
     "categoryId": "58",
     "sku": "PUF-WNE-018",
     "companyId": "2",
@@ -419,10 +383,7 @@
     "originalPrice": 699.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/biurko-slimdesk-1.jpg",
-      "https://example.com/images/biurko-slimdesk-2.jpg"
-    ],
+    "images": ["/images/biurkoSlimDesk.jpg"],
     "categoryId": "58",
     "sku": "BIU-WNE-019",
     "companyId": "1",
@@ -443,10 +404,7 @@
     "originalPrice": 1099.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/komoda-urban-oak-1.jpg",
-      "https://example.com/images/komoda-urban-oak-2.jpg"
-    ],
+    "images": ["/images/urbanOakKomoda.jpg"],
     "categoryId": "96",
     "sku": "KOM-WNE-020",
     "companyId": "2",
@@ -467,11 +425,8 @@
     "originalPrice": 7.99,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/sok-pomaranczowy-1.jpg",
-      "https://example.com/images/sok-pomaranczowy-2.jpg"
-    ],
-    "categoryId": "117",
+    "images": ["/images/sokpomaranczowy.jpg"],
+    "categoryId": "145",
     "sku": "SOK-SPO-021",
     "companyId": "5",
     "manufacturer": "Świeże Produkty Sp. z o.o.",
@@ -489,10 +444,7 @@
     "originalPrice": 45.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/kawa-espresso-1.jpg",
-      "https://example.com/images/kawa-espresso-2.jpg"
-    ],
+    "images": ["/images/kawa2.jpg", "/images/kawa.jpg"],
     "categoryId": "123",
     "sku": "KAW-SPO-022",
     "companyId": "6",
@@ -511,10 +463,7 @@
     "originalPrice": 26.99,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/mieszanka-warzyw-mrozona-1.jpg",
-      "https://example.com/images/mieszanka-warzyw-mrozona-2.jpg"
-    ],
+    "images": ["/images/mieszankaClassic.jpg"],
     "categoryId": "128",
     "sku": "MIX-SPO-023",
     "companyId": "5",
@@ -533,10 +482,7 @@
     "originalPrice": 21.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/filet-kurczaka-1.jpg",
-      "https://example.com/images/filet-kurczaka-2.jpg"
-    ],
+    "images": ["/images/kurczak.jpg"],
     "categoryId": "143",
     "sku": "FIL-SPO-024",
     "companyId": "6",
@@ -555,10 +501,7 @@
     "originalPrice": 16.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/marchew-1.jpg",
-      "https://example.com/images/marchew-2.jpg"
-    ],
+    "images": ["/images/marchew.jpg"],
     "categoryId": "157",
     "sku": "MAR-SPO-025",
     "companyId": "5",
@@ -577,10 +520,7 @@
     "originalPrice": 52.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/ryz-basmati-1.jpg",
-      "https://example.com/images/ryz-basmati-2.jpg"
-    ],
+    "images": ["/images/ryz.jpg"],
     "categoryId": "174",
     "sku": "RYZ-SPO-026",
     "companyId": "6",
@@ -599,10 +539,7 @@
     "originalPrice": 42.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/bulki-pszenne-1.jpg",
-      "https://example.com/images/bulki-pszenne-2.jpg"
-    ],
+    "images": ["/images/bulki.jpg"],
     "categoryId": "179",
     "sku": "BUL-SPO-027",
     "companyId": "5",
@@ -621,10 +558,7 @@
     "originalPrice": 26.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/makaron-penne-1.jpg",
-      "https://example.com/images/makaron-penne-2.jpg"
-    ],
+    "images": ["/images/makaron.jpg"],
     "categoryId": "173",
     "sku": "MAK-SPO-028",
     "companyId": "6",
@@ -643,10 +577,7 @@
     "originalPrice": 19.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/zupa-pomidorowa-1.jpg",
-      "https://example.com/images/zupa-pomidorowa-2.jpg"
-    ],
+    "images": ["/images/zupapomidorowa.jpg"],
     "categoryId": "136",
     "sku": "ZUP-SPO-029",
     "companyId": "5",
@@ -665,10 +596,7 @@
     "originalPrice": 15.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/owoce-lesne-mrozone-1.jpg",
-      "https://example.com/images/owoce-lesne-mrozone-2.jpg"
-    ],
+    "images": ["/images/mrozoneowoce.jpg"],
     "categoryId": "132",
     "sku": "OWL-SPO-030",
     "companyId": "6",
@@ -687,10 +615,7 @@
     "originalPrice": 5.99,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/napoj-izotoniczny-1.jpg",
-      "https://example.com/images/napoj-izotoniczny-2.jpg"
-    ],
+    "images": ["/images/izotoniccytryna.jpg"],
     "categoryId": "121",
     "sku": "NAP-SPO-031",
     "companyId": "5",
@@ -709,10 +634,7 @@
     "originalPrice": 29.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/wedliny-drobiowe-1.jpg",
-      "https://example.com/images/wedliny-drobiowe-2.jpg"
-    ],
+    "images": ["/images/szynka.jpg"],
     "categoryId": "146",
     "sku": "WED-SPO-032",
     "companyId": "6",
@@ -731,10 +653,7 @@
     "originalPrice": 89.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/olej-rzepakowy-1.jpg",
-      "https://example.com/images/olej-rzepakowy-2.jpg"
-    ],
+    "images": ["/images/olej.jpg"],
     "categoryId": "168",
     "sku": "OLE-SPO-033",
     "companyId": "5",
@@ -753,10 +672,7 @@
     "originalPrice": 22.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/kasza-bulgur-1.jpg",
-      "https://example.com/images/kasza-bulgur-2.jpg"
-    ],
+    "images": ["/images/kasza.jpg"],
     "categoryId": "175",
     "sku": "KAS-SPO-034",
     "companyId": "6",
@@ -775,10 +691,7 @@
     "originalPrice": 14.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/pieczywo-bezglutenowe-1.jpg",
-      "https://example.com/images/pieczywo-bezglutenowe-2.jpg"
-    ],
+    "images": ["/images/chlebkrojony.jpg"],
     "categoryId": "180",
     "sku": "PIE-SPO-035",
     "companyId": "5",
@@ -797,10 +710,7 @@
     "originalPrice": 26.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/sos-salatkowy-1.jpg",
-      "https://example.com/images/sos-salatkowy-2.jpg"
-    ],
+    "images": ["/images/sosjogurtowy.jpg"],
     "categoryId": "166",
     "sku": "SOS-SPO-036",
     "companyId": "6",
@@ -819,10 +729,7 @@
     "originalPrice": 19.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/salata-rzymska-1.jpg",
-      "https://example.com/images/salata-rzymska-2.jpg"
-    ],
+    "images": ["/images/salatarzymska.jpg"],
     "categoryId": "156",
     "sku": "SAL-SPO-037",
     "companyId": "5",
@@ -841,10 +748,7 @@
     "originalPrice": 13.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/pasztet-drobiowy-1.jpg",
-      "https://example.com/images/pasztet-drobiowy-2.jpg"
-    ],
+    "images": ["/images/pasztet.jpg"],
     "categoryId": "148",
     "sku": "PAS-SPO-038",
     "companyId": "6",
@@ -863,10 +767,7 @@
     "originalPrice": 28.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/herbata-sencha-1.jpg",
-      "https://example.com/images/herbata-sencha-2.jpg"
-    ],
+    "images": ["/images/herbatazielona.jpg"],
     "categoryId": "124",
     "sku": "HER-SPO-039",
     "companyId": "5",
@@ -885,10 +786,7 @@
     "originalPrice": 3.8,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/baton-proteinowy-1.jpg",
-      "https://example.com/images/baton-proteinowy-2.jpg"
-    ],
+    "images": ["/images/baton.jpg"],
     "categoryId": "164",
     "sku": "BAT-SPO-040",
     "companyId": "6",
@@ -907,10 +805,7 @@
     "originalPrice": 259.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/farba-elewacyjna-1.jpg",
-      "https://example.com/images/farba-elewacyjna-2.jpg"
-    ],
+    "images": ["/images/farba.jpg"],
     "categoryId": "10",
     "sku": "FAR-OBE-041",
     "companyId": "3",
@@ -932,10 +827,7 @@
     "originalPrice": 92.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/gont-bitumiczny-1.jpg",
-      "https://example.com/images/gont-bitumiczny-2.jpg"
-    ],
+    "images": ["/images/gontbitumiczny.jpg"],
     "categoryId": "15",
     "sku": "GON-OBE-042",
     "companyId": "4",
@@ -957,10 +849,7 @@
     "originalPrice": 39.9,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/rynna-pvc-1.jpg",
-      "https://example.com/images/rynna-pvc-2.jpg"
-    ],
+    "images": ["/images/rynna.jpg"],
     "categoryId": "17",
     "sku": "RYN-OBE-043",
     "companyId": "3",
@@ -982,10 +871,7 @@
     "originalPrice": 115.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/deska-kompozytowa-1.jpg",
-      "https://example.com/images/deska-kompozytowa-2.jpg"
-    ],
+    "images": ["/images/deska.jpg"],
     "categoryId": "22",
     "sku": "DES-OBE-044",
     "companyId": "4",
@@ -1007,10 +893,7 @@
     "originalPrice": 249.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/donica-betonowa-1.jpg",
-      "https://example.com/images/donica-betonowa-2.jpg"
-    ],
+    "images": ["/images/donica.jpg"],
     "categoryId": "28",
     "sku": "DON-OBE-045",
     "companyId": "3",
@@ -1032,10 +915,7 @@
     "originalPrice": 639.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/lawka-parkowa-1.jpg",
-      "https://example.com/images/lawka-parkowa-2.jpg"
-    ],
+    "images": ["/images/lawka.jpg"],
     "categoryId": "31",
     "sku": "LAW-OBE-046",
     "companyId": "4",
@@ -1057,10 +937,7 @@
     "originalPrice": 699.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/kostka-brukowa-1.jpg",
-      "https://example.com/images/kostka-brukowa-2.jpg"
-    ],
+    "images": null,
     "categoryId": "39",
     "sku": "KOS-OBE-047",
     "companyId": "3",
@@ -1082,10 +959,7 @@
     "originalPrice": 104.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/oprawa-elewacyjna-1.jpg",
-      "https://example.com/images/oprawa-elewacyjna-2.jpg"
-    ],
+    "images": ["/images/led.jpg"],
     "categoryId": "40",
     "sku": "OPR-OBE-048",
     "companyId": "4",
@@ -1107,10 +981,7 @@
     "originalPrice": 7990.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/drzwi-automatyczne-1.jpg",
-      "https://example.com/images/drzwi-automatyczne-2.jpg"
-    ],
+    "images": ["/images/drzwiszklane.jpg"],
     "categoryId": "44",
     "sku": "DRZ-OBE-049",
     "companyId": "3",
@@ -1132,10 +1003,7 @@
     "originalPrice": 389.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/zadaszenie-wejsciowe-1.jpg",
-      "https://example.com/images/zadaszenie-wejsciowe-2.jpg"
-    ],
+    "images": ["/images/zadaszenie.jpg"],
     "categoryId": "45",
     "sku": "ZAD-OBE-050",
     "companyId": "4",
@@ -1157,10 +1025,7 @@
     "originalPrice": 89.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/okladzina-hpl-1.jpg",
-      "https://example.com/images/okladzina-hpl-2.jpg"
-    ],
+    "images": ["/images/okladzina.jpg"],
     "categoryId": "11",
     "sku": "OKL-OBE-051",
     "companyId": "3",
@@ -1182,10 +1047,7 @@
     "originalPrice": 279.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/system-docieplen-1.jpg",
-      "https://example.com/images/system-docieplen-2.jpg"
-    ],
+    "images": ["/images/docieplenie.jpg"],
     "categoryId": "12",
     "sku": "DOC-OBE-052",
     "companyId": "4",
@@ -1207,10 +1069,7 @@
     "originalPrice": 22.5,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/listwa-cokolowa-1.jpg",
-      "https://example.com/images/listwa-cokolowa-2.jpg"
-    ],
+    "images": ["/images/listwa.jpg"],
     "categoryId": "13",
     "sku": "LIS-OBE-053",
     "companyId": "3",
@@ -1232,10 +1091,7 @@
     "originalPrice": 229.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/blachodachowka-1.jpg",
-      "https://example.com/images/blachodachowka-2.jpg"
-    ],
+    "images": ["/images/blachodachwoak.jpg"],
     "categoryId": "15",
     "sku": "BLA-OBE-054",
     "companyId": "4",
@@ -1257,10 +1113,7 @@
     "originalPrice": 929.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/okno-dachowe-1.jpg",
-      "https://example.com/images/okno-dachowe-2.jpg"
-    ],
+    "images": ["/images/okno.jpg"],
     "categoryId": "18",
     "sku": "OKN-OBE-055",
     "companyId": "3",
@@ -1282,10 +1135,7 @@
     "originalPrice": 1399.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/swietlik-dachowy-1.jpg",
-      "https://example.com/images/swietlik-dachowy-2.jpg"
-    ],
+    "images": ["/images/swietlik.jpg"],
     "categoryId": "19",
     "sku": "SWT-OBE-056",
     "companyId": "4",
@@ -1307,10 +1157,7 @@
     "originalPrice": 329.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/balustrada-1.jpg",
-      "https://example.com/images/balustrada-2.jpg"
-    ],
+    "images": ["/images/balustrada.jpg"],
     "categoryId": "23",
     "sku": "BAL-OBE-057",
     "companyId": "3",
@@ -1332,10 +1179,7 @@
     "originalPrice": 4790.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/brama-przesuwna-1.jpg",
-      "https://example.com/images/brama-przesuwna-2.jpg"
-    ],
+    "images": ["/images/brama.jpg"],
     "categoryId": "39",
     "sku": "BRA-OBE-058",
     "companyId": "4",
@@ -1357,10 +1201,7 @@
     "originalPrice": 749.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/oprawa-parkowa-1.jpg",
-      "https://example.com/images/oprawa-parkowa-2.jpg"
-    ],
+    "images": ["/images/oprawa.jpg"],
     "categoryId": "40",
     "sku": "OPP-OBE-059",
     "companyId": "3",
@@ -1382,10 +1223,7 @@
     "originalPrice": 279.0,
     "available": true,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "images": [
-      "https://example.com/images/stojak-rowerowy-1.jpg",
-      "https://example.com/images/stojak-rowerowy-2.jpg"
-    ],
+    "images": ["/images/stojak.jpg"],
     "categoryId": "48",
     "sku": "STO-OBE-060",
     "companyId": "4",
