@@ -11,6 +11,7 @@ type ProductStore = {
   isLoggedIn: boolean
   setIsLoggedIn: (isLogged: boolean) => void
   setProducts: (newProducts: Item[]) => void
+  setServices: (newServices: Item[]) => void
   addProduct: (newProduct: Item) => void
   removeProduct: (productId: string | number) => void
   userData: CompanyData
@@ -25,6 +26,7 @@ export const useStore = create<ProductStore>((set) => ({
   setIsLoggedIn: (isLoggedIn) => set(() => ({ isLoggedIn: isLoggedIn })),
   companies: companyList,
   setProducts: (newProducts) => set(() => ({ products: newProducts })),
+  setServices: (newServices) => set(() => ({ services: newServices })),
   addProduct: (newProduct) =>
     set((state) => ({ products: [...state.products, newProduct] })),
   removeProduct: (productId) =>

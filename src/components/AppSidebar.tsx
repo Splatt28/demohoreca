@@ -30,6 +30,11 @@ export function AppSidebar() {
       href: '/panel-uzytkownika/twoje-produkty',
     },
     {
+      title: 'Twoje usługi',
+      icon: Package,
+      href: '/panel-uzytkownika/twoje-uslugi',
+    },
+    {
       title: 'Twoja umowa',
       icon: FileText,
       href: '/panel-uzytkownika/twoja-umowa',
