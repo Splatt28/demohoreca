@@ -19,7 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { filterMap, findCategoryByNormalizedName } from '@/lib/utils'
+import { filterMap } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import productCategoryList from '@/assets/data/productCategories.json'
 import type { Category, Item } from '@/types/types'
@@ -156,7 +156,6 @@ export default function TwojeProdukty() {
   // on form submit - save or update product
   const onSubmit = () => {
     const data = getValues()
-    console.log(data)
     // Convert attributes array back to object
     const attributesObj: {
       [key: string]: string | number | boolean | string[]
@@ -173,7 +172,6 @@ export default function TwojeProdukty() {
         attributesObj[key] = val
       }
     })
-
     const newProduct: Item = {
       id: data.id ?? uuidv4(),
       name: data.name,
@@ -256,10 +254,9 @@ export default function TwojeProdukty() {
                 </TableCell>
                 <TableCell>
                   {
-                    findCategoryByNormalizedName(
-                      productCategoryList,
-                      product.categoryId,
-                    )?.name
+                    categoryValues().find(
+                      (cat) => String(cat.value) === product.categoryId,
+                    )?.label
                   }
                 </TableCell>
                 <TableCell className="text-right">
@@ -357,7 +354,7 @@ export default function TwojeProdukty() {
                   <Label htmlFor="categoryId">Kategoria</Label>
                   <ComboboxForm
                     options={categoryValues()}
-                    valueName={'category'}
+                    valueName={'categoryId'}
                   />
                 </div>
               </div>

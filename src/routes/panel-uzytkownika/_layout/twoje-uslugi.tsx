@@ -19,7 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { filterMap, findCategoryByNormalizedName } from '@/lib/utils'
+import { filterMap } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import serviceCategoryList from '@/assets/data/serviceCategories.json'
 import type { Category, Item } from '@/types/types'
@@ -255,10 +255,9 @@ export default function TwojeUslugi() {
                 </TableCell>
                 <TableCell>
                   {
-                    findCategoryByNormalizedName(
-                      serviceCategoryList,
-                      product.categoryId,
-                    )?.name
+                    categoryValues().find(
+                      (cat) => String(cat.value) === product.categoryId,
+                    )?.label
                   }
                 </TableCell>
                 <TableCell className="text-right">

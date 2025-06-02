@@ -108,7 +108,7 @@ function RouteComponent() {
             <BreadcrumbLink asChild>
               <Link
                 to={
-                  data.type === 'prodult'
+                  data.type === 'produkt'
                     ? `/kategoria/$categoryId`
                     : '/uslugi/$categoryId'
                 }
