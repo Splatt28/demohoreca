@@ -19,14 +19,17 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { findCategoryByNormalizedName } from '@/lib/utils'
+import { filterMap, findCategoryByNormalizedName } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import productCategoryList from '@/assets/data/productCategories.json'
-import type { Item } from '@/types/types'
+import type { Category, Item } from '@/types/types'
 import { createFileRoute } from '@tanstack/react-router'
 import { Edit, Plus, TrashIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { ComboboxForm } from '@/components/Combobox'
+import { useForm, useFieldArray, Controller } from 'react-hook-form'
+import { Form } from '@/components/ui/form'
 
 export const Route = createFileRoute(
   '/panel-uzytkownika/_layout/twoje-produkty',
@@ -34,13 +37,30 @@ export const Route = createFileRoute(
   component: TwojeProdukty,
 })
 
+type AttributeField = {
+  key: string
+  value: string
+}
+
+type FormValues = {
+  id?: string
+  name: string
+  price: number
+  originalPrice: number
+  available: boolean
+  description: string
+  images: string[]
+  categoryId: string
+  sku: string
+  manufacturer: string
+  attributes: AttributeField[]
+}
+
 export default function TwojeProdukty() {
   const { products, setProducts, removeProduct, userData } = useStore()
 
-  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [currentProduct, setCurrentProduct] = useState<Item | null>(null)
-  const [editedProduct, setEditedProduct] = useState<Item | null>(null)
-
   const [yourProducts, setYourProducts] = useState<Item[]>([])
 
   useEffect(() => {
@@ -49,64 +69,158 @@ export default function TwojeProdukty() {
     )
   }, [products, userData.id])
 
-  const handleEditProduct = (product: Item): void => {
-    setCurrentProduct(product)
-    setEditedProduct({ ...product })
-    setIsDialogOpen(true)
-  }
-  const handleRemoveProduct = (product: Item): void => {
-    removeProduct(product.id)
-  }
-
-  const handleAddProduct = (): void => {
-    const newProduct: Item = {
-      id: uuidv4(),
+  // react-hook-form setup
+  const form = useForm<FormValues>({
+    defaultValues: {
+      id: undefined,
       name: '',
       price: 0,
       originalPrice: 0,
       available: true,
       description: '',
-      images: ['/placeholder.svg'],
+      images: [''],
       categoryId: '',
       sku: '',
-      companyId: userData.id,
       manufacturer: '',
-      attributes: {},
-    }
+      attributes: [],
+    },
+  })
+  const {
+    control,
+    register,
+    reset,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+  } = form
+
+  const {
+    fields: attributeFields,
+    append,
+    remove,
+  } = useFieldArray({
+    control,
+    name: 'attributes',
+  })
+
+  // open dialog with new product form
+  const handleAddProduct = () => {
     setCurrentProduct(null)
-    setEditedProduct(newProduct)
+    reset({
+      id: undefined,
+      name: '',
+      price: 0,
+      originalPrice: 0,
+      available: true,
+      description: '',
+      images: [''],
+      categoryId: '',
+      sku: '',
+      manufacturer: '',
+      attributes: [],
+    })
     setIsDialogOpen(true)
   }
 
-  const handleSaveProduct = (): void => {
-    if (!editedProduct) return
+  // open dialog and fill with existing product data
+  const handleEditProduct = (product: Item) => {
+    setCurrentProduct(product)
+    // convert attributes object to array for form
+    const attrs: AttributeField[] = Object.entries(
+      product.attributes || {},
+    ).map(([key, value]) => ({
+      key,
+      value: String(value),
+    }))
+    reset({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      available: product.available,
+      description: product.description,
+      images: product?.images?.length ? product.images : [''],
+      categoryId: product.categoryId,
+      sku: product.sku,
+      manufacturer: product.manufacturer,
+      attributes: attrs,
+    })
+    setIsDialogOpen(true)
+  }
+
+  // remove product
+  const handleRemoveProduct = (product: Item) => {
+    removeProduct(product.id)
+  }
+
+  // on form submit - save or update product
+  const onSubmit = () => {
+    const data = getValues()
+    console.log(data)
+    // Convert attributes array back to object
+    const attributesObj: {
+      [key: string]: string | number | boolean | string[]
+    } = {}
+    data.attributes.forEach(({ key, value }) => {
+      if (key.trim() !== '') {
+        // try to convert to number or boolean if possible
+        let val: string | number | boolean = value.trim()
+
+        if (val.toLowerCase() === 'true') val = true
+        else if (val.toLowerCase() === 'false') val = false
+        else if (!isNaN(Number(val))) val = Number(val)
+
+        attributesObj[key] = val
+      }
+    })
+
+    const newProduct: Item = {
+      id: data.id ?? uuidv4(),
+      name: data.name,
+      price: data.price,
+      originalPrice: data.originalPrice,
+      available: data.available,
+      description: data.description,
+      images: data.images.filter(Boolean), // remove empty strings
+      categoryId: data.categoryId,
+      sku: data.sku,
+      companyId: userData.id,
+      manufacturer: data.manufacturer,
+      attributes: attributesObj,
+    }
 
     if (currentProduct) {
-      // Edit existing product
-      setProducts([
-        ...products,
-        ...yourProducts.map((p) =>
-          p.id === currentProduct.id ? editedProduct : p,
-        ),
-      ])
+      // Update existing product
+      setProducts(
+        products.map((p) => (p.id === currentProduct.id ? newProduct : p)),
+      )
     } else {
       // Add new product
-      setProducts([...products, editedProduct])
+      setProducts([...products, newProduct])
     }
 
     setIsDialogOpen(false)
+    return
   }
 
-  const handleInputChange = <K extends keyof Item>(
-    field: K,
-    value: Item[K],
-  ): void => {
-    if (!editedProduct) return
+  const categoryValues = (): { value: string | number; label: string }[] => {
+    const result: { value: string | number; label: string }[] = []
 
-    setEditedProduct({
-      ...editedProduct,
-      [field]: value,
-    })
+    function traverse(cat: Category) {
+      result.push({ value: cat.id, label: cat.name })
+      cat.subCategories?.forEach(traverse)
+    }
+
+    productCategoryList.forEach(traverse)
+
+    return result
+  }
+
+  const attributeValues = (): { value: string | number; label: string }[] => {
+    return Object.entries(filterMap).map(([key, value]) => ({
+      value: key,
+      label: value.label,
+    }))
   }
 
   return (
@@ -181,30 +295,29 @@ export default function TwojeProdukty() {
               {currentProduct ? 'zaktualizować' : 'dodać'} produkt.
             </DialogDescription>
           </DialogHeader>
-
-          {editedProduct && (
+          <Form {...form} handleSubmit={handleSubmit(onSubmit) as any}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-4 md:col-span-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Nazwa produktu</Label>
                   <Input
                     id="name"
-                    value={editedProduct.name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange('name', e.target.value)
-                    }
+                    {...register('name', { required: 'Nazwa jest wymagana' })}
                   />
+                  {errors.name && (
+                    <p className="text-red-600 text-sm">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="description">Opis produktu</Label>
                   <textarea
                     id="description"
+                    className="w-full rounded-md border px-3 py-2 text-sm"
+                    {...register('description')}
                     rows={3}
-                    value={editedProduct.description}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                      handleInputChange('description', e.target.value)
-                    }
                   />
                 </div>
               </div>
@@ -215,73 +328,124 @@ export default function TwojeProdukty() {
                   <Input
                     id="price"
                     type="number"
-                    value={editedProduct.price}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange(
-                        'price',
-                        Number.parseFloat(e.target.value),
-                      )
-                    }
+                    step="0.01"
+                    {...register('price', {
+                      required: 'Cena jest wymagana',
+                      valueAsNumber: true,
+                    })}
+                  />
+                  {errors.price && (
+                    <p className="text-red-600 text-sm">
+                      {errors.price.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="originalPrice">Cena oryginalna (zł)</Label>
+                  <Input
+                    id="originalPrice"
+                    type="number"
+                    step="0.01"
+                    {...register('originalPrice', {
+                      valueAsNumber: true,
+                    })}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="category">Kategoria</Label>
-                  <Input
-                    id="category"
-                    value={editedProduct.categoryId}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange('categoryId', e.target.value)
-                    }
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="sku">SKU</Label>
-                  <Input
-                    id="sku"
-                    value={editedProduct.sku}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange('sku', e.target.value)
-                    }
+                  <Label htmlFor="categoryId">Kategoria</Label>
+                  <ComboboxForm
+                    options={categoryValues()}
+                    valueName={'category'}
                   />
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="image">URL obrazka</Label>
+                  <Label htmlFor="images.0">URL obrazka</Label>
                   <Input
-                    id="image"
-                    value={editedProduct.images?.[0]}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleInputChange('images', [e.target.value])
-                    }
+                    id="images.0"
+                    {...register('images.0')}
+                    placeholder="https://..."
                   />
                 </div>
 
+                <div className="space-y-2">
+                  <Label htmlFor="manufacturer">Producent</Label>
+                  <Input id="manufacturer" {...register('manufacturer')} />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="sku">SKU</Label>
+                  <Input id="sku" {...register('sku')} />
+                </div>
+
                 <div className="flex items-center space-x-2 pt-4">
-                  <Switch
-                    id="available"
-                    checked={editedProduct.available}
-                    onCheckedChange={(checked: boolean) =>
-                      handleInputChange('available', checked)
-                    }
+                  <Controller
+                    control={control}
+                    name="available"
+                    render={({ field }) => (
+                      <Switch
+                        id="available"
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    )}
                   />
                   <Label htmlFor="available">Produkt dostępny</Label>
                 </div>
               </div>
             </div>
-          )}
 
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Anuluj
-            </Button>
-            <Button onClick={handleSaveProduct}>
-              {currentProduct ? 'Zapisz zmiany' : 'Dodaj produkt'}
-            </Button>
-          </DialogFooter>
+            {/* Dynamic attributes */}
+            <div>
+              <Label className="mb-2 block font-semibold text-base">
+                Atrybuty produktu
+              </Label>
+
+              {attributeFields.map((field, index) => (
+                <div key={field.id} className="flex gap-2 items-center mb-2">
+                  <ComboboxForm
+                    options={attributeValues()}
+                    valueName={`attributes.${index}.key`}
+                  />
+                  <Input
+                    placeholder="Wartość atrybutu"
+                    {...register(`attributes.${index}.value` as const, {
+                      required: 'Wartość atrybutu jest wymagana',
+                    })}
+                    className="flex-1"
+                  />
+                  <Button
+                    type="button"
+                    onClick={() => remove(index)}
+                    size="icon"
+                  >
+                    &times;
+                  </Button>
+                </div>
+              ))}
+
+              <Button
+                type="button"
+                onClick={() => append({ key: '', value: '' })}
+                className="mt-2"
+              >
+                Dodaj atrybut
+              </Button>
+            </div>
+
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+                Anuluj
+              </Button>
+              <Button type="submit" onClick={onSubmit}>
+                {currentProduct ? 'Zapisz zmiany' : 'Dodaj produkt'}
+              </Button>
+            </DialogFooter>
+          </Form>
         </DialogContent>
       </Dialog>
     </div>

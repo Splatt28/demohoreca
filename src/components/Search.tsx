@@ -7,28 +7,33 @@ import {
   useRef,
   useState,
 } from 'react'
-import productList from '@/assets/data/products.json'
 import type { Item } from '@/types/types'
 import { useNavigate } from '@tanstack/react-router'
 import { Route } from '@/routes'
+import { useStore } from '@/store/useStore'
+import { useShallow } from 'zustand/react/shallow'
 
 export const SearchInput = () => {
+  const productList = useStore(useShallow((state) => state.products))
   const [input, setInput] = useState('')
   const navigate = useNavigate({ from: Route.fullPath })
   const [searchResults, setSearchResults] = useState<Item[]>([])
   const deferredInput = useDeferredValue(input)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const handleSearch = useCallback((searchTerm: string) => {
-    if (!searchTerm || searchTerm.length < 3) {
-      setSearchResults([])
-      return
-    }
-    const searchResult = productList.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()),
-    )
-    setSearchResults(searchResult)
-  }, [])
+  const handleSearch = useCallback(
+    (searchTerm: string) => {
+      if (!searchTerm || searchTerm.length < 3) {
+        setSearchResults([])
+        return
+      }
+      const searchResult = productList.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      )
+      setSearchResults(searchResult)
+    },
+    [productList],
+  )
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -89,7 +94,7 @@ export const SearchInput = () => {
               ></div>
               <div className="flex-1">
                 <p className="font-medium">{searchResult.name}</p>
-                <p className="text-sm text-gray-600">{searchResult.price}</p>
+                <p className="text-sm text-gray-600">{searchResult.price} zł</p>
               </div>
             </div>
           ))}
