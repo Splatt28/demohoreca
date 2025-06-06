@@ -13,7 +13,7 @@
     "format": "prettier",
     "check": "prettier --write . && eslint --fix",
     "predeploy": "pnpm build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "pnpm dlx gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -72,6 +72,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "gh-pages": "^6.3.0",
     "globals": "^16.2.0",
     "jsdom": "^26.0.0",
     "prettier": "^3.5.3",
