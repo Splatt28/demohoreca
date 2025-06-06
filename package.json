@@ -1,5 +1,6 @@
 {
   "name": "fe-demo",
+  "homepage": "https://Splatt28.github.io/demohoreca",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +11,9 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

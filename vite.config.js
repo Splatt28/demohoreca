@@ -7,6 +7,7 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/demohoreca',
   plugins: [
     TanStackRouterVite({ autoCodeSplitting: true }),
     viteReact(),
@@ -18,6 +19,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      // eslint-disable-next-line no-undef
       '@': resolve(__dirname, './src'),
     },
   },
