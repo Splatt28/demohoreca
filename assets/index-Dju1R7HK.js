@@ -1,0 +1,1 @@
+import{j as s}from"./index-CYEnU9se.js";const e=function(){return s.jsx("div",{className:"font-space",children:s.jsx("div",{className:"!bg-[#f0f0f8]",children:s.jsx("div",{className:"grow shrink-0"})})})};export{e as component};
