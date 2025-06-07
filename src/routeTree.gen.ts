@@ -25,7 +25,6 @@ import { Route as PanelUzytkownikaLayoutTwojeUslugiImport } from './routes/panel
 import { Route as PanelUzytkownikaLayoutTwojeProduktyImport } from './routes/panel-uzytkownika/_layout/twoje-produkty'
 import { Route as PanelUzytkownikaLayoutTwojeDaneImport } from './routes/panel-uzytkownika/_layout/twoje-dane'
 import { Route as PanelUzytkownikaLayoutTwojaUmowaImport } from './routes/panel-uzytkownika/_layout/twoja-umowa'
-import { Route as PanelUzytkownikaLayoutTwojaStronaSprzedawcyImport } from './routes/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
 
 // Create Virtual Routes
 
@@ -114,13 +113,6 @@ const PanelUzytkownikaLayoutTwojaUmowaRoute =
     getParentRoute: () => PanelUzytkownikaLayoutRoute,
   } as any)
 
-const PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute =
-  PanelUzytkownikaLayoutTwojaStronaSprzedawcyImport.update({
-    id: '/twoja-strona-sprzedawcy',
-    path: '/twoja-strona-sprzedawcy',
-    getParentRoute: () => PanelUzytkownikaLayoutRoute,
-  } as any)
-
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -188,13 +180,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UslugiIndexImport
       parentRoute: typeof UslugiRouteImport
     }
-    '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy': {
-      id: '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
-      path: '/twoja-strona-sprzedawcy'
-      fullPath: '/panel-uzytkownika/twoja-strona-sprzedawcy'
-      preLoaderRoute: typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyImport
-      parentRoute: typeof PanelUzytkownikaLayoutImport
-    }
     '/panel-uzytkownika/_layout/twoja-umowa': {
       id: '/panel-uzytkownika/_layout/twoja-umowa'
       path: '/twoja-umowa'
@@ -243,7 +228,6 @@ const UslugiRouteRouteWithChildren = UslugiRouteRoute._addFileChildren(
 )
 
 interface PanelUzytkownikaLayoutRouteChildren {
-  PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute: typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   PanelUzytkownikaLayoutTwojaUmowaRoute: typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   PanelUzytkownikaLayoutTwojeDaneRoute: typeof PanelUzytkownikaLayoutTwojeDaneRoute
   PanelUzytkownikaLayoutTwojeProduktyRoute: typeof PanelUzytkownikaLayoutTwojeProduktyRoute
@@ -252,8 +236,6 @@ interface PanelUzytkownikaLayoutRouteChildren {
 
 const PanelUzytkownikaLayoutRouteChildren: PanelUzytkownikaLayoutRouteChildren =
   {
-    PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute:
-      PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute,
     PanelUzytkownikaLayoutTwojaUmowaRoute:
       PanelUzytkownikaLayoutTwojaUmowaRoute,
     PanelUzytkownikaLayoutTwojeDaneRoute: PanelUzytkownikaLayoutTwojeDaneRoute,
@@ -288,7 +270,6 @@ export interface FileRoutesByFullPath {
   '/uslugi/$categoryId': typeof UslugiCategoryIdRoute
   '/mapa-uslug': typeof MapaUslugIndexRoute
   '/uslugi/': typeof UslugiIndexRoute
-  '/panel-uzytkownika/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   '/panel-uzytkownika/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
@@ -303,7 +284,6 @@ export interface FileRoutesByTo {
   '/uslugi/$categoryId': typeof UslugiCategoryIdRoute
   '/mapa-uslug': typeof MapaUslugIndexRoute
   '/uslugi': typeof UslugiIndexRoute
-  '/panel-uzytkownika/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   '/panel-uzytkownika/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
@@ -321,7 +301,6 @@ export interface FileRoutesById {
   '/uslugi/$categoryId': typeof UslugiCategoryIdRoute
   '/mapa-uslug/': typeof MapaUslugIndexRoute
   '/uslugi/': typeof UslugiIndexRoute
-  '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy': typeof PanelUzytkownikaLayoutTwojaStronaSprzedawcyRoute
   '/panel-uzytkownika/_layout/twoja-umowa': typeof PanelUzytkownikaLayoutTwojaUmowaRoute
   '/panel-uzytkownika/_layout/twoje-dane': typeof PanelUzytkownikaLayoutTwojeDaneRoute
   '/panel-uzytkownika/_layout/twoje-produkty': typeof PanelUzytkownikaLayoutTwojeProduktyRoute
@@ -339,7 +318,6 @@ export interface FileRouteTypes {
     | '/uslugi/$categoryId'
     | '/mapa-uslug'
     | '/uslugi/'
-    | '/panel-uzytkownika/twoja-strona-sprzedawcy'
     | '/panel-uzytkownika/twoja-umowa'
     | '/panel-uzytkownika/twoje-dane'
     | '/panel-uzytkownika/twoje-produkty'
@@ -353,7 +331,6 @@ export interface FileRouteTypes {
     | '/uslugi/$categoryId'
     | '/mapa-uslug'
     | '/uslugi'
-    | '/panel-uzytkownika/twoja-strona-sprzedawcy'
     | '/panel-uzytkownika/twoja-umowa'
     | '/panel-uzytkownika/twoje-dane'
     | '/panel-uzytkownika/twoje-produkty'
@@ -369,7 +346,6 @@ export interface FileRouteTypes {
     | '/uslugi/$categoryId'
     | '/mapa-uslug/'
     | '/uslugi/'
-    | '/panel-uzytkownika/_layout/twoja-strona-sprzedawcy'
     | '/panel-uzytkownika/_layout/twoja-umowa'
     | '/panel-uzytkownika/_layout/twoje-dane'
     | '/panel-uzytkownika/_layout/twoje-produkty'
@@ -439,7 +415,6 @@ export const routeTree = rootRoute
       "filePath": "panel-uzytkownika/_layout.tsx",
       "parent": "/panel-uzytkownika",
       "children": [
-        "/panel-uzytkownika/_layout/twoja-strona-sprzedawcy",
         "/panel-uzytkownika/_layout/twoja-umowa",
         "/panel-uzytkownika/_layout/twoje-dane",
         "/panel-uzytkownika/_layout/twoje-produkty",
@@ -456,10 +431,6 @@ export const routeTree = rootRoute
     "/uslugi/": {
       "filePath": "uslugi/index.tsx",
       "parent": "/uslugi"
-    },
-    "/panel-uzytkownika/_layout/twoja-strona-sprzedawcy": {
-      "filePath": "panel-uzytkownika/_layout/twoja-strona-sprzedawcy.tsx",
-      "parent": "/panel-uzytkownika/_layout"
     },
     "/panel-uzytkownika/_layout/twoja-umowa": {
       "filePath": "panel-uzytkownika/_layout/twoja-umowa.tsx",

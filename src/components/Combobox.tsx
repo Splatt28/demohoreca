@@ -34,13 +34,12 @@ export function ComboboxForm({
   valueName: string
 }) {
   const form = useFormContext()
-
   return (
     <FormField
       control={form.control}
       name={valueName}
       render={({ field }) => (
-        <FormItem className="">
+        <FormItem>
           <Popover>
             <PopoverTrigger asChild>
               <FormControl className="overflow-hidden text-ellipsis">
@@ -53,8 +52,9 @@ export function ComboboxForm({
                   )}
                 >
                   {field.value
-                    ? options.find((language) => language.value === field.value)
-                        ?.label
+                    ? options.find(
+                        (language) => language.value === parseInt(field.value),
+                      )?.label
                     : 'Wybierz opcję'}
                   <ChevronsUpDown className="opacity-50" />
                 </Button>
@@ -63,11 +63,11 @@ export function ComboboxForm({
             <PopoverContent className="w-[200px] p-0">
               <Command>
                 <CommandInput
-                  placeholder="Search framework..."
+                  placeholder="Wyszukaj kategorii"
                   className="h-9"
                 />
                 <CommandList>
-                  <CommandEmpty>No framework found.</CommandEmpty>
+                  <CommandEmpty>Brak kategorii</CommandEmpty>
                   <CommandGroup>
                     {options.map((option) => (
                       <CommandItem

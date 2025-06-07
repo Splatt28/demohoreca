@@ -156,7 +156,6 @@ export default function TwojeUslugi() {
   // on form submit - save or update product
   const onSubmit = () => {
     const data = getValues()
-    console.log(data)
     // Convert attributes array back to object
     const attributesObj: {
       [key: string]: string | number | boolean | string[]

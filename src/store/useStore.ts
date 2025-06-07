@@ -8,6 +8,7 @@ type ProductStore = {
   products: Item[]
   services: Item[]
   companies: CompanyData[]
+  setCompanies: (companies: CompanyData[]) => void
   isLoggedIn: boolean
   setIsLoggedIn: (isLogged: boolean) => void
   setProducts: (newProducts: Item[]) => void
@@ -25,6 +26,7 @@ export const useStore = create<ProductStore>((set) => ({
   isLoggedIn: false,
   setIsLoggedIn: (isLoggedIn) => set(() => ({ isLoggedIn: isLoggedIn })),
   companies: companyList,
+  setCompanies: (companies) => set(() => ({ companies: companies })),
   setProducts: (newProducts) => set(() => ({ products: newProducts })),
   setServices: (newServices) => set(() => ({ services: newServices })),
   addProduct: (newProduct) =>

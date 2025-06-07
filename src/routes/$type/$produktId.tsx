@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useParams } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import { ChevronRight, Heart, ShoppingCart } from 'lucide-react'
+import { ChevronRight, ShoppingCart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Breadcrumb,
@@ -55,7 +55,9 @@ function RouteComponent() {
   useEffect(() => {
     setSimilarProducts(
       typeItems.filter(
-        (product) => product.categoryId === currentProduct?.categoryId,
+        (product) =>
+          product.categoryId === currentProduct?.categoryId &&
+          product.id !== currentProduct.id,
       ),
     )
   }, [currentProduct, typeItems])
@@ -185,11 +187,10 @@ function RouteComponent() {
               <h1 className="text-3xl font-bold">{currentProduct.name}</h1>
               <div className="flex items-center mt-2">
                 <p className="text-muted-foreground">
-                  By
                   <Button
                     variant="link"
                     onClick={() => setIsDialogOpen(true)}
-                    className="text-primary"
+                    className="text-primary px-0"
                   >
                     {getCompanyName(currentProduct.companyId)}
                   </Button>
@@ -226,9 +227,6 @@ function RouteComponent() {
                 <Button className="flex-1 rounded-full">
                   <ShoppingCart className="mr-2 h-4 w-4" />
                   Kup teraz
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full">
-                  <Heart className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -309,47 +307,50 @@ function RouteComponent() {
             </Tabs>
           </div>
         </div>
-
-        <div className="my-12">
-          <h2 className="text-2xl font-bold mb-6">Podobne produkty</h2>
-          <Carousel className="w-full">
-            <CarouselContent>
-              {similarProducts.map((product) => (
-                <CarouselItem
-                  key={product.id}
-                  className="md:basis-1/3 lg:basis-1/4"
-                >
-                  <Card className="h-full">
-                    <CardContent className="p-4 flex flex-col h-full">
-                      <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
-                        <img
-                          src={product.images?.[0] || '/images/placeholder.jpg'}
-                          alt={product.name}
-                          className="object-cover w-full transition-transform hover:scale-105"
-                        />
-                      </div>
-                      <h3 className="font-medium line-clamp-1">
-                        {product.name}
-                      </h3>
-                      <p className="font-bold mt-1">
-                        {product.price.toFixed(2)}zł
-                      </p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="mt-auto rounded-full"
-                      >
-                        View Product
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
-        </div>
+        {!!similarProducts.length && (
+          <div className="my-12">
+            <h2 className="text-2xl font-bold mb-6">Podobne produkty</h2>
+            <Carousel className="w-full">
+              <CarouselContent>
+                {similarProducts.map((product) => (
+                  <CarouselItem
+                    key={product.id}
+                    className="md:basis-1/3 lg:basis-1/4"
+                  >
+                    <Card className="h-full py-0">
+                      <CardContent className="p-4 flex flex-col h-full">
+                        <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
+                          <img
+                            src={
+                              product.images?.[0] || '/images/placeholder.jpg'
+                            }
+                            alt={product.name}
+                            className="object-cover w-full transition-transform hover:scale-105"
+                          />
+                        </div>
+                        <h3 className="font-medium line-clamp-1">
+                          {product.name}
+                        </h3>
+                        <p className="font-bold mt-1">
+                          {product.price.toFixed(2)}zł
+                        </p>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="mt-4 rounded-full"
+                        >
+                          Sprawdź produkt
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </div>
+        )}
       </div>
 
       <SellerModal

@@ -16,15 +16,17 @@ import { Pencil, Save, X } from 'lucide-react'
 import React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { useStore } from '@/store/useStore'
+import { SellerModal } from '@/components/SellerModal'
 
 export const Route = createFileRoute('/panel-uzytkownika/_layout/twoje-dane')({
   component: TwojeDane,
 })
 
 export default function TwojeDane() {
-  const { userData, setUserData } = useStore()
+  const { userData, setUserData, companies, setCompanies } = useStore()
   const [editingField, setEditingField] = useState<string | null>(null)
   const [editValue, setEditValue] = useState<string>('')
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
 
   const handleEdit = (field: string): void => {
     setEditingField(`${field}`)
@@ -36,6 +38,15 @@ export default function TwojeDane() {
       ...userData,
       [field]: editValue,
     })
+    const changedCompanyIndex = companies.findIndex(
+      (company) => company.id === userData.id,
+    )
+    const tempComapnies = companies
+    tempComapnies[changedCompanyIndex] = {
+      ...tempComapnies[changedCompanyIndex],
+      [field]: editValue,
+    }
+    setCompanies(tempComapnies)
     setEditingField(null)
   }
 
@@ -90,7 +101,12 @@ export default function TwojeDane() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Twoje dane</h1>
+      <div className="flex gap-4">
+        <h1 className="text-3xl font-bold mb-6">Twoje dane</h1>
+        <Button onClick={() => setIsDialogOpen(true)}>
+          Pokaż stronę sprzedawcy
+        </Button>
+      </div>
       <p className="text-muted-foreground mb-8">
         Zarządzaj swoimi danymi osobowymi i publicznymi. Kliknij ikonę edycji,
         aby zmienić dane.
@@ -119,6 +135,13 @@ export default function TwojeDane() {
           </Card>
         </TabsContent>
       </Tabs>
+      {isDialogOpen && (
+        <SellerModal
+          isDialogOpen={isDialogOpen}
+          setIsDialogOpen={setIsDialogOpen}
+          companyId="1"
+        />
+      )}
     </div>
   )
 }

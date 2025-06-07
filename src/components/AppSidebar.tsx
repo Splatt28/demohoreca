@@ -1,6 +1,6 @@
 'use client'
 
-import { User, Package, FileText, Store } from 'lucide-react'
+import { User, Package, FileText } from 'lucide-react'
 
 import {
   Sidebar,
@@ -38,11 +38,6 @@ export function AppSidebar() {
       title: 'Twoja umowa',
       icon: FileText,
       href: '/panel-uzytkownika/twoja-umowa',
-    },
-    {
-      title: 'Twoja strona sprzedawcy',
-      icon: Store,
-      href: '/panel-uzytkownika/twoja-strona-sprzedawcy',
     },
   ]
 

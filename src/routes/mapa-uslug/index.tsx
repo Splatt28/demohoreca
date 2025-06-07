@@ -37,6 +37,20 @@ export default function RouteComponent() {
         <div className="lg:w-1/2">
           <h2 className="text-xl font-semibold mb-4">Znajdź kategorie</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <Link key={'all'} to={`/uslugi`} className="group ">
+              <div className="border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div className="relative h-32 w-full">
+                  <img
+                    src={Placeholder}
+                    alt="Wszystkie usługi"
+                    className="object-cover absolute right-0 h-full w-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-2 text-center bg-white">
+                  <h3 className="font-medium">Wszystkie usługi</h3>
+                </div>
+              </div>
+            </Link>
             {categories.map((category) => (
               <Link
                 key={category.id}
@@ -46,7 +60,7 @@ export default function RouteComponent() {
                 }}
                 className="group"
               >
-                <div className="border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                <div className="border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md h-full flex flex-col">
                   <div className="relative h-32 w-full">
                     <img
                       src={Placeholder}
@@ -54,7 +68,7 @@ export default function RouteComponent() {
                       className="object-cover absolute right-0 h-full w-full group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <div className="p-2 text-center bg-white">
+                  <div className="p-2 text-center bg-white flex flex-1 items-center justify-center">
                     <h3 className="font-medium">{category.name}</h3>
                   </div>
                 </div>
