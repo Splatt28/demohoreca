@@ -219,7 +219,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div
-                className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
                 style={{ backgroundColor: '#042254' }}
               >
                 <Settings className="h-10 w-10 text-white" />
@@ -237,7 +237,7 @@ function App() {
 
             <div className="text-center">
               <div
-                className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
                 style={{ backgroundColor: '#042254' }}
               >
                 <Search className="h-10 w-10 text-white" />
@@ -255,7 +255,7 @@ function App() {
 
             <div className="text-center">
               <div
-                className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
                 style={{ backgroundColor: '#042254' }}
               >
                 <Link2 className="h-10 w-10 text-white" />
@@ -273,7 +273,7 @@ function App() {
 
             <div className="text-center">
               <div
-                className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
                 style={{ backgroundColor: '#042254' }}
               >
                 <BookOpen className="h-10 w-10 text-white" />
