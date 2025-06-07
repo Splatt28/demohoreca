@@ -12,7 +12,6 @@
     "lint": "eslint",
     "format": "prettier",
     "check": "prettier --write . && eslint --fix",
-    "copy404": "cpy dist/index.html . --rename=404.html",
     "predeploy": "npm run build && npm run copy404",
     "deploy": "gh-pages -d dist"
   },
