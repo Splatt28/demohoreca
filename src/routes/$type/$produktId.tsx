@@ -156,7 +156,10 @@ function RouteComponent() {
           <div className="space-y-4">
             <div className="relative aspect-square overflow-hidden rounded-xl border">
               <img
-                src={currentProduct.images?.[0] || '/images/placeholder.jpg'}
+                src={
+                  currentProduct.images?.[selectedImage] ||
+                  '/images/placeholder.jpg'
+                }
                 alt={currentProduct.name}
                 className="object-cover  w-full"
               />
@@ -166,7 +169,7 @@ function RouteComponent() {
                 currentProduct.images.map((image, index) => (
                   <button
                     key={index}
-                    className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border ${
+                    className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border cursor-pointer ${
                       selectedImage === index ? 'ring-2 ring-primary' : ''
                     }`}
                     onClick={() => setSelectedImage(index)}
@@ -231,15 +234,24 @@ function RouteComponent() {
               </div>
             </div>
 
-            <Tabs defaultValue="description" className="mt-6">
+            <Tabs defaultValue="description " className="mt-6">
               <TabsList className="grid w-full grid-cols-3 rounded-lg">
-                <TabsTrigger value="description" className="rounded-lg">
+                <TabsTrigger
+                  value="description"
+                  className="rounded-lg cursor-pointer"
+                >
                   Opis
                 </TabsTrigger>
-                <TabsTrigger value="features" className="rounded-lg">
+                <TabsTrigger
+                  value="features"
+                  className="rounded-lg cursor-pointer"
+                >
                   Szczegóły
                 </TabsTrigger>
-                <TabsTrigger value="specifications" className="rounded-lg">
+                <TabsTrigger
+                  value="specifications"
+                  className="rounded-lg cursor-pointer"
+                >
                   Specyfikacja
                 </TabsTrigger>
               </TabsList>

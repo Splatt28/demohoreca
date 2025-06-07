@@ -77,6 +77,7 @@ export const Map = () => {
                   const { name } = geo.properties
                   setTooltipContent(`${name}`)
                 }}
+                className="cursor-pointer"
                 onMouseDown={() => {
                   navigate({
                     to: '/uslugi',
