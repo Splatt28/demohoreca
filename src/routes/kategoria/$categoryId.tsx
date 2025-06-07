@@ -86,7 +86,7 @@ function RouteComponent() {
 
   //TODO: Handle category banners based on url data.categoryid
   return (
-    <section className="container">
+    <section className="container py-8">
       <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
         <Form watch={watch} {...form}>
           <Filters type="PRODUCT" />

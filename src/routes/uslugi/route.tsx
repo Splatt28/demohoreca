@@ -30,7 +30,7 @@ export default function ServicesLayout() {
   }, [getValues, search, setValue])
 
   return (
-    <section className="container">
+    <section className="container py-8">
       <div className="grid grid-flow-col grid-cols-[auto_1fr] gap-30">
         <Form watch={watch} {...form}>
           <Filters type="SERVICE" />

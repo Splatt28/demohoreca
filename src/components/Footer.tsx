@@ -82,7 +82,7 @@ export function Footer() {
 
         <div className="mt-8 pt-6 border-t border-primary-foreground">
           <p className="text-center text-primary-foreground">
-            © {new Date().getFullYear()} Your Company. All rights reserved.
+            © {new Date().getFullYear()} Strefa HoReCa. All rights reserved.
           </p>
         </div>
       </div>
