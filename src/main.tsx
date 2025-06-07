@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals.ts'
 
 // Create a new router instance
 const router = createRouter({
+  basepath: '/demohoreca',
   routeTree,
   context: {},
   defaultPreload: 'intent',
