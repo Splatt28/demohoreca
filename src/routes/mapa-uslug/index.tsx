@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import categories from '@/assets/data/serviceCategories.json'
-import Placeholder from '@/assets/placeholder.jpg'
 import { Map } from '@/components/Map'
 export const Route = createFileRoute('/mapa-uslug/')({
   component: RouteComponent,
@@ -25,7 +24,7 @@ export default function RouteComponent() {
           </div>
           <div className="md:w-1/2 h-48 md:h-64 relative">
             <img
-              src={Placeholder}
+              src={'/images/services/nasze_uslugi.png'}
               alt="Local shopping"
               className="object-cover absolute right-0 h-full w-full"
             />
@@ -41,7 +40,7 @@ export default function RouteComponent() {
               <div className="border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-32 w-full">
                   <img
-                    src={Placeholder}
+                    src={'/images/services/wszystkie_uslugi.png'}
                     alt="Wszystkie usługi"
                     className="object-cover absolute right-0 h-full w-full group-hover:scale-105 transition-transform duration-300"
                   />
@@ -63,7 +62,7 @@ export default function RouteComponent() {
                 <div className="border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md h-full flex flex-col">
                   <div className="relative h-32 w-full">
                     <img
-                      src={Placeholder}
+                      src={category.image}
                       alt={category.name}
                       className="object-cover absolute right-0 h-full w-full group-hover:scale-105 transition-transform duration-300"
                     />

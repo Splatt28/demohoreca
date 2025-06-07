@@ -26,14 +26,17 @@ export const Nav = () => {
         {/* Logo */}
         <div className="flex gap-6 items-center">
           <div className="text-lg font-semibold tracking-tight flex-1">
-            MyLogo
+            <Link to="/" className="hover:text-accent transition-colors">
+              <img
+                  src={'/images/logo_horeca.png'}
+                  alt="Local shopping"
+                  className="h-12 w-auto object-contain"
+              />
+            </Link>
           </div>
 
           {/* Navigation Menu */}
           <nav className="space-x-6 hidden md:flex">
-            <Link to="/" className="hover:text-accent transition-colors">
-              Home
-            </Link>
             <Link
               to="/kategoria/$categoryId"
               params={{ categoryId: 'obiekt_od_zewnatrz' }}
