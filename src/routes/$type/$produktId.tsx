@@ -1,4 +1,9 @@
-import { createFileRoute, Link, useParams } from '@tanstack/react-router'
+import {
+  createFileRoute,
+  Link,
+  useParams,
+  useRouter,
+} from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { ChevronRight, ShoppingCart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -35,6 +40,7 @@ export const Route = createFileRoute('/$type/$produktId')({
 })
 
 function RouteComponent() {
+  const router = useRouter()
   const data = useParams({ from: '/$type/$produktId' })
   const { products, services, companies } = useStore(
     useShallow((state) => ({
@@ -157,7 +163,7 @@ function RouteComponent() {
             <div className="relative aspect-square overflow-hidden rounded-xl border">
               <img
                 src={
-                  currentProduct.images?.[selectedImage] ||
+                  `${router.basepath}${currentProduct.images?.[selectedImage]}` ||
                   'images/placeholder.jpg'
                 }
                 alt={currentProduct.name}
@@ -175,7 +181,7 @@ function RouteComponent() {
                     onClick={() => setSelectedImage(index)}
                   >
                     <img
-                      src={image}
+                      src={`${router.basepath}${image}`}
                       alt={`${currentProduct.name} view ${index + 1}`}
                       className="object-cover w-full"
                     />
@@ -334,7 +340,8 @@ function RouteComponent() {
                         <div className="relative aspect-square mb-3 overflow-hidden rounded-lg">
                           <img
                             src={
-                              product.images?.[0] || '/images/placeholder.jpg'
+                              `${router.basepath}${product.images?.[0]}` ||
+                              'images/placeholder.jpg'
                             }
                             alt={product.name}
                             className="object-cover w-full transition-transform hover:scale-105"

@@ -1,5 +1,5 @@
 import type { Item } from '@/types/types'
-import { Link } from '@tanstack/react-router'
+import { Link, useRouter } from '@tanstack/react-router'
 
 export const Product = ({
   id,
@@ -8,6 +8,7 @@ export const Product = ({
   price,
   type,
 }: Item & { type: string }) => {
+  const router = useRouter()
   return (
     <div className="group relative  transition-all hover:scale-[1.05] overflow-hidden">
       <Link
@@ -18,7 +19,7 @@ export const Product = ({
         <div
           className="mb-3 h-92 shadow-md bg-cover bg-center bg-no-repeat rounded-sm"
           style={{
-            backgroundImage: `url(${images && images[0] ? images[0] : 'images/placeholder.jpg'})`,
+            backgroundImage: `url(${router.basepath}${images && images[0] ? images[0] : 'images/placeholder.jpg'})`,
           }}
         ></div>
         <div className="flex flex-col gap-[5px] flex-1 justify-between">
