@@ -1,6 +1,10 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
+import {
+  RouterProvider,
+  createMemoryHistory,
+  createRouter,
+} from '@tanstack/react-router'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
@@ -8,14 +12,20 @@ import { routeTree } from './routeTree.gen'
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 
+const memoryHistory = createMemoryHistory({
+  initialEntries: ['/'],
+})
+
 // Create a new router instance
 const router = createRouter({
+  basepath: '/demohoreca/',
   routeTree,
   context: {},
   defaultPreload: 'intent',
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
+  history: memoryHistory,
 })
 
 // Register the router instance for type safety
