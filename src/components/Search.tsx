@@ -8,12 +8,13 @@ import {
   useState,
 } from 'react'
 import type { Item } from '@/types/types'
-import { useNavigate } from '@tanstack/react-router'
+import { useNavigate, useRouter } from '@tanstack/react-router'
 import { Route } from '@/routes'
 import { useStore } from '@/store/useStore'
 import { useShallow } from 'zustand/react/shallow'
 
 export const SearchInput = () => {
+  const router = useRouter()
   const productList = useStore(useShallow((state) => state.products))
   const [input, setInput] = useState('')
   const navigate = useNavigate({ from: Route.fullPath })
@@ -89,7 +90,7 @@ export const SearchInput = () => {
               <div
                 className="w-1/3 bg-cover bg-center bg-no-repeat rounded-sm h-20"
                 style={{
-                  backgroundImage: `url(${searchResult.images && searchResult.images[0] ? searchResult.images[0] : 'images/placeholder.jpg'})`,
+                  backgroundImage: `url(${router.basepath}${searchResult.images && searchResult.images[0] ? searchResult.images[0] : 'images/placeholder.jpg'})`,
                 }}
               ></div>
               <div className="flex-1">
