@@ -18,7 +18,7 @@ export const Product = ({
         <div
           className="mb-3 h-92 shadow-md bg-cover bg-center bg-no-repeat rounded-sm"
           style={{
-            backgroundImage: `url(${images && images[0] ? images[0] : '/images/placeholder.jpg'})`,
+            backgroundImage: `url(${images && images[0] ? images[0] : 'images/placeholder.jpg'})`,
           }}
         ></div>
         <div className="flex flex-col gap-[5px] flex-1 justify-between">

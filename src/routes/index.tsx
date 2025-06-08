@@ -71,7 +71,7 @@ function App() {
             </div>
             <div className="relative">
               <img
-                src="/images/herosection.jpg?height=400&width=600"
+                src="images/herosection.jpg?height=400&width=600"
                 alt="HoReCa marketplace illustration"
                 width={600}
                 height={400}

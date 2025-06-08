@@ -91,7 +91,7 @@ function RouteComponent() {
         <Form watch={watch} {...form}>
           <Filters type="PRODUCT" />
           <div>
-            <CategoryBanner imageSrc={`/images/${data.categoryId}.jpg`}>
+            <CategoryBanner imageSrc={`images/${data.categoryId}.jpg`}>
               <>
                 <h1 className="font-bold text-3xl mb-1">
                   {data?.categoryId

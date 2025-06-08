@@ -158,7 +158,7 @@ function RouteComponent() {
               <img
                 src={
                   currentProduct.images?.[selectedImage] ||
-                  '/images/placeholder.jpg'
+                  'images/placeholder.jpg'
                 }
                 alt={currentProduct.name}
                 className="object-cover  w-full"

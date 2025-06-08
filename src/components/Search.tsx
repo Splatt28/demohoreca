@@ -89,7 +89,7 @@ export const SearchInput = () => {
               <div
                 className="w-1/3 bg-cover bg-center bg-no-repeat rounded-sm h-20"
                 style={{
-                  backgroundImage: `url(${searchResult.images && searchResult.images[0] ? searchResult.images[0] : '/images/placeholder.jpg'})`,
+                  backgroundImage: `url(${searchResult.images && searchResult.images[0] ? searchResult.images[0] : 'images/placeholder.jpg'})`,
                 }}
               ></div>
               <div className="flex-1">

@@ -28,9 +28,9 @@ export const Nav = () => {
           <div className="text-lg font-semibold tracking-tight flex-1">
             <Link to="/" className="hover:text-accent transition-colors">
               <img
-                  src={'/images/logo_horeca.png'}
-                  alt="Local shopping"
-                  className="h-12 w-auto object-contain"
+                src={'images/logo_horeca.png'}
+                alt="Local shopping"
+                className="h-12 w-auto object-contain"
               />
             </Link>
           </div>
