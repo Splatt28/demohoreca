@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   RouterProvider,
-  createMemoryHistory,
+  createHashHistory,
   createRouter,
 } from '@tanstack/react-router'
 
@@ -11,10 +11,6 @@ import { routeTree } from './routeTree.gen'
 
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
-
-const memoryHistory = createMemoryHistory({
-  initialEntries: ['/'],
-})
 
 // Create a new router instance
 const router = createRouter({
@@ -25,7 +21,7 @@ const router = createRouter({
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
-  history: memoryHistory,
+  history: createHashHistory(),
 })
 
 // Register the router instance for type safety
