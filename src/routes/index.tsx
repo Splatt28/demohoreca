@@ -43,7 +43,7 @@ function App() {
                 <Button
                   size="lg"
                   className="text-white font-semibold"
-                  style={{ backgroundColor: '#042254' }}
+                  style={{ backgroundColor: '#203a65' }}
                   onClick={() =>
                     navigate({
                       to: '/kategoria/$categoryId',
@@ -57,7 +57,7 @@ function App() {
                 <Button
                   size="lg"
                   variant="outline"
-                  style={{ borderColor: '#042254', color: '#042254' }}
+                  style={{ borderColor: '#203a65', color: '#203a65' }}
                   onClick={() =>
                     navigate({
                       to: '/uslugi',
@@ -220,7 +220,7 @@ function App() {
             <div className="text-center">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
-                style={{ backgroundColor: '#042254' }}
+                style={{ backgroundColor: '#203a65' }}
               >
                 <Settings className="h-10 w-10 text-white" />
               </div>
@@ -238,7 +238,7 @@ function App() {
             <div className="text-center">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
-                style={{ backgroundColor: '#042254' }}
+                style={{ backgroundColor: '#203a65' }}
               >
                 <Search className="h-10 w-10 text-white" />
               </div>
@@ -256,7 +256,7 @@ function App() {
             <div className="text-center">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
-                style={{ backgroundColor: '#042254' }}
+                style={{ backgroundColor: '#203a65' }}
               >
                 <Link2 className="h-10 w-10 text-white" />
               </div>
@@ -274,7 +274,7 @@ function App() {
             <div className="text-center">
               <div
                 className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center"
-                style={{ backgroundColor: '#042254' }}
+                style={{ backgroundColor: '#203a65' }}
               >
                 <BookOpen className="h-10 w-10 text-white" />
               </div>
@@ -308,7 +308,7 @@ function App() {
               <div className="text-center relative">
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl z-5 relative"
-                  style={{ backgroundColor: '#042254' }}
+                  style={{ backgroundColor: '#203a65' }}
                 >
                   1
                 </div>
@@ -332,7 +332,7 @@ function App() {
               <div className="text-center relative">
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl z-5 relative"
-                  style={{ backgroundColor: '#042254' }}
+                  style={{ backgroundColor: '#203a65' }}
                 >
                   2
                 </div>
@@ -355,7 +355,7 @@ function App() {
               <div className="text-center">
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl"
-                  style={{ backgroundColor: '#042254' }}
+                  style={{ backgroundColor: '#203a65' }}
                 >
                   3
                 </div>
@@ -375,7 +375,7 @@ function App() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20" style={{ backgroundColor: '#042254' }}>
+      <section className="bg-slate-800 py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">
             Gotowy do współpracy?
