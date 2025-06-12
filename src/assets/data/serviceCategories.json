@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Budowa i infrastruktura",
-    "image": "images/services/budowa_i_infrastruktura.jpg",
+    "image": "images/services-categories/budowa_i_infrastruktura.jpg",
     "subCategories": [
       {
         "id": 2,
@@ -34,7 +34,7 @@
   {
     "id": 6,
     "name": "Utrzymanie techniczne",
-    "image": "images/services/utrzymanie_techniczne.jpg",
+    "image": "images/services-categories/utrzymanie_techniczne.jpg",
     "subCategories": [
       {
         "id": 7,
@@ -66,7 +66,7 @@
   {
     "id": 11,
     "name": "Usługi „miękkie”",
-    "image": "images/services/uslugi_miekkie.jpg",
+    "image": "images/services-categories/uslugi_miekkie.jpg",
     "subCategories": [
       {
         "id": 12,
@@ -98,7 +98,7 @@
   {
     "id": 16,
     "name": "Tereny zewnętrzne i zieleniarskie",
-    "image": "images/services/tereny_zewnetrzne_i_zieleniarskie.jpg",
+    "image": "images/services-categories/tereny_zewnetrzne_i_zieleniarskie.jpg",
     "subCategories": [
       {
         "id": 17,
@@ -136,7 +136,7 @@
   {
     "id": 22,
     "name": "Cyfrowe i IT",
-    "image": "images/services/cyfrowe_i_it.jpg",
+    "image": "images/services-categories/cyfrowe_i_it.jpg",
     "subCategories": [
       {
         "id": 23,
@@ -168,7 +168,7 @@
   {
     "id": 27,
     "name": "Projektowanie wnętrz i wyposażenie",
-    "image": "images/services/projektowanie_wnetrz_i_wyposazenie.jpg",
+    "image": "images/services-categories/projektowanie_wnetrz_i_wyposazenie.jpg",
     "subCategories": [
       {
         "id": 28,
@@ -200,7 +200,7 @@
   {
     "id": 32,
     "name": "Konsulting i szkolenia",
-    "image": "images/services/konsulting_i_szkolenia.jpg",
+    "image": "images/services-categories/konsulting_i_szkolenia.jpg",
     "subCategories": [
       {
         "id": 33,
@@ -226,7 +226,7 @@
   {
     "id": 36,
     "name": "Zarządzanie energią i zrównoważony rozwój",
-    "image": "images/services/zarzadzanie_energia_i_zrownowazony_rozwoj.jpg",
+    "image": "images/services-categories/zarzadzanie_energia_i_zrownowazony_rozwoj.jpg",
     "subCategories": [
       {
         "id": 37,
@@ -252,7 +252,7 @@
   {
     "id": 40,
     "name": "Bezpieczeństwo i ochrona",
-    "image": "images/services/bezpieczenstwo_i_ochrona.jpg",
+    "image": "images/services-categories/bezpieczenstwo_i_ochrona.jpg",
     "subCategories": [
       {
         "id": 41,
@@ -284,7 +284,7 @@
   {
     "id": 45,
     "name": "Marketing i branding",
-    "image": "images/services/marketing_i_branding.jpg",
+    "image": "images/services-categories/marketing_i_branding.jpg",
     "subCategories": [
       {
         "id": 46,
@@ -316,7 +316,7 @@
   {
     "id": 50,
     "name": "Audyty",
-    "image": "images/services/audyty.jpg",
+    "image": "images/services-categories/audyty.jpg",
     "subCategories": [
       {
         "id": 51,

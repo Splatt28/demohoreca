@@ -8,7 +8,7 @@ export function Footer() {
             <div className="lg:col-span-1 place-items-center">
               <div>
                 <img
-                    src="/images/mini-logo-white.png"
+                    src="images/mini-logo-white.png"
                     alt="Sandbox Logo"
                     width={120}
                 />

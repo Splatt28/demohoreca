@@ -6,7 +6,7 @@
     "originalPrice": 5000,
     "available": true,
     "description": "Kompleksowe projektowanie nowoczesnych stron dla hoteli i restauracji.",
-    "images": ["https://example.com/images/projektowanie1.jpg"],
+    "images": ["/images/services/Projektowanie_stron_internetowych.jpg"],
     "categoryId": "22",
     "companyId": "7",
     "attributes": {
@@ -37,7 +37,7 @@
     "originalPrice": 15000,
     "available": true,
     "description": "Integracja systemu rezerwacyjnego PMS z istniejącą stroną.",
-    "images": ["https://example.com/images/pms.jpg"],
+    "images": ["/images/services/System_rezerwacyjny_PMS.jpg"],
     "categoryId": "24",
     "companyId": "7",
     "attributes": {
@@ -60,7 +60,7 @@
     "originalPrice": 2900,
     "available": true,
     "description": "Instalacja energooszczędnego oświetlenia LED w przestrzeniach zewnętrznych.",
-    "images": ["https://example.com/images/oswietlenie-led.jpg"],
+    "images": ["/images/services/Montaz_oswietlenia_ogrodowego_LED.jpg"],
     "categoryId": "21",
     "companyId": "8",
     "attributes": {
@@ -83,7 +83,7 @@
     "originalPrice": 2200,
     "available": true,
     "description": "Regularna pielęgnacja zieleni hotelowej: koszenie, nawożenie, przycinanie.",
-    "images": ["https://example.com/images/zielen.jpg"],
+    "images": ["/images/services/pielegnacja.jpg"],
     "categoryId": "17",
     "companyId": "8",
     "attributes": {
@@ -97,7 +97,7 @@
     "originalPrice": 1200,
     "available": true,
     "description": "Usługi sprzątające dla hoteli, lobby, korytarzy i stref SPA.",
-    "images": ["https://example.com/images/sprzatanie.jpg"],
+    "images": ["/images/services/sprzatanie.jpg"],
     "categoryId": "12",
     "companyId": "8",
     "attributes": {
@@ -117,7 +117,7 @@
     "originalPrice": 4000,
     "available": true,
     "description": "Prowadzenie reklam w Google i social media.",
-    "images": ["https://example.com/images/reklamy.jpg"],
+    "images": ["/images/services/reklamy.jpg"],
     "categoryId": "46",
     "companyId": "7",
     "attributes": {
@@ -148,7 +148,7 @@
     "originalPrice": 8200,
     "available": false,
     "description": "Nowoczesne systemy z kartami RFID i zarządzaniem dostępem online.",
-    "images": ["https://example.com/images/dostep.jpg"],
+    "images": ["/images/services/dostep.jpg"],
     "categoryId": "42",
     "companyId": "7",
     "attributes": {
@@ -162,7 +162,7 @@
     "originalPrice": 35000,
     "available": true,
     "description": "Instalacje PV na dachach hoteli i restauracji, doradztwo i montaż.",
-    "images": ["https://example.com/images/pv.jpg"],
+    "images": ["/images/services/pv.jpg"],
     "categoryId": "37",
     "companyId": "7",
     "attributes": {
@@ -182,7 +182,7 @@
     "originalPrice": 2000,
     "available": true,
     "description": "Weryfikacja jakości obsługi, profesjonalne raporty i rekomendacje.",
-    "images": ["https://example.com/images/audyty.jpg"],
+    "images": ["/images/services/audyty.jpg"],
     "categoryId": "51",
     "companyId": "8",
     "attributes": {
@@ -196,7 +196,7 @@
     "originalPrice": 2500,
     "available": true,
     "description": "Profesjonalna sesja zdjęciowa pokojów, restauracji i SPA.",
-    "images": ["https://example.com/images/foto.jpg"],
+    "images": ["/images/services/foto.jpg"],
     "categoryId": "47",
     "companyId": "8",
     "attributes": {
@@ -227,7 +227,7 @@
     "originalPrice": 5000,
     "available": true,
     "description": "SEO",
-    "images": ["https://example.com/images/projektowanie1.jpg"],
+    "images": ["/images/services/seo.jpg"],
     "categoryId": "22",
     "companyId": "7",
     "attributes": {

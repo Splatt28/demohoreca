@@ -24,7 +24,7 @@ export default function RouteComponent() {
           </div>
           <div className="md:w-1/2 h-48 md:h-64 relative">
             <img
-              src={'images/services/nasze_uslugi.png'}
+              src={'images/services-categories/nasze_uslugi.png'}
               alt="Local shopping"
               className="object-cover absolute right-0 h-full w-full"
             />
@@ -40,7 +40,7 @@ export default function RouteComponent() {
               <div className="border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
                 <div className="relative h-32 w-full">
                   <img
-                    src={'images/services/wszystkie_uslugi.png'}
+                    src={'images/services-categories/wszystkie_uslugi.png'}
                     alt="Wszystkie usługi"
                     className="object-cover absolute right-0 h-full w-full group-hover:scale-105 transition-transform duration-300"
                   />
