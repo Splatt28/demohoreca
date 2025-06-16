@@ -34,7 +34,7 @@ export type Category = {
   name: string
   subCategories: Category[]
   slug: string
-  image: string | undefined
+  image?: string
 }
 
 export type NavigationItem = {
