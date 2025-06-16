@@ -164,7 +164,7 @@ function RouteComponent() {
               <img
                 src={
                   `${router.basepath}${currentProduct.images?.[selectedImage]}` ||
-                  'images/placeholder.jpg'
+                  '/images/placeholder.jpg'
                 }
                 alt={currentProduct.name}
                 className="object-cover  w-full"
@@ -341,7 +341,7 @@ function RouteComponent() {
                           <img
                             src={
                               `${router.basepath}${product.images?.[0]}` ||
-                              'images/placeholder.jpg'
+                              '/images/placeholder.jpg'
                             }
                             alt={product.name}
                             className="object-cover w-full transition-transform hover:scale-105"
