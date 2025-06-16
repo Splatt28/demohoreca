@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Obiekt od Zewnątrz",
     "slug": "obiekt_od_zewnatrz",
+    "image": "images/obiekt_od_zewnatrz.jpg",
     "subCategories": [
       {
         "id": 2,
@@ -317,6 +318,7 @@
   "id": 52,
   "name": "Elementy wykończenia wnętrz",
   "slug": "elementy_wykonczenia_wnetrz",
+  "image": "images/elementy_wykonczenia_wnetrz.jpg",
   "subCategories": [
     {
       "id": 53,
@@ -876,6 +878,7 @@
     "id": 142,
     "name": "Artykuły spożywcze",
     "slug": "artykuly_spozywcze",
+    "image": "images/artykuly_spozywcze.jpg",
     "subCategories": [
       {
         "id": 143,

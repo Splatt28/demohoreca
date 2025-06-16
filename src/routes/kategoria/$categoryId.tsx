@@ -84,6 +84,10 @@ function RouteComponent() {
     return () => unsubscribe()
   }, [watch, getProducts, navigate])
 
+  const category = data?.categoryId
+      ? findCategoryByNormalizedName(productCategoryList, data.categoryId)
+      : null;
+
   //TODO: Handle category banners based on url data.categoryid
   return (
     <section className="container py-8">
@@ -91,18 +95,15 @@ function RouteComponent() {
         <Form watch={watch} {...form}>
           <Filters type="PRODUCT" />
           <div>
-            <CategoryBanner imageSrc={`images/${data.categoryId}.jpg`}>
-              <>
-                <h1 className="font-bold text-3xl mb-1">
-                  {data?.categoryId
-                    ? findCategoryByNormalizedName(
-                        productCategoryList,
-                        data.categoryId,
-                      )?.name
-                    : ''}
-                </h1>
-              </>
-            </CategoryBanner>
+            {category?.image &&(
+              <CategoryBanner imageSrc={category.image}>
+                <>
+                  <h1 className="font-bold text-3xl mb-1">
+                    {category.name}
+                  </h1>
+                </>
+              </CategoryBanner>
+            )}
             <ProductList products={currentProducts} type="produkt" />
           </div>
         </Form>
